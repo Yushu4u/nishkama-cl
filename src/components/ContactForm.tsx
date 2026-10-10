@@ -201,7 +201,7 @@ export function ContactForm() {
                 website_hp: "",
               });
             }}
-            className="text-xs font-bold text-indigo-600 underline underline-offset-4 hover:text-indigo-700 transition-colors"
+            className="text-xs font-bold text-[#2F7CEF] underline underline-offset-4 hover:text-[#1E66D8] transition-colors"
           >
             Submit Another Inquiry
           </button>
@@ -264,7 +264,7 @@ export function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             placeholder="Ada"
-            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 ${
+            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.firstName ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
             }`}
           />
@@ -294,7 +294,7 @@ export function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             placeholder="Lovelace"
-            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 ${
+            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.lastName ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
             }`}
           />
@@ -326,7 +326,7 @@ export function ContactForm() {
             value={formData.workEmail}
             onChange={handleChange}
             placeholder="ada@company.com"
-            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 ${
+            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.workEmail ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
             }`}
           />
@@ -356,7 +356,7 @@ export function ContactForm() {
             value={formData.company}
             onChange={handleChange}
             placeholder="Analytical Engine Corp"
-            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600 ${
+            className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.company ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
             }`}
           />
@@ -384,7 +384,7 @@ export function ContactForm() {
             value={formData.productWebsite}
             onChange={handleChange}
             placeholder="https://app.yourproduct.com"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]"
           />
         </div>
 
@@ -402,7 +402,7 @@ export function ContactForm() {
             required
             value={formData.needHelpWith}
             onChange={handleChange}
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]"
           >
             {needOptions.map((opt) => (
               <option key={opt} value={opt}>
@@ -429,7 +429,7 @@ export function ContactForm() {
             value={formData.currentQaSetup}
             onChange={handleChange}
             placeholder="e.g. Developers test own code, 1 manual tester"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]"
           />
         </div>
 
@@ -446,7 +446,7 @@ export function ContactForm() {
             name="expectedTimeline"
             value={formData.expectedTimeline}
             onChange={handleChange}
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]"
           >
             {timelineOptions.map((opt) => (
               <option key={opt} value={opt}>
@@ -472,7 +472,7 @@ export function ContactForm() {
           value={formData.details}
           onChange={handleChange}
           placeholder="Tell us about your upcoming release, critical flows, known regression risks, or where user quality hurts..."
-          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]"
         />
       </div>
 
@@ -488,11 +488,11 @@ export function ContactForm() {
             aria-required="true"
             aria-invalid={Boolean(fieldErrors.privacyConsent)}
             aria-describedby={fieldErrors.privacyConsent ? "privacyConsent-error" : undefined}
-            className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-600"
+            className="mt-1 h-4 w-4 rounded border-slate-300 text-[#2F7CEF] focus:ring-[#2F7CEF]"
           />
           <span className="text-xs text-slate-600 leading-relaxed">
             I agree to the processing of the provided information in accordance with Nishkama CodeLab&apos;s{" "}
-            <a href="/privacy-policy" className="underline text-indigo-600 font-semibold hover:text-indigo-700">
+            <a href="/privacy-policy" className="underline text-[#2F7CEF] font-semibold hover:text-[#1E66D8]">
               Privacy Notice
             </a>
             .
@@ -510,7 +510,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-indigo-700 active:scale-[0.98] shadow-sm disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-600"
+          className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#2F7CEF] px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#1E66D8] active:scale-[0.98] shadow-sm disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2F7CEF]"
         >
           {isSubmitting ? (
             <>

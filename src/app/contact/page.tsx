@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Mail, ShieldCheck, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/data/siteConfig";
@@ -12,13 +13,23 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-slate-50 min-h-screen py-16 md:py-24 text-slate-900">
+    <div className="bg-slate-50 min-h-screen py-16 md:py-24 text-[#0E2539]">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           {/* Left Column: Heading, Supporting Copy, Trust Notes */}
           <div className="lg:col-span-5">
-            <span className="badge-pill">GET IN TOUCH</span>
-            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08]">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src={siteConfig.brand.assets.iconSquare}
+                alt="Nishkama CodeLab Mark"
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-xl object-contain border border-slate-200 shadow-sm"
+              />
+              <span className="badge-pill">GET IN TOUCH</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
               Tell us where quality hurts.
             </h1>
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
@@ -30,11 +41,11 @@ export default function ContactPage() {
             {/* Trust and Response Guarantees */}
             <div className="mt-10 space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-start gap-3">
-                <div className="grid h-8 w-8 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 shrink-0 mt-0.5">
+                <div className="grid h-8 w-8 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] shrink-0 mt-0.5">
                   <Clock className="h-4 w-4" />
                 </div>
                 <div>
-                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-[#0E2539]">
                     Rapid Response
                   </h2>
                   <p className="text-xs text-slate-600 mt-0.5">
@@ -44,11 +55,11 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="grid h-8 w-8 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 shrink-0 mt-0.5">
+                <div className="grid h-8 w-8 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] shrink-0 mt-0.5">
                   <ShieldCheck className="h-4 w-4" />
                 </div>
                 <div>
-                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-[#0E2539]">
                     Strict Confidentiality
                   </h2>
                   <p className="text-xs text-slate-600 mt-0.5">
@@ -58,16 +69,16 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="grid h-8 w-8 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 shrink-0 mt-0.5">
+                <div className="grid h-8 w-8 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] shrink-0 mt-0.5">
                   <Mail className="h-4 w-4" />
                 </div>
                 <div>
-                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-[#0E2539]">
                     Direct Email
                   </h2>
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="text-xs text-indigo-600 font-bold underline underline-offset-4 hover:text-indigo-700"
+                    className="text-xs text-[#2F7CEF] font-bold underline underline-offset-4 hover:text-[#1E66D8]"
                   >
                     {siteConfig.email}
                   </a>

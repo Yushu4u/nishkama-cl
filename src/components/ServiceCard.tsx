@@ -26,7 +26,7 @@ export function ServiceCard({ service, defaultExpanded = false }: ServiceCardPro
       </div>
 
       {/* Title & Tagline */}
-      <h3 className="mt-4 text-2xl font-bold text-slate-900 tracking-tight">
+      <h3 className="mt-4 text-2xl font-bold text-[#0E2539] tracking-tight">
         {service.title}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-slate-600 max-w-3xl">
@@ -38,7 +38,7 @@ export function ServiceCard({ service, defaultExpanded = false }: ServiceCardPro
         <button
           type="button"
           onClick={() => setIsExpanded(!isExpanded)}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-700 transition-colors focus:outline-none"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors focus:outline-none"
           aria-expanded={isExpanded}
         >
           <span>{isExpanded ? "Hide capabilities" : "View capabilities"}</span>
@@ -53,10 +53,10 @@ export function ServiceCard({ service, defaultExpanded = false }: ServiceCardPro
         {/* Direct Link to Dedicated Sub-Page */}
         <Link
           href={`/services/${service.slug}`}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 hover:text-indigo-600 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 hover:text-[#2F7CEF] transition-colors"
         >
           <span>Full Dedicated Page</span>
-          <ArrowRight className="h-4 w-4 text-indigo-600" aria-hidden="true" />
+          <ArrowRight className="h-4 w-4 text-[#2F7CEF]" aria-hidden="true" />
         </Link>
       </div>
 
@@ -75,7 +75,7 @@ export function ServiceCard({ service, defaultExpanded = false }: ServiceCardPro
                 <ul className="space-y-1.5 text-xs text-slate-600">
                   {group.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF] mt-1.5 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -91,13 +91,13 @@ export function ServiceCard({ service, defaultExpanded = false }: ServiceCardPro
             <div className="flex items-center gap-4">
               <Link
                 href={`/services/${service.slug}`}
-                className="font-bold text-indigo-600 hover:text-indigo-700 underline underline-offset-4"
+                className="font-bold text-[#2F7CEF] hover:text-[#1E66D8] underline underline-offset-4"
               >
                 Read deep dive guide →
               </Link>
               <Link
                 href={`/contact?need=${service.slug}`}
-                className="rounded-full bg-indigo-600 px-4 py-1.5 text-white font-bold hover:bg-indigo-700 transition-colors shadow-sm"
+                className="rounded-full bg-[#2F7CEF] px-4 py-1.5 text-white font-bold hover:bg-[#1E66D8] transition-colors shadow-sm"
               >
                 Get in touch
               </Link>

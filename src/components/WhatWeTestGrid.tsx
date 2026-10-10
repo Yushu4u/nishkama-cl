@@ -35,13 +35,13 @@ export function WhatWeTestGrid({ limit, className = "" }: WhatWeTestGridProps) {
       {items.map((item: PlatformCoverage) => (
         <div
           key={item.id}
-          className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 transition-all hover:border-indigo-200 hover:shadow-md"
+          className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 transition-all hover:border-[#BFDBFE] hover:shadow-md"
         >
           <div>
-            <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
+            <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] transition-colors group-hover:bg-[#2F7CEF] group-hover:text-white">
               {iconMap[item.iconKey] || <Globe className="h-5 w-5" />}
             </div>
-            <h3 className="text-base font-bold tracking-tight text-slate-900">
+            <h3 className="text-base font-bold tracking-tight text-[#0E2539]">
               {item.title}
             </h3>
             <p className="mt-2 text-xs leading-relaxed text-slate-600">

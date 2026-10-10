@@ -79,7 +79,7 @@ export default function HowWeWorkPage() {
                 className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="flex items-center gap-2.5 mb-3">
-                  <div className="h-8 w-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+                  <div className="h-8 w-8 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2F7CEF]">
                     <ShieldCheck className="h-4 w-4" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900">
@@ -115,15 +115,15 @@ export default function HowWeWorkPage() {
             {processStages.map((stage, idx) => (
               <div
                 key={stage.step}
-                className="rounded-2xl border border-slate-200 bg-slate-50/50 p-7 md:p-8 shadow-sm hover:border-indigo-200 transition-all"
+                className="rounded-2xl border border-slate-200 bg-slate-50/50 p-7 md:p-8 shadow-sm hover:border-[#2F7CEF]/40 transition-all"
               >
                 <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/60">
                   <div className="flex items-center gap-4">
-                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                       {stageIcons[idx] || <Search className="h-5 w-5" />}
                     </span>
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
                         STAGE {stage.step}
                       </span>
                       <h3 className="text-2xl font-bold tracking-tight text-slate-900">
@@ -156,7 +156,7 @@ export default function HowWeWorkPage() {
                     <ul className="space-y-2">
                       {stage.activities.map((act) => (
                         <li key={act} className="flex items-start gap-2 text-xs text-slate-600">
-                          <CheckCircle2 className="h-3.5 w-3.5 text-indigo-600 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-3.5 w-3.5 text-[#2F7CEF] shrink-0 mt-0.5" />
                           <span>{act}</span>
                         </li>
                       ))}
@@ -210,7 +210,7 @@ export default function HowWeWorkPage() {
                     <span className="text-xs font-bold text-slate-400">
                       {em.timeline}
                     </span>
-                    <span className="text-xs font-bold text-indigo-600">{em.number}</span>
+                    <span className="text-xs font-bold text-[#2F7CEF]">{em.number}</span>
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-slate-900">
                     {em.title}
@@ -237,7 +237,7 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* 5. CALLOUT BANNER */}
-      <section className="bg-slate-900 text-white py-16 md:py-24">
+      <section className="bg-[#0E2539] text-white py-16 md:py-24 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
             READY TO PARTNER?

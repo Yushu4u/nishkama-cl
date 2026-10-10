@@ -83,15 +83,15 @@ export default function HomePage() {
             {/* Quality Commitment Badges / Stat Ticker */}
             <ul className="mt-12 divide-y divide-slate-100 border-t border-slate-100 text-xs uppercase tracking-wider text-slate-500 sm:mt-16 sm:flex sm:flex-wrap sm:items-center sm:gap-x-8 sm:divide-y-0 sm:pt-6 font-bold">
               <li className="flex items-center gap-2.5 py-3 sm:py-0">
-                <span className="h-2 w-2 rounded-full bg-indigo-600" aria-hidden="true" />
+                <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" aria-hidden="true" />
                 <span>Zero Happy-Path Assumption Bias</span>
               </li>
               <li className="flex items-center gap-2.5 py-3 sm:py-0">
-                <span className="h-2 w-2 rounded-full bg-indigo-600" aria-hidden="true" />
+                <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" aria-hidden="true" />
                 <span>100% Independent QA Perspective</span>
               </li>
               <li className="flex items-center gap-2.5 py-3 sm:py-0">
-                <span className="h-2 w-2 rounded-full bg-indigo-600" aria-hidden="true" />
+                <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" aria-hidden="true" />
                 <span>End-to-End User Journey Validation</span>
               </li>
             </ul>
@@ -156,7 +156,7 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold tracking-wider uppercase text-indigo-600">
+                <span className="text-xs font-bold tracking-wider uppercase text-[#2F7CEF]">
                   PROBLEM 01
                 </span>
                 <h3 className="mt-3 text-lg font-bold text-slate-900">
@@ -171,7 +171,7 @@ export default function HomePage() {
 
             <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold tracking-wider uppercase text-indigo-600">
+                <span className="text-xs font-bold tracking-wider uppercase text-[#2F7CEF]">
                   PROBLEM 02
                 </span>
                 <h3 className="mt-3 text-lg font-bold text-slate-900">
@@ -186,7 +186,7 @@ export default function HomePage() {
 
             <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold tracking-wider uppercase text-indigo-600">
+                <span className="text-xs font-bold tracking-wider uppercase text-[#2F7CEF]">
                   PROBLEM 03
                 </span>
                 <h3 className="mt-3 text-lg font-bold text-slate-900">
@@ -201,7 +201,7 @@ export default function HomePage() {
 
             <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold tracking-wider uppercase text-indigo-600">
+                <span className="text-xs font-bold tracking-wider uppercase text-[#2F7CEF]">
                   PROBLEM 04
                 </span>
                 <h3 className="mt-3 text-lg font-bold text-slate-900">
@@ -249,17 +249,17 @@ export default function HomePage() {
               <Link
                 key={svc.id}
                 href={`/services/${svc.slug}`}
-                className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#2F7CEF]/50 transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                    <span className="text-[11px] font-bold text-indigo-600 uppercase tracking-wider">
+                    <span className="text-[11px] font-bold text-[#2F7CEF] uppercase tracking-wider">
                       SERVICE {svc.number}
                     </span>
-                    <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="h-4 w-4 text-slate-400 group-hover:text-[#2F7CEF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
 
-                  <h3 className="mt-4 text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                  <h3 className="mt-4 text-lg font-bold text-slate-900 group-hover:text-[#2F7CEF] transition-colors">
                     {svc.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-slate-600 line-clamp-3">
@@ -273,7 +273,7 @@ export default function HomePage() {
                     <ul className="space-y-1 text-[11px] text-slate-600">
                       {svc.whatWeCheck.slice(0, 3).map((c: string) => (
                         <li key={c} className="flex items-center gap-1.5 truncate">
-                          <span className="h-1 w-1 rounded-full bg-indigo-600 shrink-0" />
+                          <span className="h-1 w-1 rounded-full bg-[#2F7CEF] shrink-0" />
                           <span className="truncate">{c}</span>
                         </li>
                       ))}
@@ -281,7 +281,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-100 text-xs font-bold text-indigo-600 flex items-center justify-between">
+                <div className="mt-5 pt-3 border-t border-slate-100 text-xs font-bold text-[#2F7CEF] flex items-center justify-between">
                   <span>View Sub-Page</span>
                   <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -319,7 +319,7 @@ export default function HomePage() {
                     <span className="text-xs font-bold tracking-wider text-slate-400">
                       STAGE {stage.number}
                     </span>
-                    <span className="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200/60">
+                    <span className="text-xs font-bold text-[#2F7CEF] bg-[#EFF6FF] px-2.5 py-0.5 rounded-full border border-[#BFDBFE]/60">
                       {stage.stage}
                     </span>
                   </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
                   <ul className="space-y-1.5">
                     {stage.focusAreas.slice(0, 2).map((fa) => (
                       <li key={fa} className="text-xs text-slate-600 flex items-center gap-1.5">
-                        <span className="h-1 w-1 rounded-full bg-indigo-600" />
+                        <span className="h-1 w-1 rounded-full bg-[#2F7CEF]" />
                         <span>{fa}</span>
                       </li>
                     ))}
@@ -348,9 +348,9 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-2xl bg-indigo-600 p-6 text-center text-white shadow-sm">
-            <p className="text-base sm:text-lg font-bold">
-              Then we REPORT the evidence and ADVOCATE for the user-facing improvements that matter.
+          <div className="mt-10 rounded-2xl bg-[#0E2539] p-6 text-center text-white shadow-sm border border-[#2F7CEF]/30">
+            <p className="text-base sm:text-lg font-bold text-white">
+              Then we REPORT the evidence and ADVOCATE for the <span className="text-[#2F7CEF]">user-facing improvements</span> that matter.
             </p>
           </div>
         </div>
@@ -381,7 +381,7 @@ export default function HomePage() {
                 className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-5 transition-all hover:shadow-sm hover:border-slate-300"
               >
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F7CEF]">
                     {item.category}
                   </span>
                   <h3 className="mt-2 text-sm font-bold text-slate-900">
@@ -461,7 +461,7 @@ export default function HomePage() {
                       </p>
                     </div>
                     <div className="pt-2 border-t border-slate-100">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#2F7CEF]">
                         How NCL Solves It
                       </span>
                       <p className="text-xs leading-relaxed text-slate-800 font-medium mt-1">
@@ -501,7 +501,7 @@ export default function HomePage() {
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-slate-200/60">
-                    <span className="text-xs font-bold tracking-wider text-indigo-600">
+                    <span className="text-xs font-bold tracking-wider text-[#2F7CEF]">
                       STEP {stg.step}
                     </span>
                     <span className="text-sm font-bold text-slate-900">
@@ -523,7 +523,7 @@ export default function HomePage() {
                   <ul className="space-y-1">
                     {stg.outputs.slice(0, 2).map((out) => (
                       <li key={out} className="text-xs text-slate-600 flex items-center gap-1.5">
-                        <CheckCircle2 className="h-3 w-3 text-indigo-600 shrink-0" />
+                        <CheckCircle2 className="h-3 w-3 text-[#2F7CEF] shrink-0" />
                         <span>{out}</span>
                       </li>
                     ))}
@@ -569,14 +569,14 @@ export default function HomePage() {
                     <span className="text-xs font-bold tracking-wider text-slate-400">
                       MODEL {em.number}
                     </span>
-                    <span className="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200/60">
+                    <span className="text-xs font-bold text-[#2F7CEF] bg-[#EFF6FF] px-2.5 py-0.5 rounded-full border border-[#BFDBFE]/60">
                       {em.timeline}
                     </span>
                   </div>
                   <h3 className="mt-4 text-xl font-bold text-slate-900">
                     {em.title}
                   </h3>
-                  <p className="mt-1 text-xs font-semibold text-indigo-600">
+                  <p className="mt-1 text-xs font-semibold text-[#2F7CEF]">
                     {em.subtitle}
                   </p>
                   <p className="mt-3 text-xs leading-relaxed text-slate-600">
@@ -590,7 +590,7 @@ export default function HomePage() {
                     <ul className="space-y-1.5">
                       {em.highlights.map((hl) => (
                         <li key={hl} className="text-xs text-slate-600 flex items-start gap-2">
-                          <CheckCircle2 className="h-3 w-3 text-indigo-600 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-3 w-3 text-[#2F7CEF] shrink-0 mt-0.5" />
                           <span>{hl}</span>
                         </li>
                       ))}
@@ -640,7 +640,7 @@ export default function HomePage() {
                 className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-xs font-bold tracking-wider text-indigo-600">
+                  <span className="text-xs font-bold tracking-wider text-[#2F7CEF]">
                     {pt.number}
                   </span>
                   <h3 className="mt-3 text-lg font-bold text-slate-900">

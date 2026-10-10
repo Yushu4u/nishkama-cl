@@ -1,7 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ShieldCheck, HeartHandshake, Compass } from "lucide-react";
 import { Button } from "@/components/Button";
+import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
   title: "About Nishkama CodeLab — Quality Advocates for Your Product",
@@ -11,13 +13,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-white text-slate-900">
+    <div className="bg-white text-[#0E2539]">
       {/* 1. HERO SECTION */}
       <section className="border-b border-slate-200/80 bg-white py-16 md:py-24">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">OUR PHILOSOPHY</span>
-            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08]">
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
               We believe QA should speak for the customer.
             </h1>
             <div className="mt-6 max-w-2xl">
@@ -45,9 +47,24 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
               <span className="badge-pill">WHY WE EXIST</span>
-              <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+              <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
                 An independent quality layer for your team.
               </h2>
+
+              {/* Brand Identity Artifact Showcase */}
+              <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                <Image
+                  src={siteConfig.brand.assets.logoBanner}
+                  alt="Nishkama CodeLab Official Brand"
+                  width={600}
+                  height={188}
+                  className="w-full h-auto object-contain rounded-xl"
+                />
+                <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-500">
+                  <span>Official Brand Asset</span>
+                  <span className="text-[#2F7CEF] font-bold">Nishkama CodeLab</span>
+                </div>
+              </div>
             </div>
 
             <div className="lg:col-span-7 space-y-6 text-sm sm:text-base leading-relaxed text-slate-600">
@@ -67,7 +84,7 @@ export default function AboutPage() {
                 quality improvements.
               </p>
 
-              <blockquote className="rounded-2xl border-l-4 border-indigo-600 bg-white p-6 shadow-sm text-base font-semibold text-slate-900">
+              <blockquote className="rounded-2xl border-l-4 border-[#2F7CEF] bg-white p-6 shadow-sm text-base font-semibold text-[#0E2539]">
                 &ldquo;We don&apos;t want to be the team that simply says &lsquo;tested.&rsquo; We want
                 to be the team that can confidently say, &lsquo;we looked at it from every important
                 angle.&rsquo;&rdquo;
@@ -82,17 +99,17 @@ export default function AboutPage() {
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">OUR CONVICTIONS</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
               Three convictions that guide our work.
             </h2>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-indigo-200 transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-[#BFDBFE] transition-all">
+              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-[#0E2539]">
                 1. Independence Breeds Honesty
               </h3>
               <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
@@ -101,11 +118,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-indigo-200 transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-[#BFDBFE] transition-all">
+              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                 <Compass className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-[#0E2539]">
                 2. Beyond The Happy Path
               </h3>
               <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
@@ -114,11 +131,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-indigo-200 transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-[#BFDBFE] transition-all">
+              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                 <HeartHandshake className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-[#0E2539]">
                 3. Evidence Over Opinions
               </h3>
               <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
@@ -131,7 +148,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. CALLOUT BAND */}
-      <section className="bg-slate-900 text-white py-16 md:py-24">
+      <section className="bg-[#0E2539] text-white py-16 md:py-24">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
             GET IN TOUCH

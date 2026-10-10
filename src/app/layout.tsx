@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#4F46E5",
+  themeColor: "#0E2539",
   width: "device-width",
   initialScale: 1,
 };
@@ -42,6 +42,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Nishkama CodeLab" }],
   creator: "Nishkama CodeLab",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+      { url: siteConfig.brand.assets.iconSquare, sizes: "1024x1024", type: "image/jpeg" },
+    ],
+    apple: [
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -49,11 +59,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "Nishkama CodeLab | Quality Advocates for Your Product",
     description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.brand.assets.logoBanner,
+        width: 1024,
+        height: 320,
+        alt: "Nishkama CodeLab — Quality Advocates for Your Product",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nishkama CodeLab | Quality Advocates for Your Product",
     description: siteConfig.description,
+    images: [siteConfig.brand.assets.logoBanner],
   },
   robots: {
     index: true,
@@ -63,17 +82,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html
-      lang="en"
-      className={`${plusJakartaSans.variable} scroll-smooth antialiased`}
-    >
-      <body className="flex min-h-screen flex-col bg-white text-slate-900 font-sans">
+    <html lang="en" className={plusJakartaSans.variable}>
+      <body className="antialiased min-h-screen flex flex-col bg-white text-[#0E2539]">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

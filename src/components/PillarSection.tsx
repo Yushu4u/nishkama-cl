@@ -20,7 +20,7 @@ export function PillarSection() {
         {/* Section Header */}
         <div className="max-w-3xl">
           <span className="badge-pill">OUR CORE ARCHITECTURE</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
             Three Ways We Advocate for Your Product.
           </h2>
           <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
@@ -29,14 +29,14 @@ export function PillarSection() {
           </p>
         </div>
 
-        {/* Visual Connector Breadcrumb (QA TESTING -> PRODUCT EXPERIENCE -> QUALITY ADVOCACY) */}
+        {/* Visual Connector Breadcrumb */}
         <div className="mt-8 mb-10 hidden md:flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-slate-500 border border-slate-200 bg-slate-50 rounded-full px-5 py-2.5 w-max">
-          <span className="text-slate-900 font-bold">Connected Quality Loop:</span>
-          <span className="text-indigo-600 font-bold">1. QA Testing</span>
+          <span className="text-[#0E2539] font-bold">Connected Quality Loop:</span>
+          <span className="text-[#2F7CEF] font-bold">1. QA Testing</span>
           <ArrowRight className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
           <span className="text-slate-700 font-bold">2. Product Experience</span>
           <ArrowRight className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
-          <span className="text-indigo-700 font-bold bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-200/60">
+          <span className="text-[#2F7CEF] font-bold bg-[#EFF6FF] px-2.5 py-0.5 rounded-full border border-[#BFDBFE]">
             3. Quality Advocacy
           </span>
         </div>
@@ -52,7 +52,7 @@ export function PillarSection() {
                 key={pillar.id}
                 className={`group relative flex flex-col justify-between rounded-2xl border p-8 transition-all hover:shadow-md ${
                   isHighlighted
-                    ? "border-indigo-200 bg-gradient-to-b from-indigo-50/40 via-white to-white shadow-sm"
+                    ? "border-[#BFDBFE] bg-gradient-to-b from-[#EFF6FF]/60 via-white to-white shadow-sm"
                     : "border-slate-200 bg-white hover:border-slate-300"
                 }`}
               >
@@ -60,7 +60,7 @@ export function PillarSection() {
                 <div>
                   <div className="flex items-center justify-between pb-6 border-b border-slate-100">
                     <div className="flex items-center gap-2.5">
-                      <div className="h-8 w-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+                      <div className="h-8 w-8 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2F7CEF]">
                         <IconComponent className="h-4 w-4" />
                       </div>
                       <span className="text-xs font-bold tracking-wider uppercase text-slate-500">
@@ -70,8 +70,8 @@ export function PillarSection() {
                     <span
                       className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${
                         isHighlighted
-                          ? "bg-indigo-600 text-white"
-                          : "bg-slate-100 text-slate-800"
+                          ? "bg-[#2F7CEF] text-white"
+                          : "bg-slate-100 text-[#0E2539]"
                       }`}
                     >
                       {pillar.action}
@@ -80,10 +80,10 @@ export function PillarSection() {
 
                   {/* Pillar Title & Question */}
                   <div className="mt-6">
-                    <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+                    <h3 className="text-2xl font-bold tracking-tight text-[#0E2539]">
                       {pillar.name}
                     </h3>
-                    <p className="mt-1 text-sm font-semibold italic text-indigo-600">
+                    <p className="mt-1 text-sm font-semibold italic text-[#2F7CEF]">
                       &ldquo;{pillar.question}&rdquo;
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export function PillarSection() {
                           className="flex items-start gap-2.5 text-xs text-slate-600"
                         >
                           <CheckCircle2
-                            className="h-3.5 w-3.5 shrink-0 text-indigo-600 mt-0.5"
+                            className="h-3.5 w-3.5 shrink-0 text-[#2F7CEF] mt-0.5"
                             aria-hidden="true"
                           />
                           <span>{cap}</span>
@@ -119,11 +119,11 @@ export function PillarSection() {
                 <div className="mt-8 pt-6 border-t border-slate-100">
                   <Link
                     href={pillar.href}
-                    className="group/link inline-flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-slate-900 transition-colors hover:text-indigo-600"
+                    className="group/link inline-flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-[#0E2539] transition-colors hover:text-[#2F7CEF]"
                   >
                     <span>Explore {pillar.name}</span>
                     <ArrowUpRight
-                      className="h-4 w-4 text-slate-400 transition-transform duration-200 group-hover/link:text-indigo-600 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                      className="h-4 w-4 text-slate-400 transition-transform duration-200 group-hover/link:text-[#2F7CEF] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
                       aria-hidden="true"
                     />
                   </Link>

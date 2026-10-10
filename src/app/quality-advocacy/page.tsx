@@ -68,7 +68,7 @@ export default function QualityAdvocacyPage() {
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                     <Hammer className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
@@ -89,7 +89,7 @@ export default function QualityAdvocacyPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-indigo-600">
+              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-[#2F7CEF]">
                 Mandate: &ldquo;Does the software operate correctly under stress?&rdquo;
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function QualityAdvocacyPage() {
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                     <Eye className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
@@ -127,24 +127,24 @@ export default function QualityAdvocacyPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-indigo-600">
+              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-[#2F7CEF]">
                 Mandate: &ldquo;Does it feel natural and frictionless?&rdquo;
               </div>
             </div>
 
             {/* Lens 3: LISTEN TO IT */}
-            <div className="rounded-2xl border border-indigo-200 bg-gradient-to-b from-indigo-50/50 via-white to-white p-8 shadow-sm flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#BFDBFE] bg-gradient-to-b from-[#EFF6FF]/60 via-white to-white p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-6 border-b border-indigo-100">
-                  <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
+                <div className="flex items-center justify-between pb-6 border-b border-[#BFDBFE]/60">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
                     LENS 03 (Differentiator)
                   </span>
-                  <span className="rounded-full bg-indigo-600 px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-[#2F7CEF] px-3 py-1 text-xs font-bold text-white">
                     LISTEN TO IT
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 text-white shadow-sm">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#2F7CEF] text-white shadow-sm">
                     <Ear className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
@@ -157,7 +157,7 @@ export default function QualityAdvocacyPage() {
                   engineering priorities.
                 </p>
 
-                <div className="mt-6 pt-5 border-t border-indigo-100 space-y-2 text-xs text-slate-600">
+                <div className="mt-6 pt-5 border-t border-[#BFDBFE]/60 space-y-2 text-xs text-slate-600">
                   <p className="font-bold text-slate-800">Key Investigative Focus:</p>
                   <p>• Recurring support ticket patterns &amp; root causes</p>
                   <p>• Churn feedback &amp; negative review sentiment</p>
@@ -165,7 +165,7 @@ export default function QualityAdvocacyPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-indigo-100 text-xs font-bold text-indigo-700">
+              <div className="mt-8 pt-4 border-t border-[#BFDBFE]/60 text-xs font-bold text-[#2F7CEF]">
                 Mandate: &ldquo;What are customers actively struggling with?&rdquo;
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function QualityAdvocacyPage() {
 
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8">
-              <span className="text-xs font-bold tracking-wider text-indigo-600 uppercase">
+              <span className="text-xs font-bold tracking-wider text-[#2F7CEF] uppercase">
                 STEP 01
               </span>
               <h3 className="mt-3 text-xl font-bold text-slate-900">
@@ -202,7 +202,7 @@ export default function QualityAdvocacyPage() {
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8">
-              <span className="text-xs font-bold tracking-wider text-indigo-600 uppercase">
+              <span className="text-xs font-bold tracking-wider text-[#2F7CEF] uppercase">
                 STEP 02
               </span>
               <h3 className="mt-3 text-xl font-bold text-slate-900">
@@ -215,7 +215,7 @@ export default function QualityAdvocacyPage() {
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8">
-              <span className="text-xs font-bold tracking-wider text-indigo-600 uppercase">
+              <span className="text-xs font-bold tracking-wider text-[#2F7CEF] uppercase">
                 STEP 03
               </span>
               <h3 className="mt-3 text-xl font-bold text-slate-900">
@@ -249,7 +249,7 @@ export default function QualityAdvocacyPage() {
                 <tr>
                   <th className="py-4 px-6">Dimension</th>
                   <th className="py-4 px-6">Traditional QA</th>
-                  <th className="py-4 px-6 bg-indigo-50/70 text-indigo-700 font-bold">
+                  <th className="py-4 px-6 bg-[#EFF6FF] text-[#2F7CEF] font-bold">
                     NCL Quality Advocacy
                   </th>
                 </tr>
@@ -258,35 +258,35 @@ export default function QualityAdvocacyPage() {
                 <tr>
                   <td className="py-4 px-6 font-bold text-slate-900">Primary Mandate</td>
                   <td className="py-4 px-6 text-slate-600">Verify specifications and close tickets</td>
-                  <td className="py-4 px-6 font-medium text-slate-900 bg-indigo-50/30">
+                  <td className="py-4 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
                     Advocate for the user experience &amp; eliminate product risk
                   </td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 font-bold text-slate-900">Testing Approach</td>
                   <td className="py-4 px-6 text-slate-600">Rigid scripted checklists &amp; happy-path suites</td>
-                  <td className="py-4 px-6 font-medium text-slate-900 bg-indigo-50/30">
+                  <td className="py-4 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
                     Risk-based exploratory probing, dogfooding &amp; unscripted edge cases
                   </td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 font-bold text-slate-900">Customer Feedback</td>
                   <td className="py-4 px-6 text-slate-600">Ignored; seen as customer support&apos;s job</td>
-                  <td className="py-4 px-6 font-medium text-slate-900 bg-indigo-50/30">
+                  <td className="py-4 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
                     Systematically analyzed for recurring quality defects and churn signals
                   </td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 font-bold text-slate-900">Bug Reporting</td>
                   <td className="py-4 px-6 text-slate-600">Isolated tickets without customer context</td>
-                  <td className="py-4 px-6 font-medium text-slate-900 bg-indigo-50/30">
+                  <td className="py-4 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
                     Reproducible evidence with severity, blast radius, and UX impact
                   </td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 font-bold text-slate-900">Fix Verification</td>
                   <td className="py-4 px-6 text-slate-600">Basic retest of ticket step</td>
-                  <td className="py-4 px-6 font-medium text-slate-900 bg-indigo-50/30">
+                  <td className="py-4 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
                     Deep regression sweep around adjacent systems and workflow sanity
                   </td>
                 </tr>
@@ -297,7 +297,7 @@ export default function QualityAdvocacyPage() {
       </section>
 
       {/* 5. CALLOUT CTA */}
-      <section className="bg-slate-900 text-white py-16 md:py-24">
+      <section className="bg-[#0E2539] text-white py-16 md:py-24 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
             EXPERIENCE THE DIFFERENCE

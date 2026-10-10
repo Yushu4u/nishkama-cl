@@ -35,17 +35,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.title} Services | Nishkama CodeLab`,
+    title: `${service.title} — QA Services | Nishkama CodeLab`,
     description: service.shortDescription,
+    keywords: [
+      service.title,
+      `${service.title} QA`,
+      "software testing services",
+      "independent QA",
+      "Nishkama CodeLab",
+    ],
     openGraph: {
-      title: `${service.title} QA Services | Nishkama CodeLab`,
+      title: `${service.title} | Nishkama CodeLab`,
       description: service.shortDescription,
       url: `https://nishkamacodelab.com/services/${service.slug}`,
+      type: "website",
     },
   };
 }
 
-export default async function ServiceSubPage({ params }: Props) {
+export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const service = detailedServices.find((s) => s.slug === slug);
 
@@ -53,19 +61,18 @@ export default async function ServiceSubPage({ params }: Props) {
     notFound();
   }
 
-  // Related other services (next 3)
-  const currentIndex = detailedServices.findIndex((s) => s.slug === slug);
-  const relatedServices = [
-    detailedServices[(currentIndex + 1) % detailedServices.length],
-    detailedServices[(currentIndex + 2) % detailedServices.length],
-    detailedServices[(currentIndex + 3) % detailedServices.length],
-  ];
+  const relatedServices = detailedServices
+    .filter((s) => s.slug !== service.slug)
+    .slice(0, 3);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white text-[#0E2539]">
       {/* 1. BREADCRUMBS BAR */}
-      <nav aria-label="Breadcrumb" className="border-b border-slate-100 bg-slate-50/70 py-3">
-        <div className="shell flex items-center gap-2 text-xs text-slate-500">
+      <nav
+        aria-label="Breadcrumbs"
+        className="border-b border-slate-200/80 bg-slate-50/70 py-3 text-xs text-slate-500"
+      >
+        <div className="shell flex items-center gap-1.5">
           <Link href="/" className="hover:text-slate-800 transition-colors">
             Home
           </Link>
@@ -74,12 +81,12 @@ export default async function ServiceSubPage({ params }: Props) {
             Services
           </Link>
           <ChevronRight className="h-3 w-3 text-slate-400" />
-          <span className="font-semibold text-slate-900">{service.title}</span>
+          <span className="font-semibold text-[#0E2539]">{service.title}</span>
         </div>
       </nav>
 
       {/* 2. HERO SECTION */}
-      <section className="border-b border-slate-200/80 bg-gradient-to-b from-indigo-50/40 via-white to-white py-14 sm:py-20">
+      <section className="border-b border-slate-200/80 bg-gradient-to-b from-[#EFF6FF]/50 via-white to-white py-14 sm:py-20">
         <div className="shell">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4">
@@ -91,11 +98,11 @@ export default async function ServiceSubPage({ params }: Props) {
               </span>
             </div>
 
-            <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-5xl sm:leading-[1.1]">
+            <h1 className="text-3xl font-extrabold text-[#0E2539] tracking-tight sm:text-5xl sm:leading-[1.1]">
               {service.title}
             </h1>
 
-            <p className="mt-4 text-base sm:text-lg font-medium text-indigo-700 leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg font-bold text-[#2F7CEF] leading-relaxed">
               {service.tagline}
             </p>
 
@@ -131,12 +138,12 @@ export default async function ServiceSubPage({ params }: Props) {
       {/* 3. WHY IT MATTERS CALLOUT */}
       <section className="border-b border-slate-200/80 bg-slate-50/60 py-12 sm:py-16">
         <div className="shell">
-          <div className="rounded-2xl border border-indigo-100 bg-white p-7 sm:p-10 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="rounded-2xl border border-[#BFDBFE] bg-white p-7 sm:p-10 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
                 Business &amp; Product Impact
               </span>
-              <h2 className="mt-2 text-xl sm:text-2xl font-bold text-slate-900">
+              <h2 className="mt-2 text-xl sm:text-2xl font-bold text-[#0E2539]">
                 Why {service.title} matters for your release
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
@@ -145,21 +152,21 @@ export default async function ServiceSubPage({ params }: Props) {
             </div>
 
             <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 shrink-0 text-xs text-slate-600 space-y-1.5 md:w-64">
-              <span className="font-bold text-slate-800 block">Recommended Context:</span>
+              <span className="font-bold text-[#0E2539] block">Recommended Context:</span>
               <p>{service.recommendedFor}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. GROUPED CAPABILITIES (Inspired by Tests Assured category boxes) */}
+      {/* 4. GROUPED CAPABILITIES */}
       <section className="border-b border-slate-200/80 bg-white py-16 sm:py-24">
         <div className="shell">
           <div className="max-w-2xl mb-12">
             <span className="badge-pill mb-3">
               Deep Coverage
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E2539] tracking-tight">
               What we validate in {service.title}
             </h2>
             <p className="mt-3 text-sm text-slate-600">
@@ -171,18 +178,18 @@ export default async function ServiceSubPage({ params }: Props) {
             {service.capabilitiesGrouped.map((grp) => (
               <div
                 key={grp.heading}
-                className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-7 shadow-sm hover:border-indigo-200 hover:shadow-md transition-all"
+                className="rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] hover:shadow-md transition-all"
               >
                 <div className="flex items-center gap-2 pb-4 border-b border-slate-100">
-                  <Layers className="h-4 w-4 text-indigo-600 shrink-0" />
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
+                  <Layers className="h-4 w-4 text-[#2F7CEF] shrink-0" />
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#0E2539]">
                     {grp.heading}
                   </h3>
                 </div>
                 <ul className="mt-5 space-y-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {grp.items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-600 mt-2 shrink-0" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF] mt-2 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -193,7 +200,7 @@ export default async function ServiceSubPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 5. PRACTICAL CHECKLIST: WHAT WE CHECK */}
+      {/* 5. PRACTICAL CHECKLIST */}
       <section className="border-b border-slate-200/80 bg-slate-50/60 py-16 sm:py-24">
         <div className="shell">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
@@ -201,19 +208,19 @@ export default async function ServiceSubPage({ params }: Props) {
               <span className="badge-pill mb-3">
                 Real Scenarios
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E2539] tracking-tight">
                 Practical verification checklist
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 Here are examples of real real-world verification paths our QA specialists execute during this engagement.
               </p>
 
-              <div className="mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/60 p-6">
-                <div className="flex items-center gap-2 mb-2 text-indigo-700 font-bold text-xs uppercase tracking-wider">
+              <div className="mt-8 rounded-2xl border border-[#BFDBFE] bg-[#EFF6FF]/60 p-6">
+                <div className="flex items-center gap-2 mb-2 text-[#2F7CEF] font-bold text-xs uppercase tracking-wider">
                   <ShieldCheck className="h-4 w-4" />
                   <span>Quality Guarantee</span>
                 </div>
-                <p className="text-xs text-indigo-950 leading-relaxed">
+                <p className="text-xs text-[#0E2539] leading-relaxed">
                   Every check is validated with environment metadata, reproducible instructions, and cross-browser confirmation.
                 </p>
               </div>
@@ -224,7 +231,7 @@ export default async function ServiceSubPage({ params }: Props) {
                 <ul className="space-y-4">
                   {service.whatWeCheck.map((check, i) => (
                     <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 leading-relaxed pb-3 border-b border-slate-100 last:border-0 last:pb-0">
-                      <CheckCircle2 className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-[#2F7CEF] shrink-0 mt-0.5" />
                       <span>{check}</span>
                     </li>
                   ))}
@@ -242,8 +249,8 @@ export default async function ServiceSubPage({ params }: Props) {
             {/* Deliverables */}
             <div className="rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-sm">
               <div className="flex items-center gap-2 pb-4 border-b border-slate-100">
-                <FileCheck2 className="h-5 w-5 text-indigo-600" />
-                <h3 className="text-lg font-bold text-slate-900">
+                <FileCheck2 className="h-5 w-5 text-[#2F7CEF]" />
+                <h3 className="text-lg font-bold text-[#0E2539]">
                   Deliverables &amp; Artifacts
                 </h3>
               </div>
@@ -261,7 +268,7 @@ export default async function ServiceSubPage({ params }: Props) {
             <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-7 sm:p-8">
               <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
                 <Bug className="h-5 w-5 text-rose-600" />
-                <h3 className="text-lg font-bold text-slate-900">
+                <h3 className="text-lg font-bold text-[#0E2539]">
                   Sample Bugs Caught in this Discipline
                 </h3>
               </div>
@@ -278,14 +285,14 @@ export default async function ServiceSubPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 7. EXECUTION WORKFLOW (4 Steps) */}
+      {/* 7. EXECUTION WORKFLOW */}
       <section className="border-b border-slate-200/80 bg-slate-50/60 py-16 sm:py-24">
         <div className="shell">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="badge-pill mb-3">
               Process
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E2539] tracking-tight">
               How we execute {service.title}
             </h2>
             <p className="mt-3 text-sm text-slate-600">
@@ -300,10 +307,10 @@ export default async function ServiceSubPage({ params }: Props) {
                 className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-xs font-bold text-indigo-600 font-mono">
+                  <span className="text-xs font-bold text-[#2F7CEF] font-mono">
                     STEP {step.step}
                   </span>
-                  <h3 className="mt-2 text-base font-bold text-slate-900">
+                  <h3 className="mt-2 text-base font-bold text-[#0E2539]">
                     {step.title}
                   </h3>
                   <p className="mt-2 text-xs text-slate-600 leading-relaxed">
@@ -321,7 +328,7 @@ export default async function ServiceSubPage({ params }: Props) {
         <div className="shell">
           <div className="flex items-center justify-between pb-6 border-b border-slate-100 flex-wrap gap-4">
             <div>
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-[#0E2539]">
                 Explore Other QA Services
               </h3>
               <p className="text-xs text-slate-500">
@@ -330,7 +337,7 @@ export default async function ServiceSubPage({ params }: Props) {
             </div>
             <Link
               href="/services"
-              className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+              className="text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] flex items-center gap-1"
             >
               <span>View All 8 Services</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -342,18 +349,18 @@ export default async function ServiceSubPage({ params }: Props) {
               <Link
                 key={rel.slug}
                 href={`/services/${rel.slug}`}
-                className="rounded-xl border border-slate-200/80 bg-white p-5 hover:border-indigo-300 hover:shadow-md transition-all group"
+                className="rounded-xl border border-slate-200/80 bg-white p-5 hover:border-[#BFDBFE] hover:shadow-md transition-all group"
               >
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                   SERVICE {rel.number}
                 </span>
-                <h4 className="mt-1 text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                <h4 className="mt-1 text-sm font-bold text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
                   {rel.title}
                 </h4>
                 <p className="mt-1 text-xs text-slate-500 line-clamp-2">
                   {rel.shortDescription}
                 </p>
-                <div className="mt-3 flex items-center gap-1 text-xs font-bold text-indigo-600">
+                <div className="mt-3 flex items-center gap-1 text-xs font-bold text-[#2F7CEF]">
                   <span>Learn more</span>
                   <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -364,9 +371,9 @@ export default async function ServiceSubPage({ params }: Props) {
       </section>
 
       {/* 9. BOTTOM CALLOUT BANNER */}
-      <section className="bg-slate-900 py-16 sm:py-20 text-white">
+      <section className="bg-[#0E2539] py-16 sm:py-20 text-white">
         <div className="shell text-center max-w-3xl mx-auto">
-          <span className="badge-pill bg-indigo-900/60 text-indigo-300 border-indigo-700/50 mb-4">
+          <span className="badge-pill bg-[#163A57] text-[#BFDBFE] border-[#2F7CEF]/40 mb-4">
             Get Started
           </span>
           <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
