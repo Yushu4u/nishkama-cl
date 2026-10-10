@@ -35,25 +35,25 @@ export function Button({
   trackingLocation,
 }: ButtonProps) {
   const baseClasses =
-    "group inline-flex items-center justify-center font-medium transition-smooth rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#282531]";
+    "group inline-flex items-center justify-center font-bold transition-all rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-600";
 
   const variantClasses = {
     primary:
-      "bg-[#282531] text-[#FAF8F5] hover:bg-[#14121A] active:scale-[0.98] shadow-sm",
+      "bg-indigo-600 text-white hover:bg-indigo-700 active:scale-[0.98] shadow-sm hover:shadow",
     secondary:
-      "bg-[#EFECE4] text-[#282531] hover:bg-[#E5E0D5] active:scale-[0.98]",
+      "bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200/60 active:scale-[0.98]",
     outline:
-      "border border-[#E8E4DC] bg-transparent text-[#282531] hover:bg-[#FFFFFF] hover:border-[#DDD8CD] active:scale-[0.98]",
+      "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400 active:scale-[0.98] shadow-sm",
     ghost:
-      "text-[#282531] hover:text-[#706B78] active:scale-[0.98]",
+      "text-slate-700 hover:text-indigo-600 active:scale-[0.98]",
     dark:
-      "bg-[#FAF8F5] text-[#282531] hover:bg-[#FFFFFF] active:scale-[0.98] shadow-sm",
+      "bg-white text-slate-900 hover:bg-slate-100 active:scale-[0.98] shadow-sm",
   };
 
   const sizeClasses = {
     sm: "text-xs px-4 py-2 gap-1.5",
-    md: "text-sm px-6 py-3 gap-2",
-    lg: "text-base px-8 py-4 gap-2.5",
+    md: "text-sm px-5 py-2.5 gap-2",
+    lg: "text-sm sm:text-base px-7 py-3.5 gap-2.5",
   };
 
   const handleClick = () => {
@@ -75,7 +75,7 @@ export function Button({
       <span>{children}</span>
       {withArrow && (
         <ArrowUpRight
-          className="h-4 w-4 shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           aria-hidden="true"
         />
       )}

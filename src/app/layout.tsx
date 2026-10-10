@@ -1,26 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/data/siteConfig";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FAF8F5",
+  themeColor: "#4F46E5",
   width: "device-width",
   initialScale: 1,
 };
@@ -37,12 +30,14 @@ export const metadata: Metadata = {
     "software testing services",
     "QA testing company",
     "software QA partner",
+    "functional testing",
     "exploratory testing",
     "regression testing",
+    "compatibility QA",
+    "usability testing",
     "product QA",
     "quality audit",
     "independent QA",
-    "product quality testing",
     "Quality Advocacy",
   ],
   authors: [{ name: "Nishkama CodeLab" }],
@@ -74,9 +69,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${dmSans.variable} scroll-smooth antialiased`}
+      className={`${plusJakartaSans.variable} scroll-smooth antialiased`}
     >
-      <body className="flex min-h-screen flex-col bg-[#FAF8F5] text-[#282531]">
+      <body className="flex min-h-screen flex-col bg-white text-slate-900 font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

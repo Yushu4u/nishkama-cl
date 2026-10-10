@@ -1,11 +1,12 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/data/siteConfig";
+import { detailedServices } from "@/data/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.canonicalUrl;
   const now = new Date();
 
-  return [
+  const mainPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
       lastModified: now,
@@ -55,4 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+
+  // Dynamic Sub-Pages for all 8 QA Testing disciplines
+  const serviceSubPages: MetadataRoute.Sitemap = detailedServices.map((svc) => ({
+    url: `${baseUrl}/services/${svc.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...mainPages, ...serviceSubPages];
 }

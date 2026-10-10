@@ -3,35 +3,35 @@ import type { Metadata } from "next";
 import { AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Notice (Draft)",
+  title: "Privacy Notice (Draft) | Nishkama CodeLab",
   description: "Draft privacy notice and data processing statement for Nishkama CodeLab.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-[#FAF8F5] py-16 md:py-24">
+    <div className="bg-slate-50 py-16 md:py-24 text-slate-900">
       <div className="shell max-w-3xl">
-        <p className="eyebrow">Legal &amp; Transparency</p>
-        <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-[#282531]">
+        <span className="badge-pill">LEGAL &amp; TRANSPARENCY</span>
+        <h1 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
           Privacy Policy (Draft Notice)
         </h1>
-        <p className="mt-2 text-xs text-[#706B78]">
+        <p className="mt-2 text-xs text-slate-500 font-medium">
           Last Updated: October 2026 • Document Status: Draft for Business &amp; Legal Review
         </p>
 
         <div className="mt-6 flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-xs text-amber-900">
           <AlertCircle className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
           <div>
-            <span className="font-semibold block">Notice to Legal Counsel / Business Owner</span>
+            <span className="font-bold block">Notice to Legal Counsel / Business Owner</span>
             This page represents a transparent draft disclosure reflecting current technical
             data handling practices. It must be formally reviewed and approved by legal counsel
             before final production certification.
           </div>
         </div>
 
-        <div className="mt-10 space-y-8 text-sm leading-relaxed text-[#706B78] border-t border-[#E8E4DC] pt-8">
+        <div className="mt-10 space-y-8 text-sm leading-relaxed text-slate-600 border-t border-slate-200 pt-8">
           <div>
-            <h2 className="font-display text-lg font-semibold text-[#282531]">
+            <h2 className="text-lg font-bold text-slate-900">
               1. Information We Collect
             </h2>
             <p className="mt-2">
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-lg font-semibold text-[#282531]">
+            <h2 className="text-lg font-bold text-slate-900">
               2. How We Use Submitted Information
             </h2>
             <p className="mt-2">
@@ -53,36 +53,36 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-lg font-semibold text-[#282531]">
+            <h2 className="text-lg font-bold text-slate-900">
               3. Client Product Data &amp; Confidentiality
             </h2>
             <p className="mt-2">
               All client testing artifacts, test environments, API credentials, and bug reports
-              shared with Nishkama CodeLab during engagements are treated as strictly confidential.
-              We execute mutual non-disclosure agreements (NDAs) upon request before reviewing proprietary code.
+              are treated as strictly confidential client intellectual property. Standard mutual
+              NDAs are executed prior to deep repository or staging environment access.
             </p>
           </div>
 
           <div>
-            <h2 className="font-display text-lg font-semibold text-[#282531]">
-              4. Analytics &amp; Cookies
+            <h2 className="text-lg font-bold text-slate-900">
+              4. Cookies &amp; Tracking
             </h2>
             <p className="mt-2">
-              Our website uses privacy-respecting, anonymized telemetry strictly to measure site
-              performance and aggregate CTA conversion rates. We do not track personal identifying
-              information (PII) across third-party websites.
+              This website uses minimal essential telemetry to assess page load performance
+              and understand user interest across service disciplines. We do not engage in
+              cross-site tracking or advertising profiling.
             </p>
           </div>
 
           <div>
-            <h2 className="font-display text-lg font-semibold text-[#282531]">
-              5. Contacting Us
+            <h2 className="text-lg font-bold text-slate-900">
+              5. Contact Us
             </h2>
             <p className="mt-2">
-              For any privacy questions or requests to delete submitted contact information,
-              please reach out directly to{" "}
-              <a href="mailto:hello@nishkamacodelab.com" className="font-semibold text-[#282531] underline">
-                hello@nishkamacodelab.com
+              If you have any questions about this privacy statement or our data handling
+              practices, please contact us at{" "}
+              <a href="mailto:privacy@nishkama.tech" className="text-indigo-600 font-bold underline">
+                privacy@nishkama.tech
               </a>
               .
             </p>

@@ -35,29 +35,29 @@ export function WhatWeTestGrid({ limit, className = "" }: WhatWeTestGridProps) {
       {items.map((item: PlatformCoverage) => (
         <div
           key={item.id}
-          className="group relative flex flex-col justify-between rounded-xl border border-[#E8E4DC] bg-[#FFFFFF] p-6 transition-smooth hover:border-[#282531]/40 hover:shadow-sm"
+          className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 transition-all hover:border-indigo-200 hover:shadow-md"
         >
           <div>
-            <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-lg bg-[#FAF8F5] text-[#282531] border border-[#E8E4DC] transition-smooth group-hover:bg-[#282531] group-hover:text-[#FAF8F5]">
+            <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
               {iconMap[item.iconKey] || <Globe className="h-5 w-5" />}
             </div>
-            <h3 className="font-display text-lg font-semibold tracking-tight text-[#282531]">
+            <h3 className="text-base font-bold tracking-tight text-slate-900">
               {item.title}
             </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#706B78]">
+            <p className="mt-2 text-xs leading-relaxed text-slate-600">
               {item.description}
             </p>
           </div>
 
-          <div className="mt-5 pt-4 border-t border-[#E8E4DC]">
-            <p className="text-[10px] uppercase font-semibold tracking-wider text-[#706B78] mb-2">
+          <div className="mt-5 pt-4 border-t border-slate-100">
+            <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400 mb-2">
               Representative Coverage
             </p>
             <div className="flex flex-wrap gap-1.5">
               {item.examples.map((ex) => (
                 <span
                   key={ex}
-                  className="rounded-md bg-[#FAF8F5] border border-[#E8E4DC] px-2 py-0.5 text-[10px] text-[#282531] font-medium"
+                  className="rounded-md bg-slate-50 border border-slate-200/60 px-2 py-0.5 text-[10px] text-slate-700 font-medium"
                 >
                   {ex}
                 </span>
