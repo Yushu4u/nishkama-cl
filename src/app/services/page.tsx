@@ -54,7 +54,7 @@ export default function ServicesPage() {
 
             <div className="mt-8 flex flex-wrap gap-4 items-center">
               <Button href="/contact?need=assessment" variant="primary" withArrow>
-                Get a QA Assessment
+                Test Your App
               </Button>
               <Button href="#catalog" variant="outline">
                 Browse 8 Testing Disciplines
