@@ -33,9 +33,77 @@ export interface ServiceOverview {
 
 export const detailedServices: DetailedService[] = [
   {
+    id: "xr-testing",
+    slug: "xr-testing",
+    number: "01",
+    title: "XR & Spatial Software QA",
+    tagline: "Manual and automated QA engineering for immersive spatial applications, Unity/Unreal builds, VisionOS apps, and WebXR experiences.",
+    shortDescription: "End-to-end software testing across VisionOS, Meta Quest, and WebXR—validating spatial UI interaction, frame rates, 3D engines, and custom test automation.",
+    longDescription:
+      "Nishkama CodeLab delivers deep manual and automated quality engineering for spatial computing applications and immersive software. From hand-tracking gesture debounce and motion-to-photon latency on Apple Vision Pro and Meta Quest to companion-app synchronization for smart wearables, our QA engineers ensure comfortable, stutter-free, and immersive user experiences.",
+    whyItMatters:
+      "Unlike traditional 2D screens, software defects in XR cause physiological discomfort—motion sickness, eye strain, and disorienting UI drift. Precision software QA is vital to shipping spatial products that users love and trust.",
+    iconKey: "glasses",
+    capabilitiesGrouped: [
+      {
+        heading: "Spatial UI, Gestures & Tracking Interaction",
+        items: [
+          "6DoF head, hand, and eye-tracking UI responsiveness and gesture debounce",
+          "Virtual boundary safety, object clipping, and spatial anchor persistence",
+          "Gaze, pinch, and controller input handling across spatial interfaces",
+          "Companion mobile app data synchronization and companion software flows",
+        ],
+      },
+      {
+        heading: "Spatial Engines & Graphics Performance",
+        items: [
+          "Stable 90Hz / 120Hz frame rates and motion-to-photon latency audits",
+          "Unity and Unreal Engine spatial build verification and regression",
+          "Stereoscopic rendering, depth buffer clipping, and FOV edge artifacts",
+          "Spatial audio occlusion, acoustic positioning, and haptic feedback",
+        ],
+      },
+      {
+        heading: "XR Test Automation & CI/CD",
+        items: [
+          "Automated smoke tests within Unity Test Framework & Unreal Gauntlet",
+          "ADB, Python, and custom input-injection scripts for headless regression",
+          "Multi-user spatial room synchronization and networking stress tests",
+          "App Store compliance: Quest Store, VisionOS App Store, and enterprise releases",
+        ],
+      },
+    ],
+    whatWeCheck: [
+      "Motion-to-photon latency, frame drops, and reprojection artifacts",
+      "Hand tracking pinch precision, occlusion handling, and gesture debounce",
+      "Spatial UI layer depth, text readability, and comfort zones",
+      "Network synchronization across multi-user immersive sessions",
+    ],
+    deliverables: [
+      "Perceptual latency and FPS telemetry benchmarks (OVR Metrics / Instruments)",
+      "High-resolution 4K stereoscopic bug recordings and logcat traces",
+      "Spatial comfort and interaction UX audit scorecards",
+      "Automated CI/CD spatial regression test scripts",
+    ],
+    typicalBugsCaught: [
+      "Sudden frame drops triggering reprojection shudder when complex shaders compile",
+      "Spatial anchor drift causing UI elements to float away through physical walls",
+      "Memory leaks in 3D scene transitions causing headset crashes after 20 minutes",
+      "Hand tracking losing pinch state when hands cross or drop near waistline",
+    ],
+    recommendedFor:
+      "Spatial app developers, VisionOS engineering teams, XR gaming studios, enterprise 3D training platforms, and WebXR creators.",
+    executionSteps: [
+      { step: "01", title: "Target Environment & SDK Mapping", desc: "Select target spatial runtimes, OS versions, SDKs, and boundary environments." },
+      { step: "02", title: "Performance Profiling", desc: "Attach GPU/CPU profilers to establish baseline frame times, memory usage, and shader budgets." },
+      { step: "03", title: "Spatial Stress & Exploratory QA", desc: "Execute rapid gesture sequences, boundary transitions, network drops, and prolonged play sessions." },
+      { step: "04", title: "Automated Suite Execution", desc: "Run custom scripted regression passes for core spatial flows and multiplayer synchronization." },
+    ],
+  },
+  {
     id: "functional-testing",
     slug: "functional-testing",
-    number: "01",
+    number: "02",
     title: "Functional Testing",
     tagline: "Systematic validation of product behavior, core features, and edge scenarios against business logic.",
     shortDescription: "Validate every feature behaves as intended under expected conditions and handles unexpected inputs gracefully.",

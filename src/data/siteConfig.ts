@@ -36,6 +36,7 @@ export const siteConfig = {
     { label: "Contact", href: "/contact" },
   ] as NavItem[],
   serviceSubPages: [
+    { label: "XR & Spatial QA", href: "/services/xr-testing", desc: "VisionOS, Meta Quest, WebXR & spatial apps" },
     { label: "Functional Testing", href: "/services/functional-testing", desc: "Core feature verification & business rules" },
     { label: "Exploratory Testing", href: "/services/exploratory-testing", desc: "Unscripted edge-case discovery & bug hunting" },
     { label: "Regression Testing", href: "/services/regression-testing", desc: "Protecting critical paths and release safety" },
@@ -47,6 +48,7 @@ export const siteConfig = {
   ],
   footerLinks: {
     services: [
+      { label: "XR & Spatial QA", href: "/services/xr-testing" },
       { label: "Functional Testing", href: "/services/functional-testing" },
       { label: "Exploratory Testing", href: "/services/exploratory-testing" },
       { label: "Regression Testing", href: "/services/regression-testing" },

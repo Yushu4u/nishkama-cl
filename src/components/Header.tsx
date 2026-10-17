@@ -4,11 +4,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ChevronDown, CheckSquare, Compass, ShieldCheck, Monitor, UserCheck, Workflow, Rocket, Search } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, CheckSquare, Compass, ShieldCheck, Monitor, UserCheck, Workflow, Rocket, Search, Glasses } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { trackEvent } from "@/lib/analytics";
 
 const serviceIcons: Record<string, React.ReactNode> = {
+  "xr-testing": <Glasses className="h-4 w-4 text-[#2F7CEF]" />,
   "functional-testing": <CheckSquare className="h-4 w-4 text-[#2F7CEF]" />,
   "exploratory-testing": <Compass className="h-4 w-4 text-[#2F7CEF]" />,
   "regression-testing": <ShieldCheck className="h-4 w-4 text-[#2F7CEF]" />,
@@ -210,14 +211,14 @@ export function Header() {
               trackEvent({
                 name: "cta_click",
                 properties: {
-                  label: "Get a QA Assessment",
+                  label: "Talk to a QA Lead",
                   location: "Header",
                   destination: "/contact?need=assessment",
                 },
               });
             }}
           >
-            <span>Get a QA Assessment</span>
+            <span>Talk to a QA Lead</span>
             <ArrowRight
               className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
               aria-hidden="true"
@@ -346,7 +347,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
             >
-              <span>Get a QA Assessment</span>
+              <span>Talk to a QA Lead</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

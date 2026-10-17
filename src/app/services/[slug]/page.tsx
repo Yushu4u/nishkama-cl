@@ -24,6 +24,8 @@ export async function generateStaticParams() {
   }));
 }
 
+export const instant = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = detailedServices.find((s) => s.slug === slug);
