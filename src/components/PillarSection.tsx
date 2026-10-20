@@ -71,11 +71,11 @@ export function PillarSection() {
           {/* Pillar 1: BREAK IT (QA Testing) */}
           <div className="rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:border-slate-300 transition-all">
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+              <div className="flex items-center justify-between gap-2 pb-5 border-b border-slate-100">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 truncate">
                   PILLAR 01 // TECHNICAL
                 </span>
-                <span className="text-xs font-mono font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#2F7CEF] border border-blue-200">
+                <span className="text-xs font-mono font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#2F7CEF] border border-blue-200 shrink-0 whitespace-nowrap">
                   BREAK IT
                 </span>
               </div>
@@ -144,11 +144,11 @@ export function PillarSection() {
           {/* Pillar 2: USE IT (Product Experience) */}
           <div className="rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:border-slate-300 transition-all">
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-slate-100">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+              <div className="flex items-center justify-between gap-2 pb-5 border-b border-slate-100">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 truncate">
                   PILLAR 02 // USABILITY
                 </span>
-                <span className="text-xs font-mono font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200">
+                <span className="text-xs font-mono font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200 shrink-0 whitespace-nowrap">
                   USE IT
                 </span>
               </div>
@@ -223,11 +223,11 @@ export function PillarSection() {
             />
 
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-blue-100">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF]">
-                  PILLAR 03 // DIFFERENTIATOR
+              <div className="flex items-center justify-between gap-2 pb-5 border-b border-blue-100">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] truncate">
+                  PILLAR 03 // ADVOCACY
                 </span>
-                <span className="text-xs font-mono font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-[#2F7CEF] text-white shadow-xs">
+                <span className="text-xs font-mono font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-[#2F7CEF] text-white shadow-xs shrink-0 whitespace-nowrap">
                   LISTEN TO IT
                 </span>
               </div>
