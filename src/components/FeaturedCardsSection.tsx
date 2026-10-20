@@ -101,35 +101,17 @@ export function FeaturedCardsSection() {
           ))}
         </div>
 
-        {/* Under-Card Action Buttons Row (Tests Assured Signature Layout) */}
-        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center items-center gap-3">
-          <Link
-            href="/services"
-            className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-2xs"
-          >
-            Our Expertise
-          </Link>
-          <Link
-            href="/services"
-            className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-2xs"
-          >
-            Explore QA Services
-          </Link>
-          <Link
-            href="/how-we-work"
-            className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-2xs"
-          >
-            Our 6-Stage Process
-          </Link>
+        {/* Rest of Two Tiles Kept in Last */}
+        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center items-center gap-3.5">
           <Link
             href="/quality-advocacy"
-            className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-2xs"
+            className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
           >
             Quality Advocacy
           </Link>
           <Link
             href="/contact?need=assessment"
-            className="rounded-xl bg-[#2F7CEF] px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5 active:scale-95"
+            className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5 active:scale-95"
           >
             Get a QA Assessment
           </Link>

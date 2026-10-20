@@ -36,7 +36,7 @@ export default function HomePage() {
             We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
           </p>
 
-          {/* Action Buttons (Centered, Tests Assured Style) */}
+          {/* 3 Initial Action Tiles (Above Trust Indicators) */}
           <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
             <a
               href="#building"
@@ -51,14 +51,14 @@ export default function HomePage() {
               Our Expertise
             </Link>
             <Link
-              href="/contact?need=assessment"
-              className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:shadow-lg hover:shadow-[#2F7CEF]/30 hover:bg-[#1E66D8] transition-all hover:-translate-y-0.5 active:scale-95"
+              href="/how-we-work"
+              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
             >
-              Get a QA Assessment
+              Our 6-Stage Process
             </Link>
           </div>
 
-          {/* Trust Indicators (Centered Row) */}
+          {/* Trust Indicators (Centered Row Directly Below 3 Initial Tiles) */}
           <div className="mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
