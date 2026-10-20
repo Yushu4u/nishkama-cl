@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   CheckCircle2,
   AlertTriangle,
@@ -201,10 +202,26 @@ export function QaRealityComparison() {
           </div>
 
           {/* Right Panel: The Nishkama Reality Check (High-Contrast Midnight Card) */}
-          <div className="lg:col-span-7 rounded-3xl border border-slate-800 bg-gradient-to-br from-[#0B1E30] via-[#0E2539] to-[#081524] p-7 sm:p-9 text-white flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <div className="lg:col-span-7 rounded-3xl border border-slate-800 bg-[#0B1E30] p-7 sm:p-9 text-white flex flex-col justify-between shadow-xl relative overflow-hidden">
+            {/* Background Texture with Perfect Scrim Overlay (Zero Formatting Disruption) */}
+            <div className="absolute inset-0 pointer-events-none select-none z-0">
+              <Image
+                src="/images/ncl-perspective-bg.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="object-cover opacity-65 mix-blend-screen scale-105"
+                priority
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-[#0B1E30]/85 via-[#0E2539]/80 to-[#081524]/90"
+                aria-hidden="true"
+              />
+            </div>
+
             {/* Subtle glow effect */}
             <div
-              className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#2F7CEF]/20 blur-3xl pointer-events-none"
+              className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#2F7CEF]/25 blur-3xl pointer-events-none z-0"
               aria-hidden="true"
             />
 
