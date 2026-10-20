@@ -104,10 +104,10 @@ export function FeaturedCardsSection() {
         {/* Under-Card Action Buttons Row (Tests Assured Signature Layout) */}
         <div className="mt-10 sm:mt-12 flex flex-wrap justify-center items-center gap-3">
           <Link
-            href="/contact?need=assessment"
-            className="rounded-xl bg-[#2F7CEF] px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5 active:scale-95"
+            href="/services"
+            className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-2xs"
           >
-            Get a QA Assessment
+            Our Expertise
           </Link>
           <Link
             href="/services"
@@ -126,6 +126,12 @@ export function FeaturedCardsSection() {
             className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-xs sm:text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-2xs"
           >
             Quality Advocacy
+          </Link>
+          <Link
+            href="/contact?need=assessment"
+            className="rounded-xl bg-[#2F7CEF] px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5 active:scale-95"
+          >
+            Get a QA Assessment
           </Link>
         </div>
       </div>
