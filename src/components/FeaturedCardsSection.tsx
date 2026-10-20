@@ -49,7 +49,7 @@ export function FeaturedCardsSection() {
             CORE QA ARCHITECTURE
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-            See what we&apos;re building.
+            Quality Disciplines Across Platforms
           </h2>
           <p className="mt-3 text-sm text-slate-600 leading-relaxed">
             From technical defect discovery and physical hardware testing to product-minded user advocacy, explore our core quality disciplines.

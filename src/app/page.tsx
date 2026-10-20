@@ -38,17 +38,17 @@ export default function HomePage() {
 
           {/* 3 Initial Action Tiles (Above Trust Indicators) */}
           <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
-            <a
-              href="#building"
-              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
-            >
-              See what we&apos;re building ↓
-            </a>
             <Link
               href="/services"
               className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
             >
               Our Expertise
+            </Link>
+            <Link
+              href="/services"
+              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
+            >
+              Explore QA Services
             </Link>
             <Link
               href="/how-we-work"
