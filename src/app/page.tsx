@@ -72,10 +72,10 @@ export default function HomePage() {
             </span>
           </div>
 
-          {/* Official Doc Headline (Centrally Justified & Commanding) */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.06] max-w-4xl mx-auto">
+          {/* Official Doc Headline (Centrally Justified & Single-Line on Desktop) */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.1] max-w-6xl mx-auto">
             Quality Advocates for{" "}
-            <span className="text-[#2F7CEF]">Your Product.</span>
+            <span className="text-[#2F7CEF] whitespace-nowrap">Your Product.</span>
           </h1>
 
           {/* Official Doc Subhead (Centered) */}
