@@ -25,25 +25,25 @@ interface PlatformScope {
 const platforms: PlatformScope[] = [
   {
     id: "web-app",
-    label: "Web Applications",
+    label: "Web Apps",
     icon: Monitor,
     badges: ["Cross-Browser Matrix", "Critical Regression Gates", "Form & Payment Edges"],
   },
   {
     id: "mobile-app",
-    label: "Mobile iOS/Android",
+    label: "Mobile Apps",
     icon: Smartphone,
     badges: ["Real Device Matrix", "Network Interruption", "Push & Background Sync"],
   },
   {
     id: "saas-cloud",
-    label: "SaaS & Cloud Platforms",
+    label: "SaaS Platforms",
     icon: Layers,
     badges: ["Multi-Tenant RBAC", "API & Webhook Contracts", "Billing Edge Cases"],
   },
   {
     id: "spatial-xr",
-    label: "Spatial & XR Apps",
+    label: "Spatial & XR",
     icon: Glasses,
     badges: ["6DoF Gesture Debounce", "Frame Stability / FPS", "VisionOS & Quest Apps"],
   },
@@ -73,10 +73,10 @@ export function QuickEstimateCard() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+    <div className="relative mx-auto w-full max-w-2xl">
       {/* Ambient tech glow */}
       <div
-        className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[#2F7CEF]/25 via-[#2F7CEF]/10 to-transparent blur-xl opacity-75"
+        className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[#2F7CEF]/20 via-[#2F7CEF]/10 to-transparent blur-xl opacity-75"
         aria-hidden="true"
       />
 
@@ -108,12 +108,12 @@ export function QuickEstimateCard() {
 
         {/* Mini Intake Form */}
         <form onSubmit={handleSubmit} className="mt-5 space-y-4">
-          {/* Platform Selector Pills */}
+          {/* Platform Selector Pills (4-column responsive grid) */}
           <div>
             <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-2">
               Select Target Platform:
             </label>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {platforms.map((p) => {
                 const Icon = p.icon;
                 const isSelected = selectedPlatform === p.id;
@@ -122,7 +122,7 @@ export function QuickEstimateCard() {
                     key={p.id}
                     type="button"
                     onClick={() => setSelectedPlatform(p.id)}
-                    className={`flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold transition-all text-left border ${
+                    className={`flex items-center justify-center sm:justify-start gap-2 rounded-xl px-3 py-2.5 text-xs font-semibold transition-all border ${
                       isSelected
                         ? "bg-[#EFF6FF] border-[#2F7CEF] text-[#2F7CEF] shadow-xs ring-1 ring-[#2F7CEF]"
                         : "bg-slate-50/70 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
@@ -154,35 +154,36 @@ export function QuickEstimateCard() {
             </div>
           </div>
 
-          {/* Project URL / Name Input */}
-          <div>
-            <label htmlFor="hero-project" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-              App Name or Staging / TestFlight URL:
-            </label>
-            <input
-              id="hero-project"
-              type="text"
-              placeholder="e.g. Acme App / app.acme.com"
-              value={projectUrl}
-              onChange={(e) => setProjectUrl(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:bg-white focus:border-[#2F7CEF] focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]/20 transition-colors"
-            />
-          </div>
+          {/* Project URL & Email Inputs (2 Columns on Desktop) */}
+          <div className="grid sm:grid-cols-2 gap-3.5">
+            <div>
+              <label htmlFor="hero-project" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                App Name or Staging URL:
+              </label>
+              <input
+                id="hero-project"
+                type="text"
+                placeholder="e.g. Acme App / app.acme.com"
+                value={projectUrl}
+                onChange={(e) => setProjectUrl(e.target.value)}
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:bg-white focus:border-[#2F7CEF] focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]/20 transition-colors"
+              />
+            </div>
 
-          {/* Email Input */}
-          <div>
-            <label htmlFor="hero-email" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-              Work Email:
-            </label>
-            <input
-              id="hero-email"
-              type="email"
-              required
-              placeholder="founder@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:bg-white focus:border-[#2F7CEF] focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]/20 transition-colors"
-            />
+            <div>
+              <label htmlFor="hero-email" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Work Email:
+              </label>
+              <input
+                id="hero-email"
+                type="email"
+                required
+                placeholder="founder@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:bg-white focus:border-[#2F7CEF] focus:outline-none focus:ring-2 focus:ring-[#2F7CEF]/20 transition-colors"
+              />
+            </div>
           </div>
 
           {/* Primary Action Button */}
@@ -190,7 +191,7 @@ export function QuickEstimateCard() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] py-3 px-4 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 active:scale-[0.99] transition-all disabled:opacity-75"
+              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] py-3.5 px-4 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 active:scale-[0.99] transition-all disabled:opacity-75"
             >
               <span>Get a QA Assessment</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

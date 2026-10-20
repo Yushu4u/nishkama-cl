@@ -33,70 +33,65 @@ export default function HomePage() {
         aria-hidden="true"
       />
 
-      {/* 1. HERO SECTION (Concise, Authoritative) */}
-      <section className="relative border-b border-slate-200/80 pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
-        <div className="shell">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Column: Core Positioning */}
-            <div className="lg:col-span-7 max-w-2xl">
-              {/* Preserved Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-6">
-                <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" />
-                <span className="font-extrabold text-[#0E2539] text-xs tracking-tight">Nishkama CodeLab</span>
-                <span className="h-3 w-px bg-slate-300" aria-hidden="true" />
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2F7CEF]">
-                  Independent Software QA
-                </span>
-              </div>
+      {/* 1. HERO SECTION (Centrally Justified Authority, Tests Assured-Style) */}
+      <section className="relative border-b border-slate-200/80 pt-16 pb-20 sm:pt-24 sm:pb-28">
+        <div className="shell text-center">
+          {/* Preserved Eyebrow Badge (Centered) */}
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-8 mx-auto">
+            <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" />
+            <span className="font-extrabold text-[#0E2539] text-xs tracking-tight">Nishkama CodeLab</span>
+            <span className="h-3 w-px bg-slate-300" aria-hidden="true" />
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2F7CEF]">
+              Independent Software QA
+            </span>
+          </div>
 
-              {/* Official Doc Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.08]">
-                Quality Advocates for{" "}
-                <span className="text-[#2F7CEF]">Your Product.</span>
-              </h1>
+          {/* Official Doc Headline (Centrally Justified & Commanding) */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.06] max-w-4xl mx-auto">
+            Quality Advocates for{" "}
+            <span className="text-[#2F7CEF]">Your Product.</span>
+          </h1>
 
-              {/* Official Doc Subhead */}
-              <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
-                We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
-              </p>
+          {/* Official Doc Subhead (Centered) */}
+          <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl mx-auto">
+            We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
+          </p>
 
-              {/* Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-3.5">
-                <Link
-                  href="/contact?need=assessment"
-                  className="rounded-xl bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:shadow-lg hover:shadow-[#2F7CEF]/30 hover:bg-[#1E66D8] transition-all hover:-translate-y-0.5 active:scale-95"
-                >
-                  Get a QA Assessment
-                </Link>
-                <Link
-                  href="/services"
-                  className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
-                >
-                  Explore Our Services
-                </Link>
-              </div>
+          {/* Action Buttons (Centered) */}
+          <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
+            <Link
+              href="/contact?need=assessment"
+              className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:shadow-lg hover:shadow-[#2F7CEF]/30 hover:bg-[#1E66D8] transition-all hover:-translate-y-0.5 active:scale-95"
+            >
+              Get a QA Assessment
+            </Link>
+            <Link
+              href="/services"
+              className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
+            >
+              Explore Our Services
+            </Link>
+          </div>
 
-              {/* Trust Indicators */}
-              <div className="mt-10 pt-6 border-t border-slate-200/70 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
-                  <span>Independent QA Perspective</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
-                  <span>Real-World User Journeys</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
-                  <span>Zero Happy-Path Bias</span>
-                </div>
-              </div>
+          {/* Trust Indicators (Centered Row) */}
+          <div className="mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
+              <span>Independent QA Perspective</span>
             </div>
-
-            {/* Right Column: Rapid QA Assessment Intake Card */}
-            <div className="lg:col-span-5 w-full">
-              <QuickEstimateCard />
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
+              <span>Real-World User Journeys</span>
             </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
+              <span>Zero Happy-Path Bias</span>
+            </div>
+          </div>
+
+          {/* Uniformly Centered QA Assessment Intake Form */}
+          <div className="mt-14 max-w-2xl mx-auto text-left">
+            <QuickEstimateCard />
           </div>
         </div>
       </section>
