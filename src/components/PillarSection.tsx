@@ -54,7 +54,7 @@ export function PillarSection() {
         <div className="mt-8 mb-10 flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono font-bold uppercase tracking-wider text-slate-500 border border-slate-200 bg-white rounded-2xl p-3 sm:px-5 sm:py-3 shadow-2xs w-full max-w-3xl">
           <span className="text-[#0E2539] font-extrabold text-[11px] sm:text-xs">THE QUALITY LOOP:</span>
           <span className="text-[#2F7CEF] bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-            1. TEST (BREAK IT)
+            1. TECHNICAL QA (BREAK IT)
           </span>
           <ArrowRight className="h-3.5 w-3.5 text-slate-400 shrink-0" aria-hidden="true" />
           <span className="text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
@@ -82,7 +82,7 @@ export function PillarSection() {
 
               <div className="mt-6">
                 <h3 className="text-2xl font-extrabold tracking-tight text-[#0E2539]">
-                  QA Testing
+                  Technical QA
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm font-semibold italic text-[#2F7CEF]">
                   &ldquo;Does the product work correctly?&rdquo;
@@ -135,7 +135,7 @@ export function PillarSection() {
                 href="/services#functional-testing"
                 className="inline-flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-[#0E2539] hover:text-[#2F7CEF] transition-colors"
               >
-                <span>Explore QA Testing</span>
+                <span>Explore Technical QA</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>

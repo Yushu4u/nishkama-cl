@@ -85,7 +85,7 @@ export function HowWeWorkPipeline() {
             Simple process. Clear evidence. Actionable outcomes.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            An independent, structured cadence designed to integrate seamlessly into your existing development and release cycle.
+            An independent, structured cadence designed to integrate directly into your sprint and release cycle.
           </p>
         </div>
 

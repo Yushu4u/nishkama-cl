@@ -15,7 +15,7 @@ export const pillars: Pillar[] = [
     id: "qa-testing",
     number: "01",
     action: "BREAK IT",
-    name: "QA Testing",
+    name: "Technical QA",
     question: "Does the product work correctly?",
     capabilities: [
       "Functional Testing",

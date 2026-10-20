@@ -448,7 +448,7 @@ export const detailedServices: DetailedService[] = [
     tagline: "Validate complete customer workflows traversing multiple services, APIs, and data layers.",
     shortDescription: "Stress-test entire business journeys from initial signup through final invoice generation and third-party syncs.",
     longDescription:
-      "Isolated unit tests cannot guarantee that data flows seamlessly from a frontend trigger through third-party webhooks, background queues, and database updates. We stress-test entire business journeys from initial signup through final invoice generation.",
+      "Isolated unit tests cannot guarantee that data flows reliably from a frontend trigger through third-party webhooks, background queues, and database updates. We stress-test entire business journeys from initial signup through final invoice generation.",
     whyItMatters:
       "Modern architectures involve microservices, third-party payment gateways, asynchronous email services, and analytics hooks. E2E testing ensures the entire chain holds under real pressure.",
     iconKey: "workflow",

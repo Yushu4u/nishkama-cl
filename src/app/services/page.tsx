@@ -44,7 +44,7 @@ export default function ServicesPage() {
               QA SERVICES CATALOG
             </span>
             <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
-              Comprehensive QA testing built around your product risk.
+              Independent QA built around product risk.
             </h1>
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
               NCL provides practical, independent QA services for software teams that need
@@ -54,7 +54,7 @@ export default function ServicesPage() {
 
             <div className="mt-8 flex flex-wrap gap-4 items-center">
               <Button href="/contact?need=assessment" variant="primary" withArrow>
-                Test Your App
+                Get a QA Assessment
               </Button>
               <Button href="#catalog" variant="outline">
                 Browse 8 Testing Disciplines
@@ -141,7 +141,7 @@ export default function ServicesPage() {
       <section className="border-y border-slate-200/80 bg-white py-16 md:py-24">
         <div className="shell">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="badge-pill">TAILORED SCOPES</span>
+            <span className="badge-pill">RECOMMENDED PACKAGES</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#0E2539]">
               Common testing combinations by product stage
             </h2>

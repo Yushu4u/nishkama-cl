@@ -382,7 +382,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             Ready to integrate {service.title} into your next release?
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Tell us about your upcoming milestones and tech stack. We&apos;ll scope a custom testing engagement tailored to your risk profile.
+            Tell us about your upcoming milestones and tech stack. We&apos;ll scope a testing engagement mapped to your release risks.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button

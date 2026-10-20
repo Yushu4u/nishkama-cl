@@ -117,7 +117,7 @@ export function Header() {
                 <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xl grid grid-cols-2 gap-2">
                   <div className="col-span-2 pb-2 mb-1 border-b border-slate-100 flex items-center justify-between">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                      8 QA Testing Disciplines
+                      8 Specialized QA Disciplines
                     </span>
                     <Link
                       href="/services"
