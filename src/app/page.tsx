@@ -15,6 +15,7 @@ import {
 import { QuickEstimateCard } from "@/components/QuickEstimateCard";
 import { QaRealityComparison } from "@/components/QaRealityComparison";
 import { PillarSection } from "@/components/PillarSection";
+import { LabInfrastructureSection } from "@/components/LabInfrastructureSection";
 
 const platforms = [
   {
@@ -184,7 +185,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. HOW WE WORK & ENGAGEMENT QUICK STRIP */}
+      {/* 5. PHYSICAL TESTING INFRASTRUCTURE & LAB SHOWCASE */}
+      <LabInfrastructureSection />
+
+      {/* 6. HOW WE WORK & ENGAGEMENT QUICK STRIP */}
       <section className="py-14 border-b border-slate-200/80 bg-slate-50/60">
         <div className="shell flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl">
