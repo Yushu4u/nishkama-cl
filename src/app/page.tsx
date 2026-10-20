@@ -16,6 +16,7 @@ import { QuickEstimateCard } from "@/components/QuickEstimateCard";
 import { QaRealityComparison } from "@/components/QaRealityComparison";
 import { PillarSection } from "@/components/PillarSection";
 import { LabInfrastructureSection } from "@/components/LabInfrastructureSection";
+import { FeaturedCardsSection } from "@/components/FeaturedCardsSection";
 
 const platforms = [
   {
@@ -83,19 +84,19 @@ export default function HomePage() {
             We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
           </p>
 
-          {/* Action Buttons (Centered) */}
+          {/* Action Buttons (Centered, Tests Assured Style) */}
           <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
-            <Link
-              href="/contact?need=assessment"
+            <a
+              href="#building"
               className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:shadow-lg hover:shadow-[#2F7CEF]/30 hover:bg-[#1E66D8] transition-all hover:-translate-y-0.5 active:scale-95"
             >
-              Get a QA Assessment
-            </Link>
+              See what we&apos;re building ↓
+            </a>
             <Link
-              href="/services"
+              href="/contact?need=assessment"
               className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
             >
-              Explore Our Services
+              Get a QA Assessment
             </Link>
           </div>
 
@@ -117,18 +118,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Subtle Narrative Divider Bridge (Replaces harsh partition) */}
-      <div className="w-full max-w-4xl mx-auto px-6" aria-hidden="true">
-        <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-      </div>
+      {/* 2. TESTS ASSURED SIGNATURE: 3-CARD SHOWCASE ("See what we're building") */}
+      <FeaturedCardsSection />
 
-      {/* 2. THE PROBLEM: HAPPY PATH VS. NCL REALITY ARTIFACT */}
-      <QaRealityComparison />
-
-      {/* 3. CORE ARCHITECTURE: THE 3 CONNECTED PILLARS (P0 Founder Directive) */}
-      <PillarSection />
-
-      {/* 4. COVERAGE SPECTRUM (5 CATEGORIES IN COLUMN) + QA ASSESSMENT INTAKE (RIGHT) */}
+      {/* 3. COVERAGE SPECTRUM (5 CATEGORIES IN COLUMN) + QA ASSESSMENT INTAKE (RIGHT) */}
       <section className="py-16 sm:py-20 border-b border-slate-200/80 bg-white">
         <div className="shell">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
@@ -190,8 +183,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PHYSICAL TESTING INFRASTRUCTURE & LAB SHOWCASE */}
+      {/* 4. PHYSICAL TESTING INFRASTRUCTURE & LAB SHOWCASE */}
       <LabInfrastructureSection />
+
+      {/* 5. THE PROBLEM: HAPPY PATH VS. NCL REALITY ARTIFACT */}
+      <QaRealityComparison />
 
       {/* 6. HOW WE WORK & ENGAGEMENT QUICK STRIP */}
       <section className="py-14 border-b border-slate-200/80 bg-slate-50/60">
