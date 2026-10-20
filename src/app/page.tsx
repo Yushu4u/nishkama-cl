@@ -4,24 +4,20 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  AlertTriangle,
-  Compass,
-  ShieldAlert,
-  Frown,
-  Workflow,
-  Search,
-  FileText,
-  Repeat,
-  Sparkles,
-  Layers,
-  ShieldCheck,
+  Shield,
   Eye,
   Users,
   Target,
+  Terminal,
+  Activity,
+  Layers,
+  Sparkles,
 } from "lucide-react";
 import { QuickEstimateCard } from "@/components/QuickEstimateCard";
+import { QaRealityComparison } from "@/components/QaRealityComparison";
 import { PillarSection } from "@/components/PillarSection";
 import { WhatWeTestGrid } from "@/components/WhatWeTestGrid";
+import { HowWeWorkPipeline } from "@/components/HowWeWorkPipeline";
 
 export default function HomePage() {
   return (
@@ -92,7 +88,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Rapid QA Assessment Intake Card */}
+            {/* Right Column: Rapid QA Assessment Intake Card with Live Scope Inspector */}
             <div className="lg:col-span-5 w-full">
               <QuickEstimateCard />
             </div>
@@ -100,85 +96,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. THE PROBLEM (Doc Section 02) */}
-      <section className="py-16 md:py-24 border-b border-slate-200/80 bg-white">
-        <div className="shell">
-          <div className="max-w-3xl mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-              THE QUALITY GAP
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-              Your product can pass tests and still fail users.
-            </h2>
-            <p className="mt-4 text-base text-slate-600 leading-relaxed">
-              A product may meet technical requirements and still frustrate customers. Bugs, edge cases, broken journeys, inconsistent experiences, and release risks often appear outside the happy path. NCL brings an independent quality perspective to help teams see what their internal process may miss.
-            </p>
-          </div>
+      {/* 2. THE PROBLEM: HAPPY PATH VS NISHKAMA REALITY (Doc Section 02) */}
+      <QaRealityComparison />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between hover:border-slate-300 transition-all">
-              <div>
-                <div className="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mb-4">
-                  <AlertTriangle className="h-5 w-5" />
-                </div>
-                <h3 className="text-base font-bold text-[#0E2539]">
-                  Bugs that escape planned test cases
-                </h3>
-                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                  Defects that emerge only through unscripted exploration, non-linear workflows, and unexpected customer inputs.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between hover:border-slate-300 transition-all">
-              <div>
-                <div className="h-10 w-10 rounded-xl bg-blue-50 border border-blue-200 text-[#2F7CEF] flex items-center justify-center mb-4">
-                  <Compass className="h-5 w-5" />
-                </div>
-                <h3 className="text-base font-bold text-[#0E2539]">
-                  Real-world journeys not fully validated
-                </h3>
-                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                  Complex multi-step flows broken by network fluctuations, device interruptions, and realistic environment conditions.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between hover:border-slate-300 transition-all">
-              <div>
-                <div className="h-10 w-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center mb-4">
-                  <ShieldAlert className="h-5 w-5" />
-                </div>
-                <h3 className="text-base font-bold text-[#0E2539]">
-                  Regression risks inside frequent releases
-                </h3>
-                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                  Unintended side-effects and quiet breakages introduced into mission-critical flows during rapid agile cycles.
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-6 flex flex-col justify-between hover:border-slate-300 transition-all">
-              <div>
-                <div className="h-10 w-10 rounded-xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center mb-4">
-                  <Frown className="h-5 w-5" />
-                </div>
-                <h3 className="text-base font-bold text-[#0E2539]">
-                  Frustration that never reaches engineering
-                </h3>
-                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                  Subtle UX friction, confusing error messages, and usability dead-ends that quietly cause customer churn.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. CORE ARCHITECTURE: THE 3 CONNECTED PILLARS (Doc Section 15 - P0 Priority) */}
+      {/* 3. CORE ARCHITECTURE: THE 3 CONNECTED PILLARS (Doc Section 15 - Founder P0 Priority) */}
       <PillarSection />
 
-      {/* 4. WHAT WE TEST (Doc Section 06) */}
+      {/* 4. WHAT WE TEST: COVERAGE SPECTRUM (Doc Section 06) */}
       <section className="py-16 md:py-24 border-b border-slate-200/80 bg-slate-50/70">
         <div className="shell">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
@@ -206,72 +130,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. HOW WE WORK (Doc Section 08) */}
-      <section className="py-16 md:py-24 border-b border-slate-200/80 bg-white">
-        <div className="shell">
-          <div className="max-w-3xl mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-              OUR PROCESS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-              Simple process. Clear evidence. Actionable outcomes.
-            </h2>
-            <p className="mt-3 text-base text-slate-600">
-              An independent, structured cadence designed to integrate seamlessly with your product and engineering workflow.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">01</span>
-              <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Discover</h3>
-              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Understand your product, users, release cycle, environments, and quality concerns.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">02</span>
-              <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Plan</h3>
-              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Define scope, priorities, risks, test approach, and clear success criteria.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">03</span>
-              <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Test</h3>
-              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Execute structured and exploratory testing based on technical and business risk.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">04</span>
-              <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Experience</h3>
-              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Validate important customer journeys and friction points from a real-user perspective.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">05</span>
-              <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Report</h3>
-              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Deliver reproducible findings, video evidence, severity ratings, and impact analysis.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">06</span>
-              <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Improve</h3>
-              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Re-test fixes and help the team move toward a stronger, more confident release.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 5. HOW WE WORK: THE 6-STAGE SPRINT PIPELINE (Doc Section 08) */}
+      <HowWeWorkPipeline />
 
       {/* 6. ENGAGEMENT MODELS (Doc Section 09) */}
       <section className="py-16 md:py-24 border-b border-slate-200/80 bg-slate-50/70">
@@ -289,10 +149,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xs flex flex-col justify-between hover:border-[#BFDBFE] hover:shadow-md transition-all">
               <div>
-                <span className="text-xs font-mono font-bold text-[#2F7CEF]">MODEL 01</span>
-                <h3 className="mt-2 text-lg font-bold text-[#0E2539]">QA Assessment</h3>
+                <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">
+                  MODEL 01
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-[#0E2539]">QA Assessment</h3>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600">
                   Focused short engagement to evaluate product quality, identify critical bugs, and pinpoint coverage gaps.
                 </p>
@@ -308,10 +170,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xs flex flex-col justify-between hover:border-[#BFDBFE] hover:shadow-md transition-all">
               <div>
-                <span className="text-xs font-mono font-bold text-[#2F7CEF]">MODEL 02</span>
-                <h3 className="mt-2 text-lg font-bold text-[#0E2539]">Project QA</h3>
+                <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">
+                  MODEL 02
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Project QA</h3>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600">
                   Targeted QA capacity for a specific product milestone, major feature launch, or critical release.
                 </p>
@@ -327,10 +191,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-xs flex flex-col justify-between hover:border-[#BFDBFE] hover:shadow-md transition-all">
               <div>
-                <span className="text-xs font-mono font-bold text-[#2F7CEF]">MODEL 03</span>
-                <h3 className="mt-2 text-lg font-bold text-[#0E2539]">Ongoing QA Partner</h3>
+                <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-blue-50 px-2.5 py-1 rounded">
+                  MODEL 03
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Ongoing QA Partner</h3>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600">
                   Recurring independent QA capacity embedded into your weekly or bi-weekly development and release sprints.
                 </p>
@@ -346,10 +212,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
+            <div className="rounded-3xl border border-[#BFDBFE] bg-gradient-to-b from-[#EFF6FF]/60 via-white to-white p-7 shadow-xs flex flex-col justify-between hover:border-[#2F7CEF] hover:shadow-md transition-all">
               <div>
-                <span className="text-xs font-mono font-bold text-[#2F7CEF]">MODEL 04</span>
-                <h3 className="mt-2 text-lg font-bold text-[#0E2539]">Quality Advocacy</h3>
+                <span className="text-xs font-mono font-bold text-[#2F7CEF] bg-[#2F7CEF] text-white px-2.5 py-1 rounded">
+                  MODEL 04 // CORE
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-[#0E2539]">Quality Advocacy</h3>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600">
                   Deeper engagement combining technical testing discipline, real-world user perspective, and customer feedback.
                 </p>
@@ -368,7 +236,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. WHY NISHKAMA (Doc Section 10) */}
+      {/* 7. WHY NISHKAMA: AN INDEPENDENT QUALITY VOICE (Doc Section 10) */}
       <section className="py-16 md:py-24 border-b border-slate-200/80 bg-white">
         <div className="shell">
           <div className="max-w-2xl mb-12">
@@ -381,45 +249,51 @@ export default function HomePage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50">
-              <h3 className="font-bold text-[#0E2539]">Independent Perspective</h3>
+            <div className="p-7 rounded-3xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+              <span className="text-xs font-mono font-bold text-[#2F7CEF]">01</span>
+              <h3 className="mt-2 text-base font-bold text-[#0E2539]">Independent Perspective</h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                We bring fresh eyes rather than assuming the product works because the team built it.
+                We bring fresh eyes rather than assuming the product works because the internal team built it.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50">
-              <h3 className="font-bold text-[#0E2539]">Risk-Based Thinking</h3>
+            <div className="p-7 rounded-3xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+              <span className="text-xs font-mono font-bold text-[#2F7CEF]">02</span>
+              <h3 className="mt-2 text-base font-bold text-[#0E2539]">Risk-Based Thinking</h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                We prioritize testing where failure matters most to customers and business operations.
+                We prioritize testing where failure matters most to customers, transactions, and business operations.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50">
-              <h3 className="font-bold text-[#0E2539]">Real-World Validation</h3>
+            <div className="p-7 rounded-3xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+              <span className="text-xs font-mono font-bold text-[#2F7CEF]">03</span>
+              <h3 className="mt-2 text-base font-bold text-[#0E2539]">Real-World Validation</h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                We go beyond scripted checks and consider how customers actually use the product.
+                We go beyond scripted happy-path checks and observe how actual customers interact with edge conditions.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50">
-              <h3 className="font-bold text-[#0E2539]">Evidence-Driven Reporting</h3>
+            <div className="p-7 rounded-3xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+              <span className="text-xs font-mono font-bold text-[#2F7CEF]">04</span>
+              <h3 className="mt-2 text-base font-bold text-[#0E2539]">Evidence-Driven Reporting</h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Clear, reproducible findings with video evidence, logs, and actionable engineering impact.
+                Clear, reproducible findings with video captures, network HAR logs, and actionable engineering impact.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50">
-              <h3 className="font-bold text-[#0E2539]">Flexible Engagement</h3>
+            <div className="p-7 rounded-3xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+              <span className="text-xs font-mono font-bold text-[#2F7CEF]">05</span>
+              <h3 className="mt-2 text-base font-bold text-[#0E2539]">Flexible Engagement</h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                We can support a focused pre-launch audit, a milestone release, or an ongoing QA function.
+                Seamlessly adapt from a focused pre-launch audit to recurring, embedded sprint QA capacity.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50">
-              <h3 className="font-bold text-[#0E2539]">Quality Ownership</h3>
+            <div className="p-7 rounded-3xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-slate-300 transition-all">
+              <span className="text-xs font-mono font-bold text-[#2F7CEF]">06</span>
+              <h3 className="mt-2 text-base font-bold text-[#0E2539]">Quality Ownership</h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                We stay focused on the user outcome, not just the number of test cases executed.
+                We stay focused on the end-user outcome and release confidence, not just the number of test tickets logged.
               </p>
             </div>
           </div>
@@ -427,24 +301,30 @@ export default function HomePage() {
       </section>
 
       {/* 8. FINAL CTA (Doc Section 12) */}
-      <section className="py-16 md:py-20 bg-[#0E2539] text-white">
-        <div className="shell text-center max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+      <section className="py-16 md:py-24 bg-[#0E2539] text-white relative overflow-hidden">
+        {/* Subtle glow effect */}
+        <div
+          className="absolute -top-32 left-1/2 -translate-x-1/2 h-64 w-96 rounded-full bg-[#2F7CEF]/20 blur-3xl pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="shell text-center max-w-3xl relative z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
             Let&apos;s find what your product is missing.
           </h2>
-          <p className="mt-4 text-base text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
             Tell us about your product, release cycle, or current QA challenge. We&apos;ll help identify where an independent quality perspective can make a difference.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact?need=assessment"
-              className="rounded-xl bg-[#2F7CEF] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#2F7CEF]/30 hover:bg-[#1E66D8] transition-all hover:-translate-y-0.5"
+              className="rounded-xl bg-[#2F7CEF] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#2F7CEF]/30 hover:bg-[#1E66D8] transition-all hover:-translate-y-0.5 active:scale-95"
             >
               Get a QA Assessment
             </Link>
             <Link
               href="/services"
-              className="rounded-xl border border-slate-700 bg-slate-800/80 px-8 py-3.5 text-sm font-bold text-slate-200 hover:border-slate-500 transition-all"
+              className="rounded-xl border border-slate-700 bg-slate-800/80 px-8 py-3.5 text-sm font-bold text-slate-200 hover:border-slate-500 transition-all shadow-sm"
             >
               Explore Our Services
             </Link>
