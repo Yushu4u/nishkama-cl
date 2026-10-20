@@ -5,15 +5,15 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Glasses, Monitor, Smartphone, Layers, Lock, Sparkles, CheckCircle2 } from "lucide-react";
 
 const platforms = [
-  { id: "spatial-xr", label: "Spatial XR", icon: Glasses },
-  { id: "web-app", label: "Web App", icon: Monitor },
+  { id: "web-app", label: "Web Applications", icon: Monitor },
   { id: "mobile-app", label: "Mobile iOS/Android", icon: Smartphone },
-  { id: "full-ecosystem", label: "Full Ecosystem", icon: Layers },
+  { id: "saas-cloud", label: "SaaS & Cloud Platforms", icon: Layers },
+  { id: "spatial-xr", label: "Spatial & XR Apps", icon: Glasses },
 ];
 
 export function QuickEstimateCard() {
   const router = useRouter();
-  const [selectedPlatform, setSelectedPlatform] = useState("spatial-xr");
+  const [selectedPlatform, setSelectedPlatform] = useState("web-app");
   const [projectUrl, setProjectUrl] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,7 +49,7 @@ export function QuickEstimateCard() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2F7CEF]" />
             </span>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[#2F7CEF]">
-              RAPID PROJECT ESTIMATE
+              RAPID QA ASSESSMENT
             </span>
           </div>
           <span className="text-[11px] font-mono font-medium text-slate-500 bg-slate-50 border border-slate-200/70 px-2 py-0.5 rounded">
@@ -59,10 +59,10 @@ export function QuickEstimateCard() {
 
         <div className="mt-4">
           <h3 className="text-xl font-bold tracking-tight text-[#0E2539]">
-            Get a Free QA Estimate
+            Request a QA Assessment
           </h3>
           <p className="mt-1 text-xs text-slate-500 leading-relaxed">
-            Tell us about your build. Our QA leads will evaluate your scope under NDA and provide a tailored plan within 24 hours.
+            Tell us about your build. Our QA engineers evaluate your scope under NDA and deliver an actionable quality plan within 24 hours.
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export function QuickEstimateCard() {
               disabled={isSubmitting}
               className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] py-3 px-4 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 active:scale-[0.99] transition-all disabled:opacity-75"
             >
-              <span>Get 24-Hr Estimate</span>
+              <span>Get a QA Assessment</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
