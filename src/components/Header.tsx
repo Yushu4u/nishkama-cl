@@ -211,14 +211,14 @@ export function Header() {
               trackEvent({
                 name: "cta_click",
                 properties: {
-                  label: "Talk to a QA Lead",
+                  label: "Get a QA Assessment",
                   location: "Header",
                   destination: "/contact?need=assessment",
                 },
               });
             }}
           >
-            <span>Talk to a QA Lead</span>
+            <span>Get a QA Assessment</span>
             <ArrowRight
               className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
               aria-hidden="true"
@@ -347,7 +347,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
             >
-              <span>Talk to a QA Lead</span>
+              <span>Get a QA Assessment</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
