@@ -44,7 +44,7 @@ export const processStages: ProcessStage[] = [
       "Align on communication channels (Slack, Jira, Linear, GitHub issues)",
     ],
     outputs: [
-      "Tailored Test Strategy Document",
+      "Risk-Based Test Strategy",
       "Coverage Matrix & Device Plan",
       "Sprint/Engagement Milestone Schedule",
     ],

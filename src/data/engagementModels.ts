@@ -67,12 +67,12 @@ export const engagementModels: EngagementModel[] = [
     number: "04",
     title: "Quality Advocacy",
     timeline: "Strategic Immersion",
-    subtitle: "Holistic quality leadership combining testing, dogfooding, and user signals.",
+    subtitle: "Complete quality leadership combining technical QA, dogfooding, and user signals.",
     description:
       "Our most comprehensive engagement model: we combine technical QA discipline with deep product dogfooding, customer feedback synthesis, and quality culture advocacy across your organization.",
     suitableFor: "Product-led companies striving for category-defining user experience and customer retention.",
     highlights: [
-      "Triple-pillar execution (QA Testing, Product Experience, Advocacy)",
+      "Triple-pillar execution (Technical QA, Product Experience, Quality Advocacy)",
       "Customer feedback & support ticket telemetry analysis",
       "UX friction audits and onboarding journey optimization",
       "Strategic quality counsel for CPOs and Engineering VPs",
