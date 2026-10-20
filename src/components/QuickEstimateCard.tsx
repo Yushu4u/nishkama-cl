@@ -73,7 +73,7 @@ export function QuickEstimateCard() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-2xl">
+    <div className="relative w-full">
       {/* Ambient tech glow */}
       <div
         className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[#2F7CEF]/20 via-[#2F7CEF]/10 to-transparent blur-xl opacity-75"
@@ -108,12 +108,12 @@ export function QuickEstimateCard() {
 
         {/* Mini Intake Form */}
         <form onSubmit={handleSubmit} className="mt-5 space-y-4">
-          {/* Platform Selector Pills (4-column responsive grid) */}
+          {/* Platform Selector Pills (Adaptive grid) */}
           <div>
             <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-2">
               Select Target Platform:
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-2">
               {platforms.map((p) => {
                 const Icon = p.icon;
                 const isSelected = selectedPlatform === p.id;

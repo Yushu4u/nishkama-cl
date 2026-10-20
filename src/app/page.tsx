@@ -17,11 +17,36 @@ import { QaRealityComparison } from "@/components/QaRealityComparison";
 import { PillarSection } from "@/components/PillarSection";
 
 const platforms = [
-  { name: "Web Applications", desc: "Next.js, React, PWAs", icon: Globe },
-  { name: "Mobile iOS & Android", desc: "Native, Flutter, React Native", icon: Smartphone },
-  { name: "SaaS Platforms", desc: "RBAC, multi-tenant, billing", icon: Layers },
-  { name: "APIs & Integrations", desc: "REST, GraphQL, Webhooks", icon: Code2 },
-  { name: "Spatial & XR Apps", desc: "VisionOS, Meta Quest, WebXR", icon: Glasses },
+  {
+    num: "01",
+    name: "Web Applications",
+    desc: "Next.js, React, PWAs, high-concurrency client portals",
+    icon: Globe,
+  },
+  {
+    num: "02",
+    name: "Mobile iOS & Android",
+    desc: "Native Swift/Kotlin, Flutter, React Native on real devices",
+    icon: Smartphone,
+  },
+  {
+    num: "03",
+    name: "SaaS Platforms",
+    desc: "Multi-tenant RBAC, billing lifecycles, seat licensing",
+    icon: Layers,
+  },
+  {
+    num: "04",
+    name: "APIs & Integrations",
+    desc: "REST, GraphQL, async webhooks, payment gateways",
+    icon: Code2,
+  },
+  {
+    num: "05",
+    name: "Spatial & XR Apps",
+    desc: "VisionOS, Meta Quest, WebXR spatial gesture interactions",
+    icon: Glasses,
+  },
 ];
 
 export default function HomePage() {
@@ -88,11 +113,6 @@ export default function HomePage() {
               <span>Zero Happy-Path Bias</span>
             </div>
           </div>
-
-          {/* Uniformly Centered QA Assessment Intake Form */}
-          <div className="mt-14 max-w-2xl mx-auto text-left">
-            <QuickEstimateCard />
-          </div>
         </div>
       </section>
 
@@ -102,41 +122,64 @@ export default function HomePage() {
       {/* 3. CORE ARCHITECTURE: THE 3 CONNECTED PILLARS (P0 Founder Directive) */}
       <PillarSection />
 
-      {/* 4. WHAT WE TEST: COMPACT 1-ROW PLATFORM STRIP */}
-      <section className="py-14 border-b border-slate-200/80 bg-white">
+      {/* 4. COVERAGE SPECTRUM (5 CATEGORIES IN COLUMN) + QA ASSESSMENT INTAKE (RIGHT) */}
+      <section className="py-16 sm:py-20 border-b border-slate-200/80 bg-white">
         <div className="shell">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-            <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            {/* Left Column: Eyebrow, Title, Description & 5 Categories Stacked Vertically */}
+            <div className="lg:col-span-6 flex flex-col justify-start text-left">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
                 COVERAGE SPECTRUM
               </span>
-              <h3 className="text-2xl font-extrabold text-[#0E2539]">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0E2539] leading-tight">
                 Across Modern Digital Platforms
-              </h3>
-            </div>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors"
-            >
-              <span>Explore All 8 Testing Disciplines</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                From high-scale SaaS architectures to native mobile touchpoints and emerging spatial interfaces, we systematically validate your product across its target user ecosystem.
+              </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3.5">
-            {platforms.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div
-                  key={p.name}
-                  className="rounded-2xl border border-slate-200/90 bg-slate-50/60 p-4 transition-all hover:bg-white hover:border-[#BFDBFE] hover:shadow-xs"
+              {/* 5 Categories in a Left-Justified Column */}
+              <div className="space-y-3">
+                {platforms.map((p) => {
+                  const Icon = p.icon;
+                  return (
+                    <div
+                      key={p.name}
+                      className="group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border border-slate-200/90 bg-slate-50/60 hover:bg-white hover:border-[#2F7CEF]/50 hover:shadow-xs transition-all text-left"
+                    >
+                      <div className="flex items-center gap-3.5 min-w-0">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#2F7CEF] border border-blue-100/80 group-hover:bg-[#2F7CEF] group-hover:text-white transition-colors">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div className="min-w-0">
+                          <h4 className="text-sm font-bold text-[#0E2539] truncate">{p.name}</h4>
+                          <p className="text-xs text-slate-500 truncate">{p.desc}</p>
+                        </div>
+                      </div>
+                      <span className="text-xs font-mono font-medium text-slate-400 pl-3 shrink-0">
+                        {p.num}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors"
                 >
-                  <Icon className="h-5 w-5 text-[#2F7CEF] mb-2.5" />
-                  <h4 className="text-xs font-bold text-[#0E2539]">{p.name}</h4>
-                  <p className="mt-1 text-[11px] text-slate-500 truncate">{p.desc}</p>
-                </div>
-              );
-            })}
+                  <span>Explore All 8 Testing Disciplines</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <span className="text-[11px] font-mono text-slate-400">Zero Happy-Path Bias</span>
+              </div>
+            </div>
+
+            {/* Right Column: QA Assessment Intake Form */}
+            <div className="lg:col-span-6 lg:sticky lg:top-24">
+              <QuickEstimateCard />
+            </div>
           </div>
         </div>
       </section>
