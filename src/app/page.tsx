@@ -60,7 +60,7 @@ export default function HomePage() {
       />
 
       {/* 1. HERO SECTION (Centrally Justified Authority, Tests Assured-Style) */}
-      <section className="relative border-b border-slate-200/80 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <section className="relative pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="shell text-center">
           {/* Preserved Eyebrow Badge (Centered) */}
           <div className="inline-flex items-center gap-2.5 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-8 mx-auto">
@@ -116,6 +116,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Subtle Narrative Divider Bridge (Replaces harsh partition) */}
+      <div className="w-full max-w-4xl mx-auto px-6" aria-hidden="true">
+        <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      </div>
 
       {/* 2. THE PROBLEM: HAPPY PATH VS. NCL REALITY ARTIFACT */}
       <QaRealityComparison />

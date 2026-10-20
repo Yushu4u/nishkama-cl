@@ -115,7 +115,7 @@ export function QaRealityComparison() {
   const current = scenarios.find((s) => s.id === activeScenario) || scenarios[0];
 
   return (
-    <section className="py-16 md:py-24 border-b border-slate-200/80 bg-white">
+    <section className="pt-12 pb-20 md:pt-14 md:pb-24 border-b border-slate-200/80 bg-white">
       <div className="shell">
         {/* Section Header */}
         <div className="max-w-3xl mb-10">
