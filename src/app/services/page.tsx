@@ -129,16 +129,13 @@ function ServiceCard({ service }: { service: ServiceCardData }) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="mt-6 grid gap-4 pb-2 md:grid-cols-3">
+          <div className="mt-6 grid gap-6 pb-2 md:grid-cols-3 pt-2 border-t border-slate-100">
             {service.capabilities.map((cap) => (
-              <div
-                key={cap.heading}
-                className="rounded-xl border border-slate-200/70 bg-[#fafafa] p-5"
-              >
-                <h3 className="mb-3 text-base font-bold text-[#0E2539]">
+              <div key={cap.heading} className="space-y-2">
+                <h3 className="text-sm font-bold text-[#0E2539]">
                   {cap.heading}
                 </h3>
-                <ul className="space-y-1.5 pl-5 text-sm leading-relaxed text-slate-600">
+                <ul className="space-y-1.5 pl-4 text-xs sm:text-sm text-slate-600">
                   {cap.items.map((item, idx) => (
                     <li key={idx} className="list-disc">
                       {item}
@@ -148,8 +145,8 @@ function ServiceCard({ service }: { service: ServiceCardData }) {
               </div>
             ))}
 
-            <div className="col-span-full mt-2">
-              <p className="text-sm leading-relaxed text-slate-600">
+            <div className="col-span-full mt-4 pt-3 border-t border-slate-100">
+              <p className="text-sm text-slate-600">
                 {service.ctaText}
               </p>
               <Link
