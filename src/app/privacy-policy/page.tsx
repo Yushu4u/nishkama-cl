@@ -81,8 +81,8 @@ export default function PrivacyPolicyPage() {
             <p className="mt-2">
               If you have any questions about this privacy statement or our data handling
               practices, please contact us at{" "}
-              <a href="mailto:privacy@nishkama.tech" className="text-[#2F7CEF] font-bold underline hover:text-[#1E66D8]">
-                privacy@nishkama.tech
+              <a href="mailto:hello@nishkamacodelab.com" className="text-[#2F7CEF] font-bold underline hover:text-[#1E66D8]">
+                hello@nishkamacodelab.com
               </a>
               .
             </p>
