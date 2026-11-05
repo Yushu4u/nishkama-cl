@@ -233,10 +233,10 @@ export default function QualityAdvocacyPage() {
       {/* 4. COMPARISON TABLE: TRADITIONAL QA VS QUALITY ADVOCACY */}
       <section className="border-b border-slate-200/80 bg-slate-50/70 py-16 md:py-24">
         <div className="shell">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <span className="badge-pill">DIRECT COMPARISON</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-              Traditional QA vs. Quality Advocacy
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1] md:whitespace-nowrap">
+              Traditional QA vs. <span className="text-[#2F7CEF] whitespace-nowrap">Quality Advocacy</span>
             </h2>
             <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
               Why adding a customer-centric advocacy lens transforms product release outcomes.
