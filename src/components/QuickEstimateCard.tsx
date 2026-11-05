@@ -193,7 +193,7 @@ export function QuickEstimateCard() {
               disabled={isSubmitting}
               className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] py-3.5 px-4 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 active:scale-[0.99] transition-all disabled:opacity-75"
             >
-              <span>Get a QA Assessment</span>
+              <span>Contact Us</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>

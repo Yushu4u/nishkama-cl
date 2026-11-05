@@ -49,10 +49,10 @@ export default function HomePage() {
               Explore QA Services
             </Link>
             <Link
-              href="/how-we-work"
+              href="/careers"
               className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
             >
-              Our 6-Stage Process
+              Careers at NCL
             </Link>
           </div>
 
