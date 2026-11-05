@@ -52,13 +52,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md transition-smooth">
       <nav
-        className="shell flex min-h-[72px] items-center justify-between gap-6"
+        className="shell flex min-h-[72px] items-center justify-between gap-8"
         aria-label="Main Navigation"
       >
-        {/* Brand Logo Lockup using official transparent asset */}
+        {/* Brand Logo Lockup */}
         <Link
           href="/"
-          className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF] rounded-lg py-1"
+          className="shrink-0 flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF] rounded-lg py-1"
           aria-label="Nishkama CodeLab Homepage"
         >
           <Image
@@ -71,17 +71,17 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-1">
+        {/* Desktop Navigation Links & Contact Us CTA (Grouped to the right for generous logo-to-menu gap) */}
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
           <Link
-            href="/"
+            href="/about"
             className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
-              pathname === "/"
+              pathname === "/about"
                 ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
             }`}
           >
-            Home
+            About
           </Link>
 
           {/* Services with Hover/Click Dropdown */}
@@ -95,10 +95,10 @@ export function Header() {
               className={`inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
                 pathname.startsWith("/services")
                   ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                  : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
               }`}
             >
-              <span>Services</span>
+              <span>QA Services</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${
                   servicesDropdownOpen ? "rotate-180 text-[#2F7CEF]" : "text-slate-400"
@@ -162,67 +162,39 @@ export function Header() {
             className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
               pathname === "/quality-advocacy"
                 ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
             }`}
           >
             Quality Advocacy
           </Link>
 
           <Link
-            href="/how-we-work"
+            href="/careers"
             className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
-              pathname === "/how-we-work"
+              pathname === "/careers"
                 ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
             }`}
           >
-            How We Work
+            Careers
           </Link>
 
-          <Link
-            href="/about"
-            className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
-              pathname === "/about"
-                ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-            }`}
-          >
-            About
-          </Link>
-
+          {/* Desktop Primary CTA: Contact Us */}
           <Link
             href="/contact"
-            className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
-              pathname === "/contact"
-                ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-            }`}
-          >
-            Contact
-          </Link>
-        </div>
-
-        {/* Desktop Primary CTA */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/contact?need=assessment"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#2F7CEF] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
+            className="ml-3 xl:ml-4 rounded-full bg-[#2F7CEF] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
             onClick={() => {
               trackEvent({
                 name: "cta_click",
                 properties: {
-                  label: "Get a QA Assessment",
+                  label: "Contact Us",
                   location: "Header",
-                  destination: "/contact?need=assessment",
+                  destination: "/contact",
                 },
               });
             }}
           >
-            <span>Get a QA Assessment</span>
-            <ArrowRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-              aria-hidden="true"
-            />
+            Contact Us
           </Link>
         </div>
 
@@ -255,13 +227,13 @@ export function Header() {
           <div className="space-y-4">
             <div className="space-y-1">
               <Link
-                href="/"
+                href="/about"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/" ? "bg-[#EFF6FF] text-[#2F7CEF]" : "text-slate-800 hover:bg-slate-50"
+                  pathname === "/about" ? "bg-[#EFF6FF] text-[#2F7CEF]" : "text-slate-800 hover:bg-slate-50"
                 }`}
               >
-                Home
+                About
               </Link>
 
               <div>
@@ -274,7 +246,7 @@ export function Header() {
                       : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
-                  Services Catalog
+                  QA Services
                 </Link>
 
                 <div className="ml-4 mt-1 space-y-1 border-l-2 border-slate-100 pl-3">
@@ -304,50 +276,26 @@ export function Header() {
               </Link>
 
               <Link
-                href="/how-we-work"
+                href="/careers"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/how-we-work"
+                  pathname === "/careers"
                     ? "bg-[#EFF6FF] text-[#2F7CEF]"
                     : "text-slate-800 hover:bg-slate-50"
                 }`}
               >
-                How We Work
-              </Link>
-
-              <Link
-                href="/about"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/about"
-                    ? "bg-[#EFF6FF] text-[#2F7CEF]"
-                    : "text-slate-800 hover:bg-slate-50"
-                }`}
-              >
-                About
-              </Link>
-
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/contact"
-                    ? "bg-[#EFF6FF] text-[#2F7CEF]"
-                    : "text-slate-800 hover:bg-slate-50"
-                }`}
-              >
-                Contact
+                Careers
               </Link>
             </div>
           </div>
 
           <div className="pt-6 border-t border-slate-100">
             <Link
-              href="/contact?need=assessment"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
             >
-              <span>Get a QA Assessment</span>
+              <span>Contact Us</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

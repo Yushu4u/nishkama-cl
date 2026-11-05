@@ -28,12 +28,10 @@ export const siteConfig = {
     },
   },
   navItems: [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Quality Advocacy", href: "/quality-advocacy" },
-    { label: "How We Work", href: "/how-we-work" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "QA Services", href: "/services" },
+    { label: "Quality Advocacy", href: "/quality-advocacy" },
+    { label: "Careers", href: "/careers" },
   ] as NavItem[],
   serviceSubPages: [
     { label: "XR & Spatial QA", href: "/services/xr-testing", desc: "VisionOS, Meta Quest, WebXR & spatial apps" },
@@ -61,6 +59,7 @@ export const siteConfig = {
     company: [
       { label: "About NCL", href: "/about" },
       { label: "Quality Advocacy", href: "/quality-advocacy" },
+      { label: "Careers", href: "/careers" },
       { label: "How We Work", href: "/how-we-work" },
       { label: "Contact Us", href: "/contact" },
     ],
