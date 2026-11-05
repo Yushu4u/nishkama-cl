@@ -110,10 +110,10 @@ export function FeaturedCardsSection() {
             Quality Advocacy
           </Link>
           <Link
-            href="/contact?need=assessment"
+            href="/contact"
             className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5 active:scale-95"
           >
-            Get a QA Assessment
+            Contact Us
           </Link>
         </div>
       </div>
