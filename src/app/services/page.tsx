@@ -1,483 +1,250 @@
-import React from "react";
-import type { Metadata } from "next";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
-import {
-  Glasses,
-  CheckSquare,
-  Compass,
-  ShieldCheck,
-  Monitor,
-  UserCheck,
-  Workflow,
-  Rocket,
-  Search,
-  CheckCircle2,
-  ArrowRight,
-  Smartphone,
-  Globe,
-  Cpu,
-  Server,
-  Layers,
-  Sparkles,
-} from "lucide-react";
-import { detailedServices } from "@/data/services";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "QA Services & Testing Disciplines | Nishkama CodeLab",
-  description:
-    "Explore Nishkama CodeLab's engineering-grade QA services: XR & spatial testing, functional testing, exploratory QA, regression testing, compatibility, usability, E2E validation, release readiness, and quality audits.",
-};
+interface CapabilitySection {
+  heading: string;
+  items: string[];
+}
 
-const serviceIcons: Record<string, React.ReactNode> = {
-  "xr-testing": <Glasses className="h-5 w-5 text-[#2F7CEF]" />,
-  "functional-testing": <CheckSquare className="h-5 w-5 text-[#2F7CEF]" />,
-  "exploratory-testing": <Compass className="h-5 w-5 text-[#2F7CEF]" />,
-  "regression-testing": <ShieldCheck className="h-5 w-5 text-[#2F7CEF]" />,
-  "compatibility-testing": <Monitor className="h-5 w-5 text-[#2F7CEF]" />,
-  "usability-testing": <UserCheck className="h-5 w-5 text-[#2F7CEF]" />,
-  "e2e-testing": <Workflow className="h-5 w-5 text-[#2F7CEF]" />,
-  "release-validation": <Rocket className="h-5 w-5 text-[#2F7CEF]" />,
-  "quality-audit": <Search className="h-5 w-5 text-[#2F7CEF]" />,
-};
+interface ServiceCardData {
+  id: string;
+  title: string;
+  description: string;
+  capabilities: CapabilitySection[];
+  ctaText: string;
+  ctaHref: string;
+}
 
-const serviceCategories: Record<string, string> = {
-  "xr-testing": "SPATIAL & IMMERSIVE",
-  "functional-testing": "CORE LOGIC",
-  "exploratory-testing": "DEFECT HUNTING",
-  "regression-testing": "RELEASE SAFETY",
-  "compatibility-testing": "MULTI-DEVICE",
-  "usability-testing": "USER ADVOCACY",
-  "e2e-testing": "DATA & WORKFLOWS",
-  "release-validation": "PRE-FLIGHT GATE",
-  "quality-audit": "STRATEGIC AUDIT",
-};
-
-const platforms = [
+const servicesData: ServiceCardData[] = [
   {
-    title: "Spatial & XR Computing",
-    icon: <Glasses className="h-5 w-5 text-[#2F7CEF]" />,
-    tag: "visionOS & Meta Quest",
-    desc: "Apple Vision Pro, Meta Quest 3/Pro, WebXR, and 3D spatial engines (Unity/Unreal).",
-    checks: ["Motion-to-photon latency", "Hand & eye tracking debounce", "Spatial UI comfort", "Room boundary persistence"],
+    id: "xr-spatial",
+    title: "AR/VR/MR/XR & Spatial Testing Services",
+    description:
+      "Since spatial computing requires more than standard 2D screen checks, we test spatial apps, headsets, tracking systems, and the full runtime stack. Whether it’s a product still in development or one that’s already shipped, we know how to break it, measure latency and comfort, and help you fix issues before your users do.",
+    capabilities: [
+      {
+        heading: "Hardware & Spatial Testing",
+        items: [
+          "Apple Vision Pro, Meta Quest 3/Pro, and spatial headsets",
+          "Hand, face, eye, and controller tracking responsiveness",
+          "Motion-to-photon latency and 90Hz/120Hz frame budgets",
+          "Virtual boundary safety and spatial anchor persistence",
+        ],
+      },
+      {
+        heading: "Software Testing",
+        items: [
+          "visionOS, Quest OS platforms, and spatial store applications",
+          "Unity and Unreal Engine spatial build verification",
+          "Companion mobile app data synchronization and BLE pairing",
+          "WebXR experiences, streaming, and API regression testing",
+        ],
+      },
+      {
+        heading: "How We Test",
+        items: [
+          "Unity and Unreal Engine gauntlet and test framework expertise",
+          "Python scripting, ADB input-injection, and automated sweeps",
+          "OVR Metrics, Instruments, and perceptual latency profiling",
+          "Spatial comfort, disorientation stress, and multi-user sync",
+        ],
+      },
+    ],
+    ctaText:
+      "We couldn't fit everything here, but if you're looking for something specific we'd love to walk you through our full spatial testing capabilities.",
+    ctaHref: "/contact?need=XR%20Testing",
   },
   {
-    title: "Mobile Applications",
-    icon: <Smartphone className="h-5 w-5 text-[#2F7CEF]" />,
-    tag: "iOS & Android",
-    desc: "Native Swift/Kotlin, React Native, and Flutter across physical flagship and legacy hardware.",
-    checks: ["Device fragmentation", "Battery & thermal draw", "Background app lifecycle", "Offline store-and-forward"],
+    id: "software-qa",
+    title: "Web & Mobile Application Quality Assurance",
+    description:
+      "Modern web and mobile applications face fragmented devices, flaky network transitions, and aggressive deployment schedules. We provide thorough functional, exploratory, regression, and cross-platform testing across genuine devices so your team ships with complete confidence.",
+    capabilities: [
+      {
+        heading: "Hardware & Device Matrix",
+        items: [
+          "Physical iOS & Android flagships and legacy hardware lab",
+          "Safari (WebKit), Chrome (Chromium), Firefox, and Edge parity",
+          "Screen breakpoints, dynamic islands, and responsive viewports",
+          "Offline store-and-forward, packet loss, and throttled networks",
+        ],
+      },
+      {
+        heading: "Software Testing",
+        items: [
+          "Core business logic, permission boundaries, and checkout funnels",
+          "Pull request changelog blast-radius regression passes",
+          "Time-boxed unscripted exploratory edge-case hunting",
+          "API contract validation, asynchronous queues, and webhooks",
+        ],
+      },
+      {
+        heading: "How We Test",
+        items: [
+          "Genuine physical device bench testing (zero emulators for releases)",
+          "Playwright, Appium, and automated regression test harnesses",
+          "High-fidelity bug reports with video repros and console traces",
+          "Clear go/no-go release readiness scorecards for leads",
+        ],
+      },
+    ],
+    ctaText:
+      "Need targeted coverage for an upcoming release candidate? Tell us your tech stack and we'll map out a test plan.",
+    ctaHref: "/contact?need=Web%20and%20Mobile%20QA",
   },
   {
-    title: "Modern Web Applications",
-    icon: <Globe className="h-5 w-5 text-[#2F7CEF]" />,
-    tag: "Next.js & SPAs",
-    desc: "Full browser engine matrix testing across Safari WebKit, Chrome Chromium, and Firefox Gecko.",
-    checks: ["Engine rendering parity", "State persistence", "DOM hydration & performance", "Responsive viewports"],
-  },
-  {
-    title: "Wearables & Companion Hardware",
-    icon: <Cpu className="h-5 w-5 text-[#2F7CEF]" />,
-    tag: "BLE & Sensors",
-    desc: "Smart glasses, companion wearables, health sensors, and Bluetooth peripheral synchronization.",
-    checks: ["BLE handshake resilience", "OTA firmware verification", "Sensor telemetry accuracy", "Companion app syncing"],
-  },
-  {
-    title: "APIs & Connected Backends",
-    icon: <Server className="h-5 w-5 text-[#2F7CEF]" />,
-    tag: "REST, GraphQL, WebSockets",
-    desc: "End-to-end data contracts, third-party webhooks, authentication flows, and queue processing.",
-    checks: ["Webhook delivery & retry", "Schema error contracts", "Latency under concurrency", "Database state integrity"],
+    id: "quality-advocacy",
+    title: "Quality Advocacy & UX Reality Testing",
+    description:
+      "Testing only against the happy path misses the friction real customers feel. Quality Advocacy unites technical defect discovery with deep user empathy, heuristic evaluation, and product reality checks to catch issues before they impact adoption and churn.",
+    capabilities: [
+      {
+        heading: "Experiential Dogfooding",
+        items: [
+          "Real-world end-to-end customer journey walkthroughs",
+          "Usability friction, confusing prompts, and hesitation mapping",
+          "Microcopy clarity and interface feedback responsiveness",
+          "Error recovery states, timeout handling, and graceful degradation",
+        ],
+      },
+      {
+        heading: "Quality Audits & Diagnostics",
+        items: [
+          "1–2 week intensive diagnostic of coverage gaps",
+          "Defect escape history and regression root-cause analysis",
+          "Test documentation, test case hygiene, and pipeline review",
+          "Actionable 90-day quality roadmap for engineering leads",
+        ],
+      },
+      {
+        heading: "How We Deliver",
+        items: [
+          "Annotated UI scorecards with usability severity ratings",
+          "Executive release memos with explicit blocker ledgers",
+          "Collaborative Jira/Linear bug logging with repro steps",
+          "Direct Slack/async alignment with product managers and engineers",
+        ],
+      },
+    ],
+    ctaText:
+      "Looking to give your product a thorough quality reality check before launch? Let's talk.",
+    ctaHref: "/contact?need=Quality%20Advocacy",
   },
 ];
 
-const lifecycleSteps = [
-  {
-    number: "01",
-    title: "Scope & Risk Modeling",
-    desc: "We analyze PRDs, architectural diagrams, high-stakes customer paths, and defect history before writing test plans.",
-  },
-  {
-    number: "02",
-    title: "Multi-Environment Sweeps",
-    desc: "Execution on genuine devices, browsers, and real-world network conditions—pushing past happy paths into negative edge cases.",
-  },
-  {
-    number: "03",
-    title: "Evidence-Backed Bug Logging",
-    desc: "Reproduction steps, video proof, console traces, network payloads, and severity classifications filed directly into your tracker.",
-  },
-  {
-    number: "04",
-    title: "Release Readiness Scorecard",
-    desc: "A definitive go/no-go verdict with open blocker ledgers, resolved verification, and residual risk documentation.",
-  },
-];
+function ServiceCard({ service, defaultOpen }: { service: ServiceCardData; defaultOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen ?? false);
 
-const engagementModels = [
-  {
-    title: "Pre-Launch & MVP Readiness",
-    badge: "NEW LAUNCHES",
-    desc: "For teams preparing to launch new web, mobile, or XR products requiring full-surface defect sweeps and a decisive release verdict.",
-    deliverables: ["Full functional & compatibility sweep", "Critical path user flow validation", "Go/no-go executive scorecard"],
-    href: "/contact?need=Pre-Launch%20Assessment",
-  },
-  {
-    title: "Continuous Sprint Validation",
-    badge: "ACTIVE SPRINTS",
-    desc: "For fast-moving engineering teams shipping weekly updates who need fast regression safety nets and deep exploratory edge-case hunting.",
-    deliverables: ["Weekly regression passes", "Targeted exploratory test charters", "Same-day fix retesting & verification"],
-    href: "/contact?need=Continuous%20Sprint%20QA",
-  },
-  {
-    title: "Quality Audit & Diagnostic",
-    badge: "1–2 WEEK SPRINT",
-    desc: "For established applications experiencing user churn, regression leaks, or teams seeking an objective architectural review of test coverage.",
-    deliverables: ["Defect escape pattern audit", "Test coverage gap mapping", "90-day actionable quality roadmap"],
-    href: "/contact?need=Quality%20Audit",
-  },
-];
+  return (
+    <article className="rounded-2xl border border-slate-200/90 bg-gradient-to-b from-[#F0F6FE]/60 via-white to-white p-7 sm:p-9 shadow-sm hover:shadow-md transition-shadow">
+      <h2 className="text-2xl sm:text-[1.65rem] font-bold text-[#0E2539] tracking-tight">
+        {service.title}
+      </h2>
+
+      <p className="mt-3 max-w-3xl leading-relaxed text-slate-600 text-sm sm:text-base">
+        {service.description}
+      </p>
+
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors focus:outline-none"
+        aria-expanded={isOpen}
+      >
+        <span>{isOpen ? "Hide capabilities" : "View capabilities"}</span>
+        <ChevronDown
+          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        />
+      </button>
+
+      {/* Expandable Capabilities Grid (Tests Assured Style) */}
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-6 grid gap-4 md:grid-cols-3 pt-2">
+            {service.capabilities.map((cap) => (
+              <div
+                key={cap.heading}
+                className="rounded-xl border border-slate-200/70 bg-[#F8FAFC] p-5 flex flex-col"
+              >
+                <h3 className="mb-3 text-base font-bold text-[#0E2539]">
+                  {cap.heading}
+                </h3>
+                <ul className="space-y-2 pl-4 text-xs sm:text-sm leading-relaxed text-slate-600">
+                  {cap.items.map((item, idx) => (
+                    <li key={idx} className="list-disc">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            <div className="col-span-full mt-3 pt-3 border-t border-slate-100">
+              <p className="text-sm leading-relaxed text-slate-600">
+                {service.ctaText}
+              </p>
+              <Link
+                href={service.ctaHref}
+                className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors"
+              >
+                <span>Get in touch</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function ServicesPage() {
   return (
     <div className="bg-white min-h-screen text-[#0E2539]">
-      {/* 1. HERO SECTION (Tests Assured Signature Minimalist Centered Layout) */}
-      <section className="border-b border-slate-200/80 bg-white py-16 sm:py-24">
-        <div className="shell text-center max-w-4xl mx-auto">
-          {/* Centered Eyebrow */}
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-3">
-            QA SERVICES &amp; TESTING SOLUTIONS
-          </span>
-
-          {/* Centered Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0E2539] leading-[1.08]">
-            Engineering-Grade QA Across{" "}
-            <span className="text-[#2F7CEF] whitespace-nowrap">Web, Mobile &amp; Spatial</span> Platforms.
+      {/* 1. MINIMALISTIC PAGE TITLE (Tests Assured Style) */}
+      <section className="pt-12 pb-8 sm:pt-16 sm:pb-10">
+        <div className="shell max-w-5xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0E2539]">
+            QA Services
           </h1>
+        </div>
+      </section>
 
-          {/* Centered Subhead */}
-          <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl mx-auto">
-            Independent verification built to eliminate defect risk, uncover edge cases, and validate real-world user journeys before production cutover.
+      {/* 2. CORE SERVICE ARTICLES (Tests Assured Clean Card List) */}
+      <section className="pb-16 sm:pb-24">
+        <div className="shell max-w-5xl">
+          <div className="space-y-6">
+            {servicesData.map((svc, index) => (
+              <ServiceCard key={svc.id} service={svc} defaultOpen={index === 0} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WANT TO LEARN MORE? (Exact Tests Assured Bottom CTA) */}
+      <section className="py-16 sm:py-20 border-t border-slate-200/80 bg-[#F8FAFC]">
+        <div className="shell max-w-xl text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0E2539]">
+            Want to learn more?
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+            We&apos;re always happy to talk. Reach out and let&apos;s see how we can help.
           </p>
-
-          {/* Action Pills */}
-          <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
+          <div className="mt-6">
             <Link
-              href="/contact?need=consultation"
-              className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg transition-all hover:-translate-y-0.5 active:scale-95"
+              href="/contact"
+              className="inline-block rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg transition-all hover:-translate-y-0.5 active:scale-95"
             >
-              Schedule QA Consultation
+              Get in Touch
             </Link>
-            <Link
-              href="#disciplines"
-              className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
-            >
-              Explore 9 Disciplines
-            </Link>
-            <Link
-              href="#platforms"
-              className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
-            >
-              Platform Coverage
-            </Link>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
-              <span>Independent QA Perspective</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
-              <span>Real-World User Journeys</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
-              <span>Zero Happy-Path Bias</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. PLATFORM & HARDWARE COVERAGE (Tests Assured Style) */}
-      <section id="platforms" className="py-16 sm:py-20 border-b border-slate-200/80 bg-slate-50/50">
-        <div className="shell">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-              COVERAGE SPECTRUM
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-              Tested Across Genuine Hardware &amp; Runtimes
-            </h2>
-            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              From Apple Vision Pro and Meta Quest to high-traffic web APIs, we execute against genuine devices, operating systems, and network conditions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {platforms.map((p) => (
-              <div
-                key={p.title}
-                className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-md hover:border-[#2F7CEF]/40 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center shrink-0">
-                      {p.icon}
-                    </div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
-                      {p.tag}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-[#0E2539]">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                    {p.desc}
-                  </p>
-
-                  <div className="mt-5 pt-4 border-t border-slate-100 space-y-1.5">
-                    {p.checks.map((check) => (
-                      <div key={check} className="flex items-center gap-2 text-xs text-slate-700">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF] shrink-0" />
-                        <span>{check}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Quick Consultation Highlight Card */}
-            <div className="rounded-2xl border border-dashed border-[#2F7CEF]/50 bg-[#EFF6FF]/40 p-6 flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF] bg-white border border-[#BFDBFE] px-2.5 py-1 rounded-md inline-block mb-4">
-                  CUSTOM SCOPING
-                </span>
-                <h3 className="text-lg font-bold text-[#0E2539]">
-                  Need a Specialized Testing Matrix?
-                </h3>
-                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                  We configure bespoke test environments tailored to your analytics—targeting exact OS versions, device tiers, and regional network constraints.
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-[#BFDBFE]/60">
-                <Link
-                  href="/contact"
-                  className="text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] inline-flex items-center gap-1.5"
-                >
-                  <span>Build custom device matrix</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. CORE QA DISCIPLINES GRID (Minimalistic, Accurate, Scan-Friendly) */}
-      <section id="disciplines" className="py-16 sm:py-24 border-b border-slate-200/80 bg-white">
-        <div className="shell">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-              CORE QA DISCIPLINES
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-              Nine Specialized Testing Disciplines
-            </h2>
-            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              Granular, independent quality engineering designed to catch defects before your users do. Click any discipline to inspect detailed workflows.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {detailedServices.map((svc) => (
-              <Link
-                key={svc.slug}
-                href={`/services/${svc.slug}`}
-                className="group rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-xl hover:border-[#2F7CEF]/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Top Bar: Icon + Number + Category */}
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center shrink-0 group-hover:bg-[#2F7CEF] transition-colors">
-                      <span className="group-hover:text-white transition-colors">
-                        {serviceIcons[svc.slug] || <CheckSquare className="h-5 w-5 text-[#2F7CEF]" />}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
-                        {serviceCategories[svc.slug] || "QA"}
-                      </span>
-                      <span className="text-xs font-mono font-bold text-slate-400">
-                        {svc.number}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Title & Concise Summary */}
-                  <h3 className="text-lg font-bold text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors leading-snug">
-                    {svc.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed line-clamp-3">
-                    {svc.shortDescription}
-                  </p>
-
-                  {/* Key Highlights / Checks */}
-                  <div className="mt-5 pt-4 border-t border-slate-100 space-y-1.5">
-                    {svc.whatWeCheck.slice(0, 3).map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-[11px] text-slate-600 leading-tight">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF] mt-1 shrink-0" />
-                        <span className="line-clamp-1">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Link Arrow */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#2F7CEF]">
-                  <span>Explore Discipline</span>
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. 4-STAGE QA DELIVERY LIFECYCLE (Minimalistic Process) */}
-      <section className="py-16 sm:py-24 border-b border-slate-200/80 bg-slate-50/50">
-        <div className="shell">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-              HOW WE DELIVER
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-              Predictable QA Architecture from Scope to Sign-Off
-            </h2>
-            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              Every engagement follows our structured verification standard—giving your engineering team clear, reproducible bug reports without management overhead.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {lifecycleSteps.map((step) => (
-              <div
-                key={step.number}
-                className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm flex flex-col justify-between"
-              >
-                <div>
-                  <div className="h-9 w-9 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center font-mono font-bold text-[#2F7CEF] text-sm mb-4">
-                    {step.number}
-                  </div>
-                  <h3 className="text-base font-bold text-[#0E2539]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. ENGAGEMENT PACKAGES BY PRODUCT STAGE */}
-      <section className="py-16 sm:py-24 border-b border-slate-200/80 bg-white">
-        <div className="shell">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-              ENGAGEMENT MODELS
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-              Flexible QA Engagements Tailored to Your Release Cycle
-            </h2>
-            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              Whether you need rapid pre-launch certification, ongoing sprint regression coverage, or an objective quality audit.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {engagementModels.map((pkg) => (
-              <div
-                key={pkg.title}
-                className="rounded-2xl border border-slate-200/90 bg-white p-7 shadow-sm hover:shadow-lg hover:border-[#2F7CEF]/40 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF] bg-[#EFF6FF] border border-[#BFDBFE] px-2.5 py-1 rounded-md inline-block mb-3">
-                    {pkg.badge}
-                  </span>
-                  <h3 className="text-xl font-bold text-[#0E2539]">
-                    {pkg.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                    {pkg.desc}
-                  </p>
-
-                  <div className="mt-6 pt-5 border-t border-slate-100">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-3">
-                      Key Deliverables
-                    </span>
-                    <ul className="space-y-2">
-                      {pkg.deliverables.map((d) => (
-                        <li key={d} className="flex items-center gap-2 text-xs text-slate-700">
-                          <CheckCircle2 className="h-3.5 w-3.5 text-[#2F7CEF] shrink-0" />
-                          <span>{d}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-5 border-t border-slate-100">
-                  <Link
-                    href={pkg.href}
-                    className="rounded-xl border border-slate-300 bg-white hover:border-[#2F7CEF] hover:text-[#2F7CEF] px-5 py-2.5 text-xs font-bold text-slate-700 transition-all flex items-center justify-center gap-2 shadow-sm"
-                  >
-                    <span>Request this model</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. MINIMALIST BOTTOM CTA (Tests Assured Navy Card) */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="shell">
-          <div className="rounded-3xl bg-[#0E2539] text-white p-10 sm:p-16 text-center max-w-4xl mx-auto border border-slate-800 shadow-xl relative overflow-hidden">
-            <div className="relative z-10">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-3">
-                READY FOR STRONGER COVERAGE?
-              </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
-                Put your software through an independent QA review.
-              </h2>
-              <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-                Connect with our QA engineering team to review release milestones, scope target device matrices, and uncover release risks before your users do.
-              </p>
-
-              <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
-                <Link
-                  href="/contact?need=consultation"
-                  className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg transition-all hover:-translate-y-0.5 active:scale-95"
-                >
-                  Schedule QA Consultation
-                </Link>
-                <Link
-                  href="/quality-advocacy"
-                  className="rounded-xl border border-slate-700 bg-slate-800/80 px-7 py-3.5 text-sm font-bold text-white hover:bg-slate-800 hover:border-slate-600 transition-all shadow-sm"
-                >
-                  Explore Quality Advocacy
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
