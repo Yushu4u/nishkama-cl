@@ -16,10 +16,8 @@ export default function HomePage() {
       <section className="relative pt-16 pb-12 sm:pt-24 sm:pb-16">
         <div className="shell text-center">
           {/* Preserved Eyebrow Badge (Centered) */}
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-8 mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-8 mx-auto">
             <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" />
-            <span className="font-extrabold text-[#0E2539] text-xs tracking-tight">Nishkama CodeLab</span>
-            <span className="h-3 w-px bg-slate-300" aria-hidden="true" />
             <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2F7CEF]">
               Independent Software QA
             </span>
