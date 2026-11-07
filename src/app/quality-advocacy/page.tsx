@@ -59,12 +59,9 @@ export default function QualityAdvocacyPage() {
             {/* Lens 1: BUG HUNTING */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
               <div>
-                <div className="flex items-center justify-between pb-6 border-b border-slate-100">
+                <div className="pb-4 border-b border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     LENS 01
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
-                    BUG HUNTING
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
@@ -97,12 +94,9 @@ export default function QualityAdvocacyPage() {
             {/* Lens 2: DOGFOODING */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
               <div>
-                <div className="flex items-center justify-between pb-6 border-b border-slate-100">
+                <div className="pb-4 border-b border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     LENS 02
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
-                    DOGFOODING
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
@@ -135,12 +129,9 @@ export default function QualityAdvocacyPage() {
             {/* Lens 3: REALITY CHECK */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
               <div>
-                <div className="flex items-center justify-between pb-6 border-b border-slate-100">
+                <div className="pb-4 border-b border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     LENS 03
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
-                    REALITY CHECK
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
