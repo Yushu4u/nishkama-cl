@@ -52,33 +52,35 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md transition-smooth">
       <nav
-        className="shell flex min-h-[88px] sm:min-h-[94px] lg:min-h-[98px] items-center justify-between gap-8"
+        className="shell flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] min-h-[88px] sm:min-h-[94px] lg:min-h-[98px] gap-4"
         aria-label="Main Navigation"
       >
         {/* Brand Logo Lockup */}
-        <Link
-          href="/"
-          className="shrink-0 flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF] rounded-lg py-1"
-          aria-label="Nishkama CodeLab Homepage"
-        >
-          <Image
-            src={siteConfig.brand.assets.logoLockup}
-            alt="Nishkama CodeLab"
-            width={310}
-            height={98}
-            priority
-            className="h-14 sm:h-[60px] md:h-[66px] lg:h-[72px] w-auto object-contain transition-transform group-hover:scale-[1.02]"
-          />
-        </Link>
+        <div className="justify-self-start">
+          <Link
+            href="/"
+            className="shrink-0 flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF] rounded-lg py-1"
+            aria-label="Nishkama CodeLab Homepage"
+          >
+            <Image
+              src={siteConfig.brand.assets.logoLockup}
+              alt="Nishkama CodeLab"
+              width={310}
+              height={98}
+              priority
+              className="h-14 sm:h-[60px] md:h-[66px] lg:h-[72px] w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            />
+          </Link>
+        </div>
 
-        {/* Desktop Navigation Links & Contact Us CTA */}
-        <div className="hidden lg:flex items-center gap-2 lg:gap-3.5 xl:gap-6">
+        {/* Center: Desktop Navigation Links (Floating Island Pill Container) */}
+        <div className="hidden lg:flex justify-self-center items-center gap-1 bg-slate-100/70 border border-slate-200/80 rounded-full p-1.5 backdrop-blur-sm shadow-xs">
           <Link
             href="/about"
-            className={`rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
+            className={`rounded-full px-4 py-2 text-sm font-bold transition-all ${
               pathname === "/about"
-                ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
+                ? "text-[#2F7CEF] bg-white shadow-xs"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
             }`}
           >
             About
@@ -92,10 +94,10 @@ export function Header() {
           >
             <Link
               href="/services"
-              className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold transition-all ${
                 pathname.startsWith("/services")
-                  ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                  : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
+                  ? "text-[#2F7CEF] bg-white shadow-xs"
+                  : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
               }`}
             >
               <span>QA Services</span>
@@ -110,7 +112,7 @@ export function Header() {
             {/* Dropdown Menu */}
             {servicesDropdownOpen && (
               <div
-                className="absolute left-0 top-full pt-2 w-[480px] z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                className="absolute -left-12 top-full pt-3 w-[480px] z-50 animate-in fade-in slide-in-from-top-2 duration-150"
                 role="menu"
                 aria-orientation="vertical"
               >
@@ -159,10 +161,10 @@ export function Header() {
 
           <Link
             href="/quality-advocacy"
-            className={`rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
+            className={`rounded-full px-4 py-2 text-sm font-bold transition-all ${
               pathname === "/quality-advocacy"
-                ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
+                ? "text-[#2F7CEF] bg-white shadow-xs"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
             }`}
           >
             Quality Advocacy
@@ -170,19 +172,34 @@ export function Header() {
 
           <Link
             href="/careers"
-            className={`rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
+            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition-all ${
               pathname === "/careers"
-                ? "text-[#2F7CEF] bg-[#EFF6FF]"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
+                ? "text-[#2F7CEF] bg-white shadow-xs"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
             }`}
           >
-            Careers
+            <span>Careers</span>
+            <span className="rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wider leading-none">
+              Hiring
+            </span>
           </Link>
+        </div>
+
+        {/* Right Section: Micro-Status + Primary CTA + Mobile Menu Button */}
+        <div className="justify-self-end flex items-center gap-3 xl:gap-4">
+          {/* Subtle Live Labs Status Indicator */}
+          <div className="hidden xl:inline-flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-200/80 rounded-full px-3 py-1.5 shadow-xs">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>QA Labs Active</span>
+          </div>
 
           {/* Desktop Primary CTA: Contact Us */}
           <Link
             href="/contact"
-            className="ml-4 lg:ml-6 xl:ml-8 rounded-full bg-[#2F7CEF] px-5 sm:px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
+            className="hidden lg:inline-flex rounded-full bg-[#2F7CEF] px-5 sm:px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
             onClick={() => {
               trackEvent({
                 name: "cta_click",
@@ -196,23 +213,23 @@ export function Header() {
           >
             Contact Us
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-menu-drawer"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="-mr-2 grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-slate-700 lg:hidden hover:bg-slate-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
-        >
-          {mobileMenuOpen ? (
-            <X className="h-5 w-5" aria-hidden="true" />
-          ) : (
-            <Menu className="h-5 w-5" aria-hidden="true" />
-          )}
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu-drawer"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="-mr-2 grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-slate-700 lg:hidden hover:bg-slate-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Navigation Drawer */}
