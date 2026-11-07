@@ -185,17 +185,8 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Right Section: Micro-Status + Primary CTA + Mobile Menu Button */}
-        <div className="justify-self-end flex items-center gap-3 xl:gap-4">
-          {/* Subtle Live Labs Status Indicator */}
-          <div className="hidden xl:inline-flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-200/80 rounded-full px-3 py-1.5 shadow-xs">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>QA Labs Active</span>
-          </div>
-
+        {/* Right Section: Primary CTA + Mobile Menu Button */}
+        <div className="justify-self-end flex items-center gap-3">
           {/* Desktop Primary CTA: Contact Us */}
           <Link
             href="/contact"
