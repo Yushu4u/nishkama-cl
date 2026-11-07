@@ -58,60 +58,64 @@ export default function QualityAdvocacyPage() {
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
             {/* Lens 1: BUG HUNTING */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
-              <div>
-                <div className="pb-4 border-b border-slate-100">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                    LENS 01
-                  </span>
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                    <Bug className="h-5 w-5" />
+              <div className="flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="pb-4 border-b border-slate-100">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      LENS 01
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    Bug Hunting
-                  </h3>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
+                      <Bug className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      Bug Hunting
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                    Find defects, edge cases, unexpected behavior, and catastrophic failure points.
+                    We subject your application to rigorous stress, concurrency spikes, bad inputs,
+                    and interrupted states.
+                  </p>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">
-                  Find defects, edge cases, unexpected behavior, and catastrophic failure points.
-                  We subject your application to rigorous stress, concurrency spikes, bad inputs,
-                  and interrupted states.
-                </p>
 
                 <div className="mt-6 pt-5 border-t border-slate-100 space-y-2 text-xs text-slate-600">
                   <p className="font-bold text-slate-800">Key Investigative Focus:</p>
-                  <p>• State collision across simultaneous tabs and devices</p>
+                  <p>• State collisions across tabs and devices</p>
                   <p>• Malformed network payloads &amp; edge validations</p>
                   <p>• Memory leaks &amp; slow-degradation bottlenecks</p>
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-[#2F7CEF]">
+              <div className="mt-6 pt-4 border-t border-slate-100 min-h-[58px] flex items-center text-xs font-semibold text-[#2F7CEF] leading-relaxed">
                 Mandate: &ldquo;Does the software operate correctly under stress?&rdquo;
               </div>
             </div>
 
             {/* Lens 2: DOGFOODING */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
-              <div>
-                <div className="pb-4 border-b border-slate-100">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                    LENS 02
-                  </span>
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                    <Eye className="h-5 w-5" />
+              <div className="flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="pb-4 border-b border-slate-100">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      LENS 02
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    Dogfooding
-                  </h3>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
+                      <Eye className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      Dogfooding
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                    Walk through realistic customer journeys and experience the product as a real user.
+                    We step into the mindset of a customer trying to complete high-value work without
+                    developer shortcuts or insider knowledge.
+                  </p>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">
-                  Walk through realistic customer journeys and experience the product as a real user.
-                  We step into the mindset of a customer trying to complete high-value work without
-                  developer shortcuts or insider knowledge.
-                </p>
 
                 <div className="mt-6 pt-5 border-t border-slate-100 space-y-2 text-xs text-slate-600">
                   <p className="font-bold text-slate-800">Key Investigative Focus:</p>
@@ -121,42 +125,44 @@ export default function QualityAdvocacyPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-[#2F7CEF]">
-                Mandate: &ldquo;Does it feel natural and frictionless?&rdquo;
+              <div className="mt-6 pt-4 border-t border-slate-100 min-h-[58px] flex items-center text-xs font-semibold text-[#2F7CEF] leading-relaxed">
+                Mandate: &ldquo;Does the product feel natural, intuitive, and frictionless?&rdquo;
               </div>
             </div>
 
             {/* Lens 3: REALITY CHECK */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
-              <div>
-                <div className="pb-4 border-b border-slate-100">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                    LENS 03
-                  </span>
-                </div>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                    <CheckCircle2 className="h-5 w-5" />
+              <div className="flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="pb-4 border-b border-slate-100">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      LENS 03
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    Reality Check
-                  </h3>
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
+                      <CheckCircle2 className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      Reality Check
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                    Compare product promises against real-world customer reality. We study real customer
+                    signals, telemetry drops, and user feedback to give founders and engineering leads an
+                    honest, unvarnished quality verdict.
+                  </p>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">
-                  Compare product promises against real-world customer reality. We study real customer
-                  signals, telemetry drops, and user feedback to give founders and engineering leads an
-                  honest, unvarnished quality verdict.
-                </p>
 
                 <div className="mt-6 pt-5 border-t border-slate-100 space-y-2 text-xs text-slate-600">
                   <p className="font-bold text-slate-800">Key Investigative Focus:</p>
                   <p>• Recurring support ticket patterns &amp; root causes</p>
                   <p>• Churn feedback &amp; negative review sentiment</p>
-                  <p>• Dropped funnel telemetry &amp; abandoned workflows</p>
+                  <p>• Telemetry drop-offs &amp; abandoned workflows</p>
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-[#2F7CEF]">
+              <div className="mt-6 pt-4 border-t border-slate-100 min-h-[58px] flex items-center text-xs font-semibold text-[#2F7CEF] leading-relaxed">
                 Mandate: &ldquo;Is the product genuinely ready for paying customers?&rdquo;
               </div>
             </div>
