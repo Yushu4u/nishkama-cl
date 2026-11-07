@@ -71,11 +71,11 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation Links & Contact Us CTA (Grouped to the right for generous logo-to-menu gap) */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+        {/* Desktop Navigation Links & Contact Us CTA */}
+        <div className="hidden lg:flex items-center gap-2 lg:gap-3.5 xl:gap-6">
           <Link
             href="/about"
-            className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
+            className={`rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
               pathname === "/about"
                 ? "text-[#2F7CEF] bg-[#EFF6FF]"
                 : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
@@ -92,7 +92,7 @@ export function Header() {
           >
             <Link
               href="/services"
-              className={`inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
+              className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
                 pathname.startsWith("/services")
                   ? "text-[#2F7CEF] bg-[#EFF6FF]"
                   : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
@@ -159,7 +159,7 @@ export function Header() {
 
           <Link
             href="/quality-advocacy"
-            className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
+            className={`rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
               pathname === "/quality-advocacy"
                 ? "text-[#2F7CEF] bg-[#EFF6FF]"
                 : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
@@ -170,7 +170,7 @@ export function Header() {
 
           <Link
             href="/careers"
-            className={`rounded-lg px-3.5 py-2 text-sm font-bold transition-colors ${
+            className={`rounded-lg px-4 py-2.5 text-sm font-bold transition-colors ${
               pathname === "/careers"
                 ? "text-[#2F7CEF] bg-[#EFF6FF]"
                 : "text-slate-700 hover:text-[#2F7CEF] hover:bg-slate-50"
@@ -182,7 +182,7 @@ export function Header() {
           {/* Desktop Primary CTA: Contact Us */}
           <Link
             href="/contact"
-            className="ml-3 xl:ml-4 rounded-full bg-[#2F7CEF] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
+            className="ml-4 lg:ml-6 xl:ml-8 rounded-full bg-[#2F7CEF] px-5 sm:px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
             onClick={() => {
               trackEvent({
                 name: "cta_click",
