@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-slate-50 min-h-screen py-16 md:py-24 text-[#0E2539]">
+    <div className="bg-slate-50 min-h-screen py-12 md:py-16 text-[#0E2539]">
       <div className="shell">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
           {/* Left Column: Heading, Supporting Copy, Trust Notes */}
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-4">
@@ -32,14 +32,14 @@ export default function ContactPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
               Tell us where quality hurts.
             </h1>
-            <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
               Share a few details about your product, current QA setup, release cycle,
               or the specific quality problem you&apos;re trying to solve. An NCL QA specialist
               will review your submission and follow up directly.
             </p>
 
             {/* Trust and Response Guarantees */}
-            <div className="mt-10 space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="mt-6 space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-start gap-3">
                 <div className="grid h-8 w-8 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] shrink-0 mt-0.5">
                   <Clock className="h-4 w-4" />

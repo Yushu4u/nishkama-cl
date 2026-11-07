@@ -9,8 +9,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-slate-800 bg-[#0E2539] text-slate-300 transition-smooth">
-      <div className="shell py-16 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
+      <div className="shell py-12 md:py-16">
+        <div className="grid gap-10 lg:gap-12 lg:grid-cols-12">
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link

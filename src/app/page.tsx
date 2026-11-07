@@ -13,10 +13,10 @@ export default function HomePage() {
       />
 
       {/* 1. HERO SECTION (Centrally Justified Authority, Tests Assured-Style) */}
-      <section className="relative pt-16 pb-12 sm:pt-24 sm:pb-16">
+      <section className="relative pt-12 pb-8 sm:pt-16 sm:pb-12">
         <div className="shell text-center">
           {/* Preserved Eyebrow Badge (Centered) */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-8 mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-5 mx-auto">
             <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" />
             <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2F7CEF]">
               Independent Software QA
@@ -30,23 +30,23 @@ export default function HomePage() {
           </h1>
 
           {/* Official Doc Subhead (Centered) */}
-          <p className="mt-6 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl mx-auto">
             We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
           </p>
 
-          {/* 3 Initial Action Tiles (Above Trust Indicators) */}
-          <div className="mt-8 flex flex-wrap justify-center items-center gap-3.5">
+          {/* Action Tiles (Distinct hierarchy: Solid Primary CTA + Secondary & Tertiary) */}
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3.5">
             <Link
               href="/services"
-              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
-            >
-              Our Expertise
-            </Link>
-            <Link
-              href="/services"
-              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
+              className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5"
             >
               Explore QA Services
+            </Link>
+            <Link
+              href="/quality-advocacy"
+              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
+            >
+              Quality Advocacy
             </Link>
             <Link
               href="/careers"
@@ -56,8 +56,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Trust Indicators (Centered Row Directly Below 3 Initial Tiles) */}
-          <div className="mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
+          {/* Trust Indicators (Centered Row Directly Below Action Tiles) */}
+          <div className="mt-7 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
               <span>Independent QA Perspective</span>

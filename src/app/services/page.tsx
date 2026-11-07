@@ -15,19 +15,19 @@ export default function ServicesPage() {
   return (
     <div className="bg-white text-[#0E2539]">
       {/* 1. HERO SECTION (Identical structure & padding to About page hero) */}
-      <section className="border-b border-slate-200/80 bg-white py-16 md:py-24">
+      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">QA SERVICES CATALOG</span>
-            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
               Independent QA built around product risk.
             </h1>
-            <div className="mt-6 max-w-2xl">
+            <div className="mt-4 max-w-2xl">
               <p className="text-base sm:text-lg leading-relaxed text-slate-600">
                 Nishkama CodeLab provides practical, independent QA services across 9 specialized disciplines.
                 We uncover critical edge cases, eliminate happy-path bias, and deliver verifiable release confidence.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-6 flex flex-wrap gap-3.5">
                 <Button href="/contact" variant="primary" size="lg" withArrow>
                   Work With Us
                 </Button>
@@ -41,11 +41,11 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. ALL 9 SERVICES DIRECTORY (Tests Assured-style dropdowns, zero boxed content) */}
-      <section className="border-b border-slate-200/80 bg-slate-50/70 py-16 md:py-24">
+      <section className="border-b border-slate-200/80 bg-slate-50/70 py-12 md:py-16">
         <div className="shell">
-          <div className="max-w-3xl mb-10">
+          <div className="max-w-3xl mb-8">
             <span className="badge-pill">OUR 9 DISCIPLINES</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
               Every layer of product quality, covered.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -58,7 +58,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. THREE EXECUTION STANDARDS (Identical structure to About page convictions) */}
-      <section className="border-b border-slate-200/80 bg-white py-16 md:py-24">
+      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">OUR STANDARDS</span>
@@ -67,8 +67,8 @@ export default function ServicesPage() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-[#BFDBFE] transition-all">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
               <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                 <Cpu className="h-5 w-5" />
               </div>
@@ -80,7 +80,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-[#BFDBFE] transition-all">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
               <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                 <Video className="h-5 w-5" />
               </div>
@@ -92,7 +92,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm hover:border-[#BFDBFE] transition-all">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
               <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                 <CheckCheck className="h-5 w-5" />
               </div>
@@ -108,19 +108,19 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. CALLOUT BAND (Identical to About page callout) */}
-      <section className="bg-[#0E2539] text-white py-16 md:py-24">
+      <section className="bg-[#0E2539] text-white py-12 md:py-16">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
             GET IN TOUCH
           </span>
-          <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
             Ready for an independent quality partner?
           </h2>
-          <p className="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
             Let&apos;s discuss how Nishkama CodeLab can plug into your release cycles and
             elevate product confidence across all 9 disciplines.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Button href="/contact" variant="primary" size="lg" withArrow>
               Start a QA Conversation
             </Button>

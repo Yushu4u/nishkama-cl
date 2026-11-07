@@ -33,20 +33,20 @@ export default function HowWeWorkPage() {
   return (
     <div className="bg-white text-slate-900">
       {/* 1. HERO SECTION */}
-      <section className="border-b border-slate-200/80 bg-white py-16 md:py-24">
+      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">OUR PROCESS</span>
-            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08]">
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08]">
               Simple process. Clear evidence. Actionable outcomes.
             </h1>
-            <div className="mt-6 max-w-2xl">
+            <div className="mt-4 max-w-2xl">
               <p className="text-base sm:text-lg leading-relaxed text-slate-600">
                 Quality engineering should accelerate your delivery, not slow it down.
                 We provide a disciplined, transparent testing workflow that fits into your sprint
                 cadence and gives product leaders absolute release clarity.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-6 flex flex-wrap gap-3.5">
                 <Button href="/contact" variant="primary" size="lg" withArrow>
                   Talk to a QA Expert
                 </Button>
@@ -60,25 +60,25 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* 2. CORE QUALITY PRINCIPLES */}
-      <section className="border-b border-slate-200/80 bg-slate-50/70 py-16 md:py-24">
+      <section className="border-b border-slate-200/80 bg-slate-50/70 py-12 md:py-16">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">GUIDING STANDARDS</span>
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
               How we approach every test cycle.
             </h2>
-            <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
               Seven non-negotiable principles that shape the rigor and clarity of our work.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {qaPrinciples.map((prin) => (
               <div
                 key={prin.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-all"
+                className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs hover:shadow-sm transition-all"
               >
-                <div className="flex items-center gap-2.5 mb-3">
+                <div className="flex items-center gap-2.5 mb-2.5">
                   <div className="h-8 w-8 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] flex items-center justify-center text-[#2F7CEF]">
                     <ShieldCheck className="h-4 w-4" />
                   </div>
@@ -98,7 +98,7 @@ export default function HowWeWorkPage() {
       {/* 3. THE SIX STAGES IN DETAIL */}
       <section
         id="six-stages"
-        className="border-b border-slate-200/80 bg-white py-16 md:py-24"
+        className="border-b border-slate-200/80 bg-white py-12 md:py-16"
       >
         <div className="shell">
           <div className="max-w-3xl">
@@ -106,27 +106,27 @@ export default function HowWeWorkPage() {
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
               From first discovery to release sign-off.
             </h2>
-            <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
               Every stage has an unambiguous purpose, concrete activities, and tangible outputs.
             </p>
           </div>
 
-          <div className="mt-14 space-y-6">
+          <div className="mt-8 space-y-4 sm:space-y-5">
             {processStages.map((stage, idx) => (
               <div
                 key={stage.step}
-                className="rounded-2xl border border-slate-200 bg-slate-50/50 p-7 md:p-8 shadow-sm hover:border-[#2F7CEF]/40 transition-all"
+                className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 md:p-7 shadow-xs hover:border-[#2F7CEF]/40 transition-all"
               >
-                <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/60">
+                <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200/60">
                   <div className="flex items-center gap-4">
-                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
+                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                       {stageIcons[idx] || <Search className="h-5 w-5" />}
                     </span>
                     <div>
                       <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
                         STAGE {stage.step}
                       </span>
-                      <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+                      <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
                         {stage.name}
                       </h3>
                     </div>
@@ -137,7 +137,7 @@ export default function HowWeWorkPage() {
                   </p>
                 </div>
 
-                <div className="mt-6 grid gap-8 lg:grid-cols-12">
+                <div className="mt-5 grid gap-6 lg:grid-cols-12">
                   {/* Purpose */}
                   <div className="lg:col-span-4">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
@@ -187,23 +187,23 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* 4. ENGAGEMENT MODELS RECAP */}
-      <section className="border-b border-slate-200/80 bg-slate-50/70 py-16 md:py-24">
+      <section className="border-b border-slate-200/80 bg-slate-50/70 py-12 md:py-16">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="badge-pill">ENGAGEMENT OPTIONS</span>
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
               How we engage with your team.
             </h2>
-            <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
               Whether you need a two-week assessment sprint or a dedicated QA partner embedded in your team.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {engagementModels.map((em) => (
               <div
                 key={em.id}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between"
+                className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs flex flex-col justify-between hover:border-[#BFDBFE] transition-all"
               >
                 <div>
                   <div className="flex justify-between items-center pb-3 border-b border-slate-100">
@@ -212,14 +212,14 @@ export default function HowWeWorkPage() {
                     </span>
                     <span className="text-xs font-bold text-[#2F7CEF]">{em.number}</span>
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-slate-900">
+                  <h3 className="mt-3.5 text-lg font-bold text-slate-900">
                     {em.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-slate-600">
                     {em.description}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-slate-100">
+                <div className="mt-5 pt-3.5 border-t border-slate-100">
                   <Button
                     href={`/contact?need=${em.id.replace("-qa", "").replace("-partner", "")}`}
                     variant="outline"
@@ -237,19 +237,19 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* 5. CALLOUT BANNER */}
-      <section className="bg-[#0E2539] text-white py-16 md:py-24 border-t border-[#2F7CEF]/20">
+      <section className="bg-[#0E2539] text-white py-12 md:py-16 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
             READY TO PARTNER?
           </span>
-          <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
             Let&apos;s build release confidence together.
           </h2>
-          <p className="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-3 text-base sm:text-lg text-slate-300 leading-relaxed">
             Schedule a walkthrough with our testing team. We&apos;ll discuss your product
             architecture and design an engagement that delivers immediate results.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Button href="/contact" variant="primary" size="lg" withArrow>
               Plan Your QA Engagement
             </Button>
