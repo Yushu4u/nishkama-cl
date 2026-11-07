@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Ear, Hammer, Eye } from "lucide-react";
+import { Bug, Eye, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
@@ -51,12 +51,12 @@ export default function QualityAdvocacyPage() {
             </h2>
             <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
               Traditional testing focuses almost exclusively on technical verification.
-              Quality Advocacy layers experiential validation and customer telemetry on top.
+              Quality Advocacy unites deep bug hunting, continuous dogfooding, and an uncompromising reality check.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {/* Lens 1: BREAK IT */}
+            {/* Lens 1: BUG HUNTING */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
@@ -64,15 +64,15 @@ export default function QualityAdvocacyPage() {
                     LENS 01
                   </span>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
-                    BREAK IT
+                    BUG HUNTING
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                    <Hammer className="h-5 w-5" />
+                    <Bug className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Adversarial QA
+                    Bug Hunting
                   </h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-slate-600">
@@ -94,7 +94,7 @@ export default function QualityAdvocacyPage() {
               </div>
             </div>
 
-            {/* Lens 2: USE IT */}
+            {/* Lens 2: DOGFOODING */}
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
@@ -102,7 +102,7 @@ export default function QualityAdvocacyPage() {
                     LENS 02
                   </span>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
-                    USE IT
+                    DOGFOODING
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
@@ -110,7 +110,7 @@ export default function QualityAdvocacyPage() {
                     <Eye className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Product Dogfooding
+                    Dogfooding
                   </h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-slate-600">
@@ -132,7 +132,7 @@ export default function QualityAdvocacyPage() {
               </div>
             </div>
 
-            {/* Lens 3: LISTEN TO IT */}
+            {/* Lens 3: REALITY CHECK */}
             <div className="rounded-2xl border border-[#BFDBFE] bg-gradient-to-b from-[#EFF6FF]/60 via-white to-white p-8 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-[#BFDBFE]/60">
@@ -140,21 +140,21 @@ export default function QualityAdvocacyPage() {
                     LENS 03 (Differentiator)
                   </span>
                   <span className="rounded-full bg-[#2F7CEF] px-3 py-1 text-xs font-bold text-white">
-                    LISTEN TO IT
+                    REALITY CHECK
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#2F7CEF] text-white shadow-sm">
-                    <Ear className="h-5 w-5" />
+                    <CheckCircle2 className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Customer Signals
+                    Reality Check
                   </h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-slate-600">
-                  Study customer pain points, support tickets, reviews, and telemetry to identify
-                  recurring experience problems. We turn quiet customer attrition into concrete
-                  engineering priorities.
+                  Compare product promises against real-world customer reality. We study real customer
+                  signals, telemetry drops, and user feedback to give founders and engineering leads an
+                  honest, unvarnished quality verdict.
                 </p>
 
                 <div className="mt-6 pt-5 border-t border-[#BFDBFE]/60 space-y-2 text-xs text-slate-600">
@@ -166,7 +166,7 @@ export default function QualityAdvocacyPage() {
               </div>
 
               <div className="mt-8 pt-4 border-t border-[#BFDBFE]/60 text-xs font-bold text-[#2F7CEF]">
-                Mandate: &ldquo;What are customers actively struggling with?&rdquo;
+                Mandate: &ldquo;Is the product genuinely ready for paying customers?&rdquo;
               </div>
             </div>
           </div>
