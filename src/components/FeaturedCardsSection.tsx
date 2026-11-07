@@ -41,10 +41,10 @@ const cards: ShowcaseCard[] = [
 
 export function FeaturedCardsSection() {
   return (
-    <section id="building" className="py-14 sm:py-20 border-b border-slate-200/80 bg-white">
+    <section id="building" className="py-10 sm:py-14 border-b border-slate-200/80 bg-white">
       <div className="shell">
         {/* Section Header (Tests Assured Style) */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-9">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
             CORE QA ARCHITECTURE
           </span>
@@ -102,7 +102,7 @@ export function FeaturedCardsSection() {
         </div>
 
         {/* Rest of Two Tiles Kept in Last */}
-        <div className="mt-10 sm:mt-12 flex flex-wrap justify-center items-center gap-3.5">
+        <div className="mt-8 sm:mt-10 flex flex-wrap justify-center items-center gap-3.5">
           <Link
             href="/quality-advocacy"
             className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"

@@ -67,7 +67,7 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
     filteredServices.every((s) => !!openItems[s.id]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Category Tabs & Expand/Collapse Toolbar */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2 border-b border-slate-200">
         <div className="flex flex-wrap items-center gap-2">
@@ -141,7 +141,7 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
       </div>
 
       {/* Services List (Tests Assured-style dropdown accordion, NO nested boxes) */}
-      <div className="space-y-4 sm:space-y-5">
+      <div className="space-y-3.5 sm:space-y-4">
         {filteredServices.map((service) => {
           const isOpen = !!openItems[service.id];
           return (
@@ -154,7 +154,7 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
               }`}
             >
               {/* Card Header & Toggle Button */}
-              <div className="p-6 sm:p-7">
+              <div className="p-5 sm:p-6">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div className="flex items-start gap-3.5">
                     <div className="mt-0.5 shrink-0 grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] border border-[#BFDBFE]">
