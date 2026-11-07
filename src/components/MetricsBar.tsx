@@ -18,7 +18,7 @@ const metrics = [
     icon: MonitorCheck,
     value: "100+",
     label: "Device & OS Matrices",
-    subtext: "Validated on physical hardware",
+    subtext: "Validated across real devices",
   },
   {
     icon: Compass,

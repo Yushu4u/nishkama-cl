@@ -91,7 +91,7 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
                 : "bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-slate-900"
             }`}
           >
-            Immersive & Hardware (1)
+            XR & Immersive (1)
           </button>
           <button
             type="button"

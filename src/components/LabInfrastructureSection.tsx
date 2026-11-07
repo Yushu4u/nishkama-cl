@@ -32,18 +32,18 @@ const views: LabView[] = [
     tabLabel: "Physical Device Matrix",
     imageSrc: "/images/qa-device-lab.jpg",
     imageAlt:
-      "Nishkama CodeLab physical device testing bench with iPhone 15 Pro, Android flagship, iPad Pro, and Apple Vision Pro headset running active test telemetry",
-    telemetryTag: "PHYSICAL LAB MATRIX • REAL SILICON",
-    badges: ["iOS 17+ & Android 14+", "iPadOS & Tablet Matrix", "VisionOS & Meta Quest 3"],
+      "Nishkama CodeLab device testing bench running active test telemetry",
+    telemetryTag: "DEVICE LAB MATRIX • REAL-WORLD TESTING",
+    badges: ["iOS & Android Mobile Matrix", "Tablet & Responsive Devices", "Modern Browser Engines"],
   },
   {
     id: "telemetry",
-    tabLabel: "Root-Cause Telemetry",
+    tabLabel: "API & Log Inspection",
     imageSrc: "/images/qa-telemetry-workstation.jpg",
     imageAlt:
-      "Nishkama CodeLab dual-monitor QA engineering workstation with live e-commerce test app, API request inspector, and terminal error logs",
-    telemetryTag: "ROOT-CAUSE WORKSTATION • API LOG INSPECTOR",
-    badges: ["Live Network Payload Tracing", "Async Race Condition Catch", "JSON Schema Drift"],
+      "Nishkama CodeLab QA engineering workstation with API request inspector and console error logs",
+    telemetryTag: "QA WORKSTATION • API & CONSOLE LOG INSPECTOR",
+    badges: ["Network Request Tracing", "Edge Case & Error State Logs", "API Contract Validation"],
   },
 ];
 
@@ -66,15 +66,15 @@ export function LabInfrastructureSection() {
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-3 py-1 text-xs font-bold text-[#2F7CEF] mb-3">
             <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF]" />
             <span className="uppercase tracking-wider font-mono text-[11px]">
-              LAB INFRASTRUCTURE &amp; PHYSICAL DEVICE MATRIX
+              TEST LAB &amp; REAL DEVICE COVERAGE
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0E2539] leading-[1.12]">
-            Real Silicon. Real Network Drops.{" "}
-            <span className="text-[#2F7CEF]">Zero Emulation Shortcuts.</span>
+            Real Devices. Real Conditions.{" "}
+            <span className="text-[#2F7CEF]">Complete Test Coverage.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Automated simulators miss touch response latency, low-memory crashes, thermal throttling, and spatial tracking drift. We run your release candidates on dedicated physical hardware under enterprise NDA.
+            Emulators and synthetic tests miss touch latency, memory leaks, and real-world network fluctuations. We validate your release candidates across real physical devices and environments under strict NDA.
           </p>
         </div>
 
@@ -154,9 +154,9 @@ export function LabInfrastructureSection() {
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 px-1 font-mono">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-emerald-600" />
-                <span>Isolated hardware sandboxes wiped between client release runs</span>
+                <span>Clean test environments refreshed between client release runs</span>
               </span>
-              <span className="text-slate-400">Zero Emulation Bias</span>
+              <span className="text-slate-400">Authentic User Conditions</span>
             </div>
           </div>
 
@@ -207,12 +207,12 @@ export function LabInfrastructureSection() {
                     CAPABILITY 02
                   </span>
                   <h3 className="text-base font-bold text-[#0E2539]">
-                    Root-Cause Engineering Telemetry
+                    Network &amp; API Log Inspection
                   </h3>
                 </div>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                We don&apos;t simply file &ldquo;Button doesn&apos;t click&rdquo; reports. Our dual-monitor workstations inspect real-time network payloads, status codes, and console logs to isolate the exact failing API contract.
+                We don&apos;t simply file &ldquo;Button doesn&apos;t click&rdquo; reports. Our workstations inspect real-time network requests, status codes, and console error logs to help your developers quickly isolate bugs.
               </p>
             </div>
 

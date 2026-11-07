@@ -49,7 +49,7 @@ export default function ServicesPage() {
               Every layer of product quality, covered.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Explore our complete QA disciplines below. Click any discipline to view testing capabilities, hardware scope, and verification methodologies.
+              Explore our complete QA disciplines below. Click any discipline to view testing capabilities, coverage scope, and verification methodologies.
             </p>
           </div>
 
@@ -73,10 +73,10 @@ export default function ServicesPage() {
                 <Cpu className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-bold text-[#0E2539]">
-                1. Real Hardware & Devices
+                1. Real Devices & Environments
               </h3>
               <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                We test on real physical iPhones, Androids, VisionOS headsets, and workstations. Emulators can never simulate battery thermals, touch friction, or sensor drift.
+                We test on actual physical iPhones, Androids, tablets, and desktop workstations. Emulators cannot replicate authentic touch responsiveness, real-world network drops, or background app switching.
               </p>
             </div>
 

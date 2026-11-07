@@ -28,7 +28,7 @@ export const qaExpertiseList: QAExpertiseItem[] = [
     id: "compatibility",
     name: "Compatibility Testing",
     category: "Cross-Platform",
-    description: "Rigorous testing across browsers, operating systems, hardware form factors, and screen densities for universal consistency.",
+    description: "Rigorous testing across browsers, operating systems, device form factors, and screen densities for universal consistency.",
   },
   {
     id: "usability",

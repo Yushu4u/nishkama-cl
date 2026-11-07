@@ -49,7 +49,7 @@ const openAdvocacyRoles: Role[] = [
     description:
       "Advocate for the end-user by conducting unscripted exploratory journeys, user flow stress-testing, and functional verification across physical iOS, Android, and web platforms. You will hunt the edge-case blind spots and confusing friction that automated scripts miss.",
     advocacyFocus: [
-      "Rigorous functional & exploratory test execution on physical silicon",
+      "Rigorous functional & exploratory test execution across real devices and platforms",
       "Crafting crystal-clear repro steps backed by logs, traces, and video proofs",
       "Zero happy-path bias — relentlessly testing error states, network drops, and boundary inputs",
     ],
@@ -64,13 +64,13 @@ const openAdvocacyRoles: Role[] = [
     type: "Full-Time",
     location: "Remote",
     icon: Award,
-    highlight: "Regression & Technical Telemetry",
+    highlight: "Regression & Defect Investigation",
     description:
-      "Own critical user-journey regression suites, API contract telemetry, and cross-platform compatibility matrices. Working alongside engineering sprint teams, you will isolate complex race conditions, trace failing payloads, and safeguard system health across rapid release cycles.",
+      "Own critical user-journey regression suites, API verification, and cross-platform compatibility matrices. Working alongside engineering sprint teams, you will isolate edge cases, trace failing requests, and safeguard product stability across release cycles.",
     advocacyFocus: [
-      "Deep network payload inspection (DevTools, Postman, Proxyman) and schema verification",
-      "Designing robust regression smoke suites integrated into CI/CD deployment pipelines",
-      "Multi-device ecosystem sweeps across flagship smartphones, foldables, and spatial hardware",
+      "Network request inspection (DevTools, Postman) and response validation",
+      "Designing robust regression test suites integrated into deployment pipelines",
+      "Multi-device sweeps across flagship smartphones, tablets, and mobile operating systems",
     ],
     mailtoSubject: "Application for Senior Quality Advocate (3-5 Years Experience)",
   },
@@ -83,13 +83,13 @@ const openAdvocacyRoles: Role[] = [
     type: "Full-Time",
     location: "Remote / Hybrid",
     icon: Users,
-    highlight: "Quality Strategy & Governance",
+    highlight: "Quality Strategy & Leadership",
     description:
-      "Set the holistic quality standard across our client engagements, mentor our advocate community, and partner directly with engineering leaders and founders. You will define release readiness frameworks, conduct forensic quality audits, and serve as the objective go/no-go quality conscience.",
+      "Set the holistic quality standard across our client engagements, mentor our advocate community, and partner directly with engineering leaders and founders. You will define release readiness frameworks, conduct thorough quality audits, and guide objective launch decisions.",
     advocacyFocus: [
-      "Architecting enterprise quality frameworks, diagnostic scorecards, and coverage roadmaps",
-      "Coaching and leveling up advocates in investigative testing and technical communications",
-      "High-stakes go/no-go release governance and executive stakeholder advisories",
+      "Architecting quality frameworks, diagnostic scorecards, and coverage roadmaps",
+      "Coaching and leveling up advocates in investigative testing and clear bug reporting",
+      "Objective release readiness evaluation and clear stakeholder communication",
     ],
     mailtoSubject: "Application for Lead Quality Advocate (9+ Years Experience)",
   },

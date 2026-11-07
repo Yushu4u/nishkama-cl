@@ -312,7 +312,7 @@ export const detailedServices: DetailedService[] = [
     tagline: "Verification across diverse operating systems, browsers, screen resolutions, and physical devices.",
     shortDescription: "Validate your product across real physical devices and operating environments to eliminate anomalies.",
     longDescription:
-      "Modern users access software across an increasingly fragmented ecosystem of hardware, screen sizes, browser engines, and operating systems. We validate your product across real physical devices and operating environments to eliminate platform-specific anomalies.",
+      "Modern users access software across an increasingly fragmented ecosystem of devices, screen sizes, browser engines, and operating systems. We validate your product across real physical devices and operating environments to eliminate platform-specific anomalies.",
     whyItMatters:
       "Your web app might look pristine on an engineer's M3 MacBook Pro running Chrome, but broken on an Android tablet or Safari on iOS 16. Platform-specific glitches create instant bounce rates.",
     iconKey: "monitor",
@@ -327,7 +327,7 @@ export const detailedServices: DetailedService[] = [
         ],
       },
       {
-        heading: "Mobile Hardware & OS",
+        heading: "Mobile Devices & OS",
         items: [
           "Real device testing across Apple iPhones & iPads (current & n-2 iOS)",
           "Android device fragmentation (Samsung, Google Pixel, Motorola)",
@@ -367,7 +367,7 @@ export const detailedServices: DetailedService[] = [
     recommendedFor: "Public SaaS platforms, customer-facing web apps, and mobile applications.",
     executionSteps: [
       { step: "01", title: "Device Matrix Definition", desc: "Select device/browser tiers based on your Google Analytics user breakdown." },
-      { step: "02", title: "Physical & Virtual Sweeps", desc: "Execute core journeys on real hardware and certified device labs." },
+      { step: "02", title: "Physical & Virtual Sweeps", desc: "Execute core journeys on real devices and certified device labs." },
       { step: "03", title: "Visual & Functional Audits", desc: "Document breakpoint flaws, clipped controls, and rendering inconsistencies." },
       { step: "04", title: "Resolution Guide", desc: "Deliver actionable CSS/JS fix recommendations tailored to each engine." },
     ],
@@ -681,7 +681,7 @@ export const homeServiceOverviews: ServiceOverview[] = [
     title: "Compatibility Testing",
     description: "Verification across diverse operating systems, browsers, screen resolutions, and physical devices.",
     href: "/services/compatibility-testing",
-    points: ["Cross-Browser Matrix", "iOS & Android Hardware", "Responsive Breakpoints", "High-DPI Displays"],
+    points: ["Cross-Browser Matrix", "iOS & Android Devices", "Responsive Breakpoints", "High-DPI Displays"],
   },
   {
     id: "usability-testing",

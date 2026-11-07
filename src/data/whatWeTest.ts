@@ -19,7 +19,7 @@ export const platformCoverages: PlatformCoverage[] = [
     id: "mobile-apps",
     title: "Mobile Applications",
     description:
-      "Native iOS and Android apps, cross-platform builds (Flutter, React Native), and mobile responsive views tested on real physical hardware.",
+      "Native iOS and Android apps, cross-platform builds (Flutter, React Native), and mobile responsive views tested on real physical devices.",
     examples: ["iOS (iPhone, iPad)", "Android (Multiple OEMs)", "React Native & Flutter"],
     iconKey: "smartphone",
   },
@@ -43,7 +43,7 @@ export const platformCoverages: PlatformCoverage[] = [
     id: "cross-platform",
     title: "Cross-Platform Experiences",
     description:
-      "Products that span mobile, web, and hardware, requiring synchronized state, push notifications, and seamless device handoff.",
+      "Products that span mobile, tablet, and web, requiring synchronized state, push notifications, and seamless device handoff.",
     examples: ["Multi-Device Sessions", "Sync & Offline Queues", "Push Notification Handlers"],
     iconKey: "layers",
   },

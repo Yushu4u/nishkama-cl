@@ -21,17 +21,17 @@ export const allServicesData: ServiceItem[] = [
     slug: "xr-testing",
     title: "XR & Spatial Computing QA",
     category: "immersive",
-    categoryLabel: "Immersive & Hardware",
+    categoryLabel: "XR & Immersive",
     summary:
-      "Comprehensive testing for AR, VR, and MR headsets, spatial tracking systems, optics, and 3D spatial applications across VisionOS, Meta Quest, and WebXR.",
+      "Comprehensive testing for AR, VR, and MR headsets, spatial tracking systems, and 3D spatial applications across VisionOS, Meta Quest, and WebXR.",
     capabilities: [
       {
-        heading: "Hardware & Optics",
+        heading: "Supported Devices & Tracking",
         items: [
-          "VR/AR headsets, displays, and micro-OLED optics",
-          "Hand, eye, head, and full-body spatial tracking",
-          "Pass-through latency and camera sensor calibration",
-          "Thermal throttling & battery degradation under load",
+          "VR/AR headsets, displays, and optical viewports",
+          "Hand, eye, head, and spatial tracking accuracy",
+          "Pass-through latency and real-world camera calibration",
+          "Battery usage and performance stability under continuous load",
         ],
       },
       {
@@ -39,17 +39,17 @@ export const allServicesData: ServiceItem[] = [
         items: [
           "VisionOS, HorizonOS, and WebXR browser runtimes",
           "Spatial audio positioning and 3D physics fidelity",
-          "Guardian boundary drift & collision detection",
+          "Boundary calibration and multi-modal interaction",
           "Multi-user avatar synchronization & networking",
         ],
       },
       {
         heading: "How We Test",
         items: [
-          "Native Unity & Unreal Engine test automation rigs",
-          "Physical spatial lab testing in varying lighting conditions",
-          "Automated telemetry capture and frame-rate profiling",
-          "Genuine hardware sweeps with zero software emulation",
+          "Native Unity & Unreal Engine test validation",
+          "Physical lab testing across realistic lighting environments",
+          "Automated performance profiling and frame-rate analysis",
+          "Testing across real headsets and devices",
         ],
       },
     ],
@@ -187,15 +187,15 @@ export const allServicesData: ServiceItem[] = [
     category: "sprint",
     categoryLabel: "Core Sprint QA",
     summary:
-      "Comprehensive testing on physical iOS, Android, macOS, and Windows hardware across all modern browser engines without relying solely on emulators.",
+      "Comprehensive testing across physical iOS, Android, macOS, and Windows devices and modern browser engines without relying solely on emulators.",
     capabilities: [
       {
-        heading: "Physical Hardware",
+        heading: "Supported Platforms & Devices",
         items: [
           "Modern flagship and mid-tier iPhones and Androids",
-          "Foldable devices, iPads, tablets, and rugged displays",
-          "Apple Silicon and Intel macOS workstations",
-          "Windows 10/11 and popular Linux distributions",
+          "Foldable devices, iPads, and Android tablets",
+          "macOS and Windows desktop environments",
+          "Linux distributions and enterprise browser runtimes",
         ],
       },
       {

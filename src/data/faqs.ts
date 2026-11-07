@@ -28,7 +28,7 @@ export const homeFaqs: FaqItem[] = [
     id: "devices-platforms",
     question: "Do you test on real physical devices or simulators?",
     answer:
-      "We prioritize testing on actual physical iOS and Android hardware across varying OS versions and form factors, alongside cross-browser matrices (Chrome, Safari, Firefox, Edge) to catch genuine touch sensitivity, viewport quirks, and hardware-accelerated rendering issues.",
+      "We prioritize testing on actual physical iOS and Android devices across varying OS versions and form factors, alongside cross-browser matrices (Chrome, Safari, Firefox, Edge) to catch genuine touch sensitivity, viewport quirks, and rendering anomalies.",
   },
   {
     id: "engagement-types",

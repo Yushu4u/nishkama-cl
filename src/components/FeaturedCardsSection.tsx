@@ -23,11 +23,11 @@ const cards: ShowcaseCard[] = [
   },
   {
     title: "Multi-Platform & Spatial QA",
-    desc: "Real physical device testing across iOS, Android, web, and spatial computing headsets (Apple Vision Pro, Meta Quest) with zero emulation shortcuts.",
+    desc: "Real physical device testing across iOS, Android, web, and spatial headsets (Apple Vision Pro, Meta Quest) under real-world conditions.",
     image: "/images/spatial-hardware-testing.jpg",
-    alt: "Apple Vision Pro, iPhone 15 Pro, and Android flagship physical hardware test bench",
+    alt: "Multi-platform device testing across mobile, tablet, and spatial headsets",
     href: "/services/xr-testing",
-    tag: "PHYSICAL HARDWARE",
+    tag: "DEVICE COVERAGE",
   },
   {
     title: "Quality Advocacy & User Experience",
@@ -52,7 +52,7 @@ export function FeaturedCardsSection() {
             Quality Disciplines Across Platforms
           </h2>
           <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-            From technical defect discovery and physical hardware testing to product-minded user advocacy, explore our core quality disciplines.
+            From technical defect discovery and multi-device testing to product-minded user advocacy, explore our core quality disciplines.
           </p>
         </div>
 
