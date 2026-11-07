@@ -8,7 +8,6 @@ import {
   MapPin,
   Clock,
   Sparkles,
-  Users,
   Award,
 } from "lucide-react";
 import { Button } from "@/components/Button";
@@ -17,7 +16,7 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "Careers — Join the Quality Advocates | Nishkama CodeLab",
   description:
-    "We don't hire test runners; we hire Quality Advocates. Explore our 13 active openings: Quality Advocate (1–2 yrs), Senior Quality Advocate (2–3 yrs), and Lead Quality Advocate (9+ yrs).",
+    "We don't hire test runners; we hire Quality Advocates. Explore our 18 active openings: Quality Advocate (1–2 yrs) and Senior Advocate (3–5 yrs).",
 };
 
 interface Role {
@@ -39,8 +38,8 @@ const openAdvocacyRoles: Role[] = [
   {
     id: "quality-advocate",
     advocacyTitle: "Quality Advocate",
-    openings: "10 Openings",
-    openingsCount: 10,
+    openings: "15 Vacancies",
+    openingsCount: 15,
     experience: "1–2 Years Experience",
     type: "Full-Time",
     location: "Remote",
@@ -56,11 +55,11 @@ const openAdvocacyRoles: Role[] = [
     mailtoSubject: "Application for Quality Advocate (1-2 Years Experience)",
   },
   {
-    id: "senior-quality-advocate",
-    advocacyTitle: "Senior Quality Advocate",
-    openings: "2 Openings",
-    openingsCount: 2,
-    experience: "2–3 Years Experience",
+    id: "senior-advocate",
+    advocacyTitle: "Senior Advocate",
+    openings: "3 Vacancies",
+    openingsCount: 3,
+    experience: "3–5 Years Experience",
     type: "Full-Time",
     location: "Remote",
     icon: Award,
@@ -72,26 +71,7 @@ const openAdvocacyRoles: Role[] = [
       "Designing robust regression smoke suites integrated into CI/CD deployment pipelines",
       "Multi-device ecosystem sweeps across flagship smartphones, foldables, and spatial hardware",
     ],
-    mailtoSubject: "Application for Senior Quality Advocate (2-3 Years Experience)",
-  },
-  {
-    id: "lead-quality-advocate",
-    advocacyTitle: "Lead Quality Advocate",
-    openings: "1 Opening",
-    openingsCount: 1,
-    experience: "9+ Years Experience",
-    type: "Full-Time",
-    location: "Remote / Hybrid",
-    icon: Users,
-    highlight: "Quality Strategy & Governance",
-    description:
-      "Set the holistic quality standard across our client engagements, mentor our advocate community, and partner directly with engineering leaders and founders. You will define release readiness frameworks, conduct forensic quality audits, and serve as the objective go/no-go quality conscience.",
-    advocacyFocus: [
-      "Architecting enterprise quality frameworks, diagnostic scorecards, and coverage roadmaps",
-      "Coaching and leveling up advocates in investigative testing and technical communications",
-      "High-stakes go/no-go release governance and executive stakeholder advisories",
-    ],
-    mailtoSubject: "Application for Lead Quality Advocate (9+ Years Experience)",
+    mailtoSubject: "Application for Senior Advocate (3-5 Years Experience)",
   },
 ];
 
@@ -121,7 +101,7 @@ export default function CareersPage() {
             <strong className="text-[#0E2539] font-bold">
               {totalOpenings} Quality Advocates
             </strong>{" "}
-            across three experience tiers.
+            across our active experience tiers.
           </p>
 
           {/* Quick Summary Pill Bar */}
