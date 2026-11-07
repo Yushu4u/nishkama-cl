@@ -17,7 +17,7 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "Careers — Join the Quality Advocates | Nishkama CodeLab",
   description:
-    "We don't hire test runners; we hire Quality Advocates. Explore our 19 active openings: Quality Advocate (1–2 yrs), Senior Advocate (3–5 yrs), and Lead Quality Advocate (9+ yrs).",
+    "We don't hire test runners; we hire Quality Advocates. Explore our 19 active openings: Quality Advocate (1–2 yrs), Senior Quality Advocate (3–5 yrs), and Lead Quality Advocate (9+ yrs).",
 };
 
 interface Role {
@@ -56,8 +56,8 @@ const openAdvocacyRoles: Role[] = [
     mailtoSubject: "Application for Quality Advocate (1-2 Years Experience)",
   },
   {
-    id: "senior-advocate",
-    advocacyTitle: "Senior Advocate",
+    id: "senior-quality-advocate",
+    advocacyTitle: "Senior Quality Advocate",
     openings: "3 Vacancies",
     openingsCount: 3,
     experience: "3–5 Years Experience",
@@ -72,7 +72,7 @@ const openAdvocacyRoles: Role[] = [
       "Designing robust regression smoke suites integrated into CI/CD deployment pipelines",
       "Multi-device ecosystem sweeps across flagship smartphones, foldables, and spatial hardware",
     ],
-    mailtoSubject: "Application for Senior Advocate (3-5 Years Experience)",
+    mailtoSubject: "Application for Senior Quality Advocate (3-5 Years Experience)",
   },
   {
     id: "lead-quality-advocate",
