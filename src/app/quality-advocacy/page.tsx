@@ -15,7 +15,7 @@ export default function QualityAdvocacyPage() {
       <section className="border-b border-slate-200/80 bg-white py-16 md:py-24">
         <div className="shell">
           <div className="max-w-3xl">
-            <span className="badge-pill">OUR DIFFERENTIATOR</span>
+            <span className="badge-pill">QUALITY ADVOCACY</span>
             <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08]">
               Don&apos;t just test the product. Advocate for the person using it.
             </h1>
@@ -57,7 +57,7 @@ export default function QualityAdvocacyPage() {
 
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
             {/* Lens 1: BUG HUNTING */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between">
+            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -95,7 +95,7 @@ export default function QualityAdvocacyPage() {
             </div>
 
             {/* Lens 2: DOGFOODING */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between">
+            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -133,18 +133,18 @@ export default function QualityAdvocacyPage() {
             </div>
 
             {/* Lens 3: REALITY CHECK */}
-            <div className="rounded-2xl border border-[#BFDBFE] bg-gradient-to-b from-[#EFF6FF]/60 via-white to-white p-8 shadow-sm flex flex-col justify-between">
+            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col justify-between hover:border-[#BFDBFE] transition-all">
               <div>
-                <div className="flex items-center justify-between pb-6 border-b border-[#BFDBFE]/60">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
-                    LENS 03 (Differentiator)
+                <div className="flex items-center justify-between pb-6 border-b border-slate-100">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    LENS 03
                   </span>
-                  <span className="rounded-full bg-[#2F7CEF] px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
                     REALITY CHECK
                   </span>
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#2F7CEF] text-white shadow-sm">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
@@ -157,7 +157,7 @@ export default function QualityAdvocacyPage() {
                   honest, unvarnished quality verdict.
                 </p>
 
-                <div className="mt-6 pt-5 border-t border-[#BFDBFE]/60 space-y-2 text-xs text-slate-600">
+                <div className="mt-6 pt-5 border-t border-slate-100 space-y-2 text-xs text-slate-600">
                   <p className="font-bold text-slate-800">Key Investigative Focus:</p>
                   <p>• Recurring support ticket patterns &amp; root causes</p>
                   <p>• Churn feedback &amp; negative review sentiment</p>
@@ -165,7 +165,7 @@ export default function QualityAdvocacyPage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#BFDBFE]/60 text-xs font-bold text-[#2F7CEF]">
+              <div className="mt-8 pt-4 border-t border-slate-100 text-xs font-semibold text-[#2F7CEF]">
                 Mandate: &ldquo;Is the product genuinely ready for paying customers?&rdquo;
               </div>
             </div>
