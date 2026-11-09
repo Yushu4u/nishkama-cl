@@ -50,11 +50,12 @@ export function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md transition-smooth">
-      <nav
-        className="shell flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] min-h-[88px] sm:min-h-[94px] lg:min-h-[98px] gap-4"
-        aria-label="Main Navigation"
-      >
+    <>
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md transition-smooth">
+        <nav
+          className="shell flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] min-h-[88px] sm:min-h-[94px] lg:min-h-[98px] gap-4"
+          aria-label="Main Navigation"
+        >
         {/* Brand Logo Lockup */}
         <div className="justify-self-start">
           <Link
@@ -222,93 +223,103 @@ export function Header() {
           </button>
         </div>
       </nav>
+    </header>
 
-      {/* Mobile Navigation Drawer */}
-      {mobileMenuOpen && (
-        <div
-          id="mobile-menu-drawer"
-          className="fixed inset-x-0 top-[88px] sm:top-[94px] lg:top-[98px] bottom-0 z-40 bg-white border-t border-slate-200 p-6 flex flex-col justify-between overflow-y-auto lg:hidden animate-in fade-in slide-in-from-top-4 duration-200"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile Navigation Menu"
-        >
-          <div className="space-y-4">
-            <div className="space-y-1">
-              <Link
-                href="/about"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/about" ? "bg-[#EFF6FF] text-[#2F7CEF]" : "text-slate-800 hover:bg-slate-50"
-                }`}
-              >
-                About
-              </Link>
-
-              <div>
-                <Link
-                  href="/services"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                    pathname.startsWith("/services")
-                      ? "bg-[#EFF6FF] text-[#2F7CEF]"
-                      : "text-slate-800 hover:bg-slate-50"
-                  }`}
-                >
-                  QA Services
-                </Link>
-
-                <div className="ml-4 mt-1 space-y-1 border-l-2 border-slate-100 pl-3">
-                  {siteConfig.serviceSubPages.map((sub) => (
-                    <Link
-                      key={sub.href}
-                      href={sub.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#2F7CEF]"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href="/quality-advocacy"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/quality-advocacy"
-                    ? "bg-[#EFF6FF] text-[#2F7CEF]"
-                    : "text-slate-800 hover:bg-slate-50"
-                }`}
-              >
-                Quality Advocacy
-              </Link>
-
-              <Link
-                href="/careers"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname === "/careers"
-                    ? "bg-[#EFF6FF] text-[#2F7CEF]"
-                    : "text-slate-800 hover:bg-slate-50"
-                }`}
-              >
-                Careers
-              </Link>
-            </div>
-          </div>
-
-          <div className="pt-6 border-t border-slate-100">
+    {/* Mobile Navigation Drawer (Rendered outside <header> so backdrop-blur does not trap fixed positioning) */}
+    {mobileMenuOpen && (
+      <div
+        id="mobile-menu-drawer"
+        className="fixed inset-x-0 top-[88px] sm:top-[94px] bottom-0 z-50 bg-white border-t border-slate-200 p-6 flex flex-col justify-between overflow-y-auto lg:hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation Menu"
+      >
+        <div className="space-y-4">
+          <div className="space-y-1">
             <Link
-              href="/contact"
+              href="/about"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
+              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                pathname === "/about" ? "bg-[#EFF6FF] text-[#2F7CEF]" : "text-slate-800 hover:bg-slate-50"
+              }`}
             >
-              <span>Contact Us</span>
-              <ArrowRight className="h-4 w-4" />
+              About
+            </Link>
+
+            <div>
+              <Link
+                href="/services"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                  pathname.startsWith("/services")
+                    ? "bg-[#EFF6FF] text-[#2F7CEF]"
+                    : "text-slate-800 hover:bg-slate-50"
+                }`}
+              >
+                QA Services
+              </Link>
+
+              <div className="ml-4 mt-1 space-y-1 border-l-2 border-slate-100 pl-3">
+                {siteConfig.serviceSubPages.map((sub) => (
+                  <Link
+                    key={sub.href}
+                    href={sub.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#2F7CEF]"
+                  >
+                    {sub.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              href="/quality-advocacy"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                pathname === "/quality-advocacy"
+                  ? "bg-[#EFF6FF] text-[#2F7CEF]"
+                  : "text-slate-800 hover:bg-slate-50"
+              }`}
+            >
+              Quality Advocacy
+            </Link>
+
+            <Link
+              href="/careers"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                pathname === "/careers"
+                  ? "bg-[#EFF6FF] text-[#2F7CEF]"
+                  : "text-slate-800 hover:bg-slate-50"
+              }`}
+            >
+              <span>Careers</span>
+              <span className="rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider leading-none">
+                Hiring
+              </span>
             </Link>
           </div>
         </div>
-      )}
-    </header>
+
+        <div className="pt-6 border-t border-slate-100 space-y-3">
+          <Link
+            href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
+          >
+            <span>Contact Us</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <div className="text-center text-xs text-slate-500 pt-1">
+            <span>Direct Email: </span>
+            <a href={`mailto:${siteConfig.email}`} className="text-slate-700 font-semibold hover:text-[#2F7CEF]">
+              {siteConfig.email}
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
+  </>
   );
 }
