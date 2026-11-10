@@ -22,6 +22,7 @@ const serviceIcons: Record<string, React.ReactNode> = {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
@@ -30,12 +31,20 @@ export function Header() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setMobileMenuOpen(false);
+        setMobileServicesOpen(false);
         setServicesDropdownOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // Reset mobile sub-menu state when mobile menu closes
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      setMobileServicesOpen(false);
+    }
+  }, [mobileMenuOpen]);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -247,30 +256,58 @@ export function Header() {
             </Link>
 
             <div>
-              <Link
-                href="/services"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                  pathname.startsWith("/services")
-                    ? "bg-[#EFF6FF] text-[#2F7CEF]"
-                    : "text-slate-800 hover:bg-slate-50"
+              <div
+                className={`flex items-center justify-between rounded-xl px-4 py-3 transition-colors ${
+                  pathname.startsWith("/services") ? "bg-[#EFF6FF]" : "hover:bg-slate-50"
                 }`}
               >
-                QA Services
-              </Link>
-
-              <div className="ml-4 mt-1 space-y-1 border-l-2 border-slate-100 pl-3">
-                {siteConfig.serviceSubPages.map((sub) => (
-                  <Link
-                    key={sub.href}
-                    href={sub.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#2F7CEF]"
-                  >
-                    {sub.label}
-                  </Link>
-                ))}
+                <Link
+                  href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-base font-bold flex-1 transition-colors ${
+                    pathname.startsWith("/services") ? "text-[#2F7CEF]" : "text-slate-800"
+                  }`}
+                >
+                  QA Services
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="p-1 -mr-1 text-slate-400 hover:text-[#2F7CEF] transition-colors focus:outline-none"
+                  aria-label={mobileServicesOpen ? "Collapse QA Services submenu" : "Expand QA Services submenu"}
+                  aria-expanded={mobileServicesOpen}
+                >
+                  <ChevronDown
+                    className={`h-5 w-5 transition-transform duration-200 ${
+                      mobileServicesOpen ? "rotate-180 text-[#2F7CEF]" : ""
+                    }`}
+                  />
+                </button>
               </div>
+
+              {mobileServicesOpen && (
+                <div className="ml-5 mt-1 space-y-1 border-l-2 border-slate-100 pl-3.5 animate-in fade-in slide-in-from-top-1 duration-150">
+                  {siteConfig.serviceSubPages.map((sub) => (
+                    <Link
+                      key={sub.href}
+                      href={sub.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-2 text-xs font-semibold text-slate-600 hover:text-[#2F7CEF] transition-colors"
+                    >
+                      {sub.label}
+                    </Link>
+                  ))}
+                  <div className="pt-1 mt-1 border-t border-slate-100">
+                    <Link
+                      href="/services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1.5 text-xs font-bold text-[#2F7CEF]"
+                    >
+                      View All Catalog →
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
 
             <Link
