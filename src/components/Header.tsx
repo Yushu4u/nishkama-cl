@@ -325,16 +325,13 @@ export function Header() {
             <Link
               href="/careers"
               onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
                 pathname === "/careers"
                   ? "bg-[#EFF6FF] text-[#2F7CEF]"
                   : "text-slate-800 hover:bg-slate-50"
               }`}
             >
-              <span>Careers</span>
-              <span className="rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider leading-none">
-                Hiring
-              </span>
+              Careers
             </Link>
           </div>
         </div>
