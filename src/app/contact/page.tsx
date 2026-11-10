@@ -74,7 +74,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h2 className="text-xs font-bold uppercase tracking-wider text-[#0E2539]">
-                    Direct Email
+                    Email
                   </h2>
                   <a
                     href={`mailto:${siteConfig.email}`}

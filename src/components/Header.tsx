@@ -346,7 +346,7 @@ export function Header() {
             <ArrowRight className="h-4 w-4" />
           </Link>
           <div className="text-center text-xs text-slate-500 pt-1">
-            <span>Direct Email: </span>
+            <span>Email: </span>
             <a href={`mailto:${siteConfig.email}`} className="text-slate-700 font-semibold hover:text-[#2F7CEF]">
               {siteConfig.email}
             </a>
