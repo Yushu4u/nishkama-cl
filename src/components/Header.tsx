@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ChevronDown, CheckSquare, Compass, ShieldCheck, Monitor, UserCheck, Workflow, Rocket, Search, Glasses } from "lucide-react";
+import { Menu, X, ChevronDown, CheckSquare, Compass, ShieldCheck, Monitor, UserCheck, Workflow, Rocket, Search, Glasses } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { trackEvent } from "@/lib/analytics";
 
@@ -336,16 +336,8 @@ export function Header() {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-100 space-y-3">
-          <Link
-            href="/contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2F7CEF] px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8]"
-          >
-            <span>Contact Us</span>
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <div className="text-center text-xs text-slate-500 pt-1">
+        <div className="pt-6 border-t border-slate-100">
+          <div className="text-center text-xs text-slate-500">
             <span>Email: </span>
             <a href={`mailto:${siteConfig.email}`} className="text-slate-700 font-semibold hover:text-[#2F7CEF]">
               {siteConfig.email}
