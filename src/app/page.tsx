@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { FeaturedCardsSection } from "@/components/FeaturedCardsSection";
-import { HowWeWorkPipeline } from "@/components/HowWeWorkPipeline";
 
 export default function HomePage() {
   return (
@@ -63,10 +62,7 @@ export default function HomePage() {
       {/* 2. CORE QA ARCHITECTURE: 3-CARD SHOWCASE */}
       <FeaturedCardsSection />
 
-      {/* 3. HOW WE WORK: 6-STAGE CADENCE */}
-      <HowWeWorkPipeline />
-
-      {/* 4. CALLOUT BANNER (Pre-Footer Consultation) */}
+      {/* 3. CALLOUT BANNER (Pre-Footer Consultation) */}
       <section className="bg-[#0E2539] text-white py-14 sm:py-16 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
