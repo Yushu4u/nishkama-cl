@@ -41,65 +41,8 @@ export default function QualityAdvocacyPage() {
       {/* 2. THE THREE CORE LENSES */}
       <QualityLensesShowcase />
 
-      {/* 3. HOW OBSERVATIONS BECOME ACTIONABLE EVIDENCE */}
+      {/* 3. COMPARISON TABLE: TRADITIONAL QA VS QUALITY ADVOCACY */}
       <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
-        <div className="shell">
-          <div className="max-w-3xl">
-            <span className="badge-pill">THE TRANSLATION PIPELINE</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-              From raw observations to engineering action.
-            </h2>
-            <p className="mt-3 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
-              We never dump vague opinions on product managers. Our Quality Advocacy methodology
-              follows a rigorous evidentiary standard.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-xs">
-              <span className="text-xs font-bold tracking-wider text-[#2F7CEF] uppercase">
-                STEP 01
-              </span>
-              <h3 className="mt-3 text-xl font-bold text-slate-900">
-                1. Empirical Evidence
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                Every observation is captured with verifiable proof: screen recordings,
-                reproducible step sequences, network inspects, and system environment state.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-xs">
-              <span className="text-xs font-bold tracking-wider text-[#2F7CEF] uppercase">
-                STEP 02
-              </span>
-              <h3 className="mt-3 text-xl font-bold text-slate-900">
-                2. User Impact Synthesis
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                We contextualize the defect against real business metrics: Does this block
-                onboarding? Does it risk checkout failure? Does it erode trust for enterprise buyers?
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-xs">
-              <span className="text-xs font-bold tracking-wider text-[#2F7CEF] uppercase">
-                STEP 03
-              </span>
-              <h3 className="mt-3 text-xl font-bold text-slate-900">
-                3. Actionable Remedies
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                We partner with engineering to recommend pragmatic solutions — from input masks
-                and state locks to improved error states and API idempotency guards.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. COMPARISON TABLE: TRADITIONAL QA VS QUALITY ADVOCACY */}
-      <section className="border-b border-slate-200/80 bg-slate-50/70 py-12 md:py-16">
         <div className="shell">
           <div className="max-w-4xl">
             <span className="badge-pill">DIRECT COMPARISON</span>
@@ -164,7 +107,7 @@ export default function QualityAdvocacyPage() {
         </div>
       </section>
 
-      {/* 5. CALLOUT CTA */}
+      {/* 4. CALLOUT CTA */}
       <section className="bg-[#0E2539] text-white py-12 md:py-16 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
