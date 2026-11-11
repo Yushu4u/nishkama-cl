@@ -47,6 +47,25 @@ export function FeaturedCardsSection() {
   return (
     <section id="building" className="py-12 sm:py-16 border-b border-slate-200/80 bg-[#FAFBFD]">
       <div className="shell">
+        {/* Sleek Asymmetric Anchor Header Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10 pb-5 border-b border-slate-200/70">
+          <div>
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
+              CORE QA ARCHITECTURE
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2539]">
+              Specialized Testing Disciplines
+            </h2>
+          </div>
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors group"
+          >
+            <span>Explore All 9 Services</span>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
         {/* 3-Card Signature Grid (4:3 Aspect Ratio) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((c) => (

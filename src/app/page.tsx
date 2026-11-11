@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FeaturedCardsSection } from "@/components/FeaturedCardsSection";
+import { QualityGapShowcase } from "@/components/QualityGapShowcase";
 
 export default function HomePage() {
   return (
@@ -11,9 +12,9 @@ export default function HomePage() {
         aria-hidden="true"
       />
 
-      {/* 1. HERO SECTION (Fills Default Screen Zoom Viewport Perfectly) */}
-      <section className="relative min-h-[calc(100vh-88px)] flex flex-col justify-center py-8 sm:py-12 border-b border-slate-200/80 bg-white">
-        <div className="shell text-center my-auto">
+      {/* 1. HERO SECTION */}
+      <section className="relative pt-14 pb-12 sm:pt-20 sm:pb-16 border-b border-slate-200/80 bg-white">
+        <div className="shell text-center">
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-4 sm:mb-5 mx-auto">
             <span className="h-2 w-2 rounded-full bg-[#2F7CEF] animate-pulse" />
@@ -62,7 +63,10 @@ export default function HomePage() {
       {/* 2. CORE QA ARCHITECTURE: 3-CARD SHOWCASE */}
       <FeaturedCardsSection />
 
-      {/* 3. CALLOUT BANNER (Pre-Footer Consultation) */}
+      {/* 3. THE QUALITY GAP: REAL-WORLD TESTING VS AUTOMATED HAPPY PATH */}
+      <QualityGapShowcase />
+
+      {/* 4. CALLOUT BANNER (Pre-Footer Consultation) */}
       <section className="bg-[#0E2539] text-white py-14 sm:py-16 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
