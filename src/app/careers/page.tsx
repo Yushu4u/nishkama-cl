@@ -4,10 +4,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  Mail,
-  MapPin,
-  Clock,
-  Sparkles,
   Users,
   Award,
 } from "lucide-react";
@@ -123,22 +119,6 @@ export default function CareersPage() {
             </strong>{" "}
             across three experience tiers.
           </p>
-
-          {/* Quick Summary Pill Bar */}
-          <div className="mt-6 flex flex-wrap justify-center items-center gap-3 text-xs font-semibold text-slate-600">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-[#EFF6FF] px-4 py-1.5 text-[#2F7CEF] font-bold">
-              <Sparkles className="h-3.5 w-3.5" />
-              {totalOpenings} Active Openings
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5">
-              <Clock className="h-3.5 w-3.5 text-slate-400" />
-              Full-Time Roles
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5">
-              <MapPin className="h-3.5 w-3.5 text-slate-400" />
-              Remote First
-            </span>
-          </div>
         </div>
       </section>
 
