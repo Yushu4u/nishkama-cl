@@ -43,19 +43,6 @@ export function FeaturedCardsSection() {
   return (
     <section id="building" className="py-10 sm:py-14 border-b border-slate-200/80 bg-white">
       <div className="shell">
-        {/* Section Header (Tests Assured Style) */}
-        <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-9">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-2">
-            CORE QA ARCHITECTURE
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-            Quality Disciplines Across Platforms
-          </h2>
-          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-            From technical defect discovery and multi-device testing to product-minded user advocacy, explore our core quality disciplines.
-          </p>
-        </div>
-
         {/* 3-Card Signature Grid (4:3 Aspect Ratio) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((c) => (
