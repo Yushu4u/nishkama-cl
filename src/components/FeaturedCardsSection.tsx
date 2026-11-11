@@ -100,22 +100,6 @@ export function FeaturedCardsSection() {
             </Link>
           ))}
         </div>
-
-        {/* Rest of Two Tiles Kept in Last */}
-        <div className="mt-8 sm:mt-10 flex flex-wrap justify-center items-center gap-3.5">
-          <Link
-            href="/quality-advocacy"
-            className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
-          >
-            Quality Advocacy
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5 active:scale-95"
-          >
-            Contact Us
-          </Link>
-        </div>
       </div>
     </section>
   );
