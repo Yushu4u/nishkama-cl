@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
 import { FeaturedCardsSection } from "@/components/FeaturedCardsSection";
 import { HowWeWorkPipeline } from "@/components/HowWeWorkPipeline";
 
@@ -51,24 +50,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-7 sm:mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs sm:text-sm font-semibold text-slate-600">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4.5 w-4.5 text-[#2F7CEF] shrink-0" />
-              <span>Independent QA Perspective</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4.5 w-4.5 text-[#2F7CEF] shrink-0" />
-              <span>Real-World User Journeys</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4.5 w-4.5 text-[#2F7CEF] shrink-0" />
-              <span>Zero Happy-Path Bias</span>
-            </div>
-          </div>
-
           {/* Validated Environments Strip */}
-          <div className="mt-8 sm:mt-9 pt-6 sm:pt-7 border-t border-slate-100 max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-[13px] font-medium text-slate-500">
+          <div className="mt-10 sm:mt-12 pt-7 sm:pt-8 border-t border-slate-100 max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-[13px] font-medium text-slate-500">
             <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">
               Validated across:
             </span>
