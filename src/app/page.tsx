@@ -13,70 +13,72 @@ export default function HomePage() {
         aria-hidden="true"
       />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-14 pb-12 sm:pt-20 sm:pb-16 border-b border-slate-200/80 bg-white">
-        <div className="shell text-center">
+      {/* 1. HERO SECTION (Fills Default Screen Zoom Viewport Perfectly) */}
+      <section className="relative min-h-[calc(100vh-88px)] flex flex-col justify-center py-8 sm:py-12 border-b border-slate-200/80 bg-white">
+        <div className="shell text-center my-auto">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-5 mx-auto">
-            <span className="h-2 w-2 rounded-full bg-[#2F7CEF]" />
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2F7CEF]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-4 sm:mb-5 mx-auto">
+            <span className="h-2 w-2 rounded-full bg-[#2F7CEF] animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
               Independent Software QA
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.1] max-w-6xl mx-auto">
+          {/* Headline (Crisp, High-Impact Typography) */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.35rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.08] max-w-5xl mx-auto">
             Quality Advocates for{" "}
             <span className="text-[#2F7CEF] whitespace-nowrap">Your Product.</span>
           </h1>
 
           {/* Subhead */}
-          <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl mx-auto">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-3xl mx-auto font-normal">
             We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
           </p>
 
           {/* Clean 2-Action Hierarchy */}
-          <div className="mt-7 flex flex-wrap justify-center items-center gap-3.5">
+          <div className="mt-6 sm:mt-7 flex flex-wrap justify-center items-center gap-3.5">
             <Link
               href="/services"
-              className="rounded-xl bg-[#2F7CEF] px-7 py-3.5 text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/20 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/30 transition-all hover:-translate-y-0.5"
+              className="rounded-2xl bg-[#2F7CEF] px-8 sm:px-9 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/35 transition-all hover:-translate-y-0.5 active:scale-98"
             >
               Explore QA Services
             </Link>
             <Link
               href="/contact"
-              className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm"
+              className="rounded-2xl border-2 border-slate-300 bg-white px-7 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm active:scale-98"
             >
               Schedule a Consultation
             </Link>
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
+          <div className="mt-7 sm:mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-xs sm:text-sm font-semibold text-slate-600">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
+              <CheckCircle2 className="h-4.5 w-4.5 text-[#2F7CEF] shrink-0" />
               <span>Independent QA Perspective</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
+              <CheckCircle2 className="h-4.5 w-4.5 text-[#2F7CEF] shrink-0" />
               <span>Real-World User Journeys</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#2F7CEF]" />
+              <CheckCircle2 className="h-4.5 w-4.5 text-[#2F7CEF] shrink-0" />
               <span>Zero Happy-Path Bias</span>
             </div>
           </div>
 
           {/* Validated Environments Strip */}
-          <div className="mt-9 pt-7 border-t border-slate-100 max-w-2xl mx-auto flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">Validated across:</span>
-            <span className="text-slate-700 font-semibold">Web &amp; SaaS</span>
+          <div className="mt-8 sm:mt-9 pt-6 sm:pt-7 border-t border-slate-100 max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-[13px] font-medium text-slate-500">
+            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">
+              Validated across:
+            </span>
+            <span className="text-slate-800 font-bold">Web &amp; SaaS</span>
             <span className="text-slate-300">•</span>
-            <span className="text-slate-700 font-semibold">iOS &amp; Android</span>
+            <span className="text-slate-800 font-bold">iOS &amp; Android</span>
             <span className="text-slate-300">•</span>
-            <span className="text-slate-700 font-semibold">Spatial &amp; XR</span>
+            <span className="text-slate-800 font-bold">Spatial &amp; XR</span>
             <span className="text-slate-300">•</span>
-            <span className="text-slate-700 font-semibold">REST &amp; GraphQL APIs</span>
+            <span className="text-slate-800 font-bold">REST &amp; GraphQL APIs</span>
           </div>
         </div>
       </section>
