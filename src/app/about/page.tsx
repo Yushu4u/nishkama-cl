@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import { ShieldCheck, HeartHandshake, Compass } from "lucide-react";
 import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
@@ -77,60 +76,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. THREE CORE BELIEFS */}
-      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
-        <div className="shell">
-          <div className="max-w-3xl">
-            <span className="badge-pill">OUR CONVICTIONS</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
-              Three convictions that guide our work.
-            </h2>
-          </div>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0E2539]">
-                1. Independence Breeds Honesty
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                True QA requires an objective vantage point unclouded by internal sprint
-                pressures or code author bias. We advocate solely for product health.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                <Compass className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0E2539]">
-                2. Beyond The Happy Path
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                Software reputation is won or lost in edge states: dropped wifi, concurrent updates,
-                unusual device viewports, and unexpected user mistakes.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                <HeartHandshake className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0E2539]">
-                3. Evidence Over Opinions
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                We don&apos;t file vague complaints. We provide reproducible steps, console logs,
-                network traces, and video proofs so engineers can fix issues fast.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CALLOUT BAND */}
+      {/* 3. CALLOUT BAND */}
       <section className="bg-[#0E2539] text-white py-12 md:py-16">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
