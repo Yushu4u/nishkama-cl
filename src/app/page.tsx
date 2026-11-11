@@ -1,9 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
-import { MetricsBar } from "@/components/MetricsBar";
 import { FeaturedCardsSection } from "@/components/FeaturedCardsSection";
-import { QaRealityComparison } from "@/components/QaRealityComparison";
 import { HowWeWorkPipeline } from "@/components/HowWeWorkPipeline";
 
 export default function HomePage() {
@@ -83,19 +81,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. KEY PERFORMANCE METRICS */}
-      <MetricsBar />
-
-      {/* 3. CORE QA ARCHITECTURE: 3-CARD SHOWCASE */}
+      {/* 2. CORE QA ARCHITECTURE: 3-CARD SHOWCASE */}
       <FeaturedCardsSection />
 
-      {/* 4. THE QUALITY GAP: REAL-WORLD TESTING VS AUTOMATED HAPPY PATH */}
-      <QaRealityComparison />
-
-      {/* 5. HOW WE WORK: 6-STAGE CADENCE */}
+      {/* 3. HOW WE WORK: 6-STAGE CADENCE */}
       <HowWeWorkPipeline />
 
-      {/* 6. CALLOUT BANNER (Pre-Footer Consultation) */}
+      {/* 4. CALLOUT BANNER (Pre-Footer Consultation) */}
       <section className="bg-[#0E2539] text-white py-14 sm:py-16 border-t border-[#2F7CEF]/20">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
