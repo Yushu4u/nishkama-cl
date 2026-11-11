@@ -127,17 +127,10 @@ export function Header() {
                 aria-orientation="vertical"
               >
                 <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xl grid grid-cols-2 gap-2">
-                  <div className="col-span-2 pb-2 mb-1 border-b border-slate-100 flex items-center justify-between">
+                  <div className="col-span-2 pb-2 mb-1 border-b border-slate-100">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                      8 Specialized QA Disciplines
+                      Specialized QA Disciplines
                     </span>
-                    <Link
-                      href="/services"
-                      onClick={() => setServicesDropdownOpen(false)}
-                      className="text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8]"
-                    >
-                      View All Catalog →
-                    </Link>
                   </div>
 
                   {siteConfig.serviceSubPages.map((sub) => {
@@ -297,15 +290,6 @@ export function Header() {
                       {sub.label}
                     </Link>
                   ))}
-                  <div className="pt-1 mt-1 border-t border-slate-100">
-                    <Link
-                      href="/services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1.5 text-xs font-bold text-[#2F7CEF]"
-                    >
-                      View All Catalog →
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>
