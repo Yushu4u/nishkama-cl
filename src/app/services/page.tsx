@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Cpu, Video, CheckCheck } from "lucide-react";
 import { Button } from "@/components/Button";
 import { ServicesDirectory } from "@/components/ServicesDirectory";
 import { allServicesData } from "@/data/servicesData";
@@ -57,57 +56,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 3. THREE EXECUTION STANDARDS (Identical structure to About page convictions) */}
-      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
-        <div className="shell">
-          <div className="max-w-3xl">
-            <span className="badge-pill">OUR STANDARDS</span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
-              Three standards that govern every test cycle.
-            </h2>
-          </div>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                <Cpu className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0E2539]">
-                1. Real Devices & Environments
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                We test on actual physical iPhones, Androids, tablets, and desktop workstations. Emulators cannot replicate authentic touch responsiveness, real-world network drops, or background app switching.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                <Video className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0E2539]">
-                2. Video & Telemetry Proofs
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                No vague bug tickets. Every report includes timestamped screen captures, console error outputs, network payloads, and deterministic reproduction steps.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 shadow-sm hover:border-[#BFDBFE] transition-all">
-              <div className="mb-4 inline-grid h-10 w-10 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE]">
-                <CheckCheck className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0E2539]">
-                3. Clear Go / No-Go Verdicts
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-                We advocate for product health with objective risk assessments, giving engineering and product leaders the exact confidence needed to ship.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CALLOUT BAND (Identical to About page callout) */}
+      {/* 3. CALLOUT BAND (Identical to About page callout) */}
       <section className="bg-[#0E2539] text-white py-12 md:py-16">
         <div className="shell text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
