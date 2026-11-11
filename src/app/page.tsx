@@ -34,19 +34,13 @@ export default function HomePage() {
             We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
           </p>
 
-          {/* Clean 2-Action Hierarchy */}
-          <div className="mt-6 sm:mt-7 flex flex-wrap justify-center items-center gap-3.5">
+          {/* Centered Primary Action Button */}
+          <div className="mt-7 sm:mt-8 flex justify-center items-center">
             <Link
               href="/services"
-              className="rounded-2xl bg-[#2F7CEF] px-8 sm:px-9 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/35 transition-all hover:-translate-y-0.5 active:scale-98"
+              className="rounded-2xl bg-[#2F7CEF] px-8 sm:px-10 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/35 transition-all hover:-translate-y-0.5 active:scale-98"
             >
-              Explore QA Services
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-2xl border-2 border-slate-300 bg-white px-7 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-slate-700 hover:border-[#2F7CEF] hover:text-[#2F7CEF] transition-all shadow-sm active:scale-98"
-            >
-              Schedule a Consultation
+              Explore Our Services
             </Link>
           </div>
 
