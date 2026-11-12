@@ -496,7 +496,7 @@ export function ContactForm() {
           <span className="text-xs text-slate-600 leading-relaxed">
             I agree to the processing of the provided information in accordance with Nishkama CodeLab&apos;s{" "}
             <a href="/privacy-policy" className="underline text-[#2F7CEF] font-semibold hover:text-[#1E66D8]">
-              Privacy Notice
+              Privacy Policy
             </a>
             .
           </span>

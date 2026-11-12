@@ -8,6 +8,34 @@ export const metadata: Metadata = {
     "Discover Quality Advocacy: Nishkama CodeLab's differentiated approach uniting technical QA, real-world dogfooding, and customer feedback analysis into actionable product excellence.",
 };
 
+const comparisonRows = [
+  {
+    dimension: "Primary Mandate",
+    traditional: "Verify specifications and close tickets",
+    advocacy: "Advocate for the user experience & eliminate product risk",
+  },
+  {
+    dimension: "Testing Approach",
+    traditional: "Rigid scripted checklists & happy-path suites",
+    advocacy: "Risk-based exploratory probing, dogfooding & unscripted edge cases",
+  },
+  {
+    dimension: "Customer Feedback",
+    traditional: "Ignored; seen as customer support's job",
+    advocacy: "Systematically analyzed for recurring quality defects and churn signals",
+  },
+  {
+    dimension: "Bug Reporting",
+    traditional: "Isolated tickets without customer context",
+    advocacy: "Reproducible evidence with severity, blast radius, and UX impact",
+  },
+  {
+    dimension: "Fix Verification",
+    traditional: "Basic retest of ticket step",
+    advocacy: "Deep regression sweep around adjacent systems and workflow sanity",
+  },
+];
+
 export default function QualityAdvocacyPage() {
   return (
     <div className="bg-white text-slate-900">
@@ -50,8 +78,37 @@ export default function QualityAdvocacyPage() {
             </p>
           </div>
 
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <table className="w-full text-left text-xs sm:text-sm">
+          {/* Mobile Stacked Comparison Cards (no horizontal swipe needed) */}
+          <div className="mt-8 space-y-4 md:hidden">
+            {comparisonRows.map((row) => (
+              <div
+                key={row.dimension}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs"
+              >
+                <div className="border-b border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-600">
+                  {row.dimension}
+                </div>
+                <div className="divide-y divide-slate-100 text-xs leading-relaxed">
+                  <div className="px-4 py-3">
+                    <span className="block text-[10.5px] font-bold uppercase tracking-wider text-slate-400">
+                      Traditional QA
+                    </span>
+                    <p className="mt-1 text-slate-600">{row.traditional}</p>
+                  </div>
+                  <div className="bg-[#EFF6FF]/45 px-4 py-3">
+                    <span className="block text-[10.5px] font-bold uppercase tracking-wider text-[#2F7CEF]">
+                      NCL Quality Advocacy
+                    </span>
+                    <p className="mt-1 font-medium text-slate-900">{row.advocacy}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Comparison Table */}
+          <div className="mt-8 hidden md:block overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
               <thead className="border-b border-slate-200 bg-slate-50 text-xs font-bold uppercase tracking-wider text-slate-500">
                 <tr>
                   <th className="py-3.5 px-6">Dimension</th>
@@ -62,41 +119,15 @@ export default function QualityAdvocacyPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                <tr>
-                  <td className="py-3.5 px-6 font-bold text-slate-900">Primary Mandate</td>
-                  <td className="py-3.5 px-6 text-slate-600">Verify specifications and close tickets</td>
-                  <td className="py-3.5 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
-                    Advocate for the user experience &amp; eliminate product risk
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-3.5 px-6 font-bold text-slate-900">Testing Approach</td>
-                  <td className="py-3.5 px-6 text-slate-600">Rigid scripted checklists &amp; happy-path suites</td>
-                  <td className="py-3.5 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
-                    Risk-based exploratory probing, dogfooding &amp; unscripted edge cases
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-3.5 px-6 font-bold text-slate-900">Customer Feedback</td>
-                  <td className="py-3.5 px-6 text-slate-600">Ignored; seen as customer support&apos;s job</td>
-                  <td className="py-3.5 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
-                    Systematically analyzed for recurring quality defects and churn signals
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-3.5 px-6 font-bold text-slate-900">Bug Reporting</td>
-                  <td className="py-3.5 px-6 text-slate-600">Isolated tickets without customer context</td>
-                  <td className="py-3.5 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
-                    Reproducible evidence with severity, blast radius, and UX impact
-                  </td>
-                </tr>
-                <tr>
-                  <td className="py-3.5 px-6 font-bold text-slate-900">Fix Verification</td>
-                  <td className="py-3.5 px-6 text-slate-600">Basic retest of ticket step</td>
-                  <td className="py-3.5 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
-                    Deep regression sweep around adjacent systems and workflow sanity
-                  </td>
-                </tr>
+                {comparisonRows.map((row) => (
+                  <tr key={row.dimension}>
+                    <td className="py-3.5 px-6 font-bold text-slate-900">{row.dimension}</td>
+                    <td className="py-3.5 px-6 text-slate-600">{row.traditional}</td>
+                    <td className="py-3.5 px-6 font-medium text-slate-900 bg-[#EFF6FF]/40">
+                      {row.advocacy}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
