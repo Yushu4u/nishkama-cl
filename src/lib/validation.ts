@@ -29,12 +29,24 @@ export const contactFormSchema = z.object({
     .string()
     .trim()
     .min(1, { message: "First name is required." })
-    .max(80, { message: "First name must be under 80 characters." }),
+    .max(80, { message: "First name must be under 80 characters." })
+    .regex(/^[\p{L}\s'’.-]+$/u, {
+      message: "First name cannot contain numbers or special symbols.",
+    })
+    .refine((val) => /\p{L}/u.test(val), {
+      message: "First name must contain at least one letter.",
+    }),
   lastName: z
     .string()
     .trim()
     .min(1, { message: "Last name is required." })
-    .max(80, { message: "Last name must be under 80 characters." }),
+    .max(80, { message: "Last name must be under 80 characters." })
+    .regex(/^[\p{L}\s'’.-]+$/u, {
+      message: "Last name cannot contain numbers or special symbols.",
+    })
+    .refine((val) => /\p{L}/u.test(val), {
+      message: "Last name must contain at least one letter.",
+    }),
   workEmail: z
     .string()
     .trim()

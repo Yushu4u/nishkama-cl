@@ -69,6 +69,35 @@ export function ContactForm() {
     }
   };
 
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    if (typeof value === "string" && value.trim().length > 0) {
+      const fieldShape = (
+        contactFormSchema.shape as Record<
+          string,
+          | {
+              safeParse: (val: unknown) => {
+                success: boolean;
+                error?: { issues: Array<{ message: string }> };
+              };
+            }
+          | undefined
+        >
+      )[name];
+      if (fieldShape) {
+        const result = fieldShape.safeParse(value);
+        if (!result.success && result.error?.issues[0]?.message) {
+          setFieldErrors((prev) => ({
+            ...prev,
+            [name]: result.error!.issues[0].message,
+          }));
+        }
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setServerError(null);
@@ -266,6 +295,7 @@ export function ContactForm() {
             aria-describedby={fieldErrors.firstName ? "firstName-error" : undefined}
             value={formData.firstName}
             onChange={handleChange}
+            onBlur={handleBlur}
             placeholder="Ada"
             className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.firstName ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
@@ -296,6 +326,7 @@ export function ContactForm() {
             aria-describedby={fieldErrors.lastName ? "lastName-error" : undefined}
             value={formData.lastName}
             onChange={handleChange}
+            onBlur={handleBlur}
             placeholder="Lovelace"
             className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.lastName ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
@@ -328,6 +359,7 @@ export function ContactForm() {
             aria-describedby={fieldErrors.workEmail ? "workEmail-error" : undefined}
             value={formData.workEmail}
             onChange={handleChange}
+            onBlur={handleBlur}
             placeholder="ada@company.com"
             className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.workEmail ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
@@ -358,6 +390,7 @@ export function ContactForm() {
             aria-describedby={fieldErrors.company ? "company-error" : undefined}
             value={formData.company}
             onChange={handleChange}
+            onBlur={handleBlur}
             placeholder="Analytical Engine Corp"
             className={`w-full rounded-xl border bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2F7CEF] ${
               fieldErrors.company ? "border-rose-400 ring-1 ring-rose-400" : "border-slate-200"
