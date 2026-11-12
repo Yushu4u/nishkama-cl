@@ -25,11 +25,6 @@ export default function QualityAdvocacyPage() {
                 We combine testing discipline with real-world product usage and customer perspective
                 to help teams see issues from outside their development bubble.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3.5">
-                <Button href="#three-lenses" variant="outline" size="lg">
-                  Explore the Three Lenses
-                </Button>
-              </div>
             </div>
           </div>
         </div>
