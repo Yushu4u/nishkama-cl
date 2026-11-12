@@ -122,7 +122,7 @@ export default function QualityAdvocacyPage() {
           </p>
           <div className="mt-6 flex justify-center">
             <Button href="/contact?need=advocacy" variant="primary" size="lg" withArrow>
-              Start a Quality Advocacy Conversation
+              Start a QA Conversation
             </Button>
           </div>
         </div>
