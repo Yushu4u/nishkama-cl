@@ -140,45 +140,52 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 3. WHY IT MATTERS CALLOUT */}
-      <section className="border-b border-slate-200/80 bg-slate-50/60 py-10 sm:py-14">
-        <div className="shell">
-          <div className="rounded-2xl border border-[#BFDBFE] bg-white p-7 sm:p-9 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#2F7CEF]">
-                Business &amp; Product Impact
+      {/* 3. UNIFIED ENGAGEMENT OVERVIEW (Impact, Fit, Deliverables & Risks) */}
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-[#F8FAFC] py-12 sm:py-16">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,rgba(47,124,239,0.05),rgba(248,250,252,0))]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10 space-y-6">
+          {/* Unified Top Summary Card */}
+          <div className="grid lg:grid-cols-12 rounded-2xl border border-slate-200/90 bg-white shadow-xs overflow-hidden">
+            <div className="lg:col-span-8 p-7 sm:p-8 flex flex-col justify-center">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF]">
+                Why It Matters
               </span>
-              <h2 className="mt-2 text-xl sm:text-2xl font-bold text-[#0E2539]">
-                Why {service.title} matters for your release
+              <h2 className="mt-1.5 text-xl sm:text-2xl font-bold tracking-tight text-[#0E2539]">
+                Release &amp; user impact
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <p className="mt-2.5 text-sm sm:text-[15px] leading-relaxed text-slate-600">
                 {service.whyItMatters}
               </p>
             </div>
 
-            <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 shrink-0 text-xs text-slate-600 space-y-1.5 md:w-64">
-              <span className="font-bold text-[#0E2539] block">Recommended Context:</span>
-              <p>{service.recommendedFor}</p>
+            <div className="lg:col-span-4 bg-[#0E2539] text-white p-7 sm:p-8 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-slate-800">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#60A5FA]">
+                Best Fit For
+              </span>
+              <p className="mt-2 text-sm leading-relaxed text-slate-200 font-medium">
+                {service.recommendedFor}
+              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 4. DELIVERABLES & TYPICAL DEFECTS CAUGHT */}
-      <section className="border-b border-slate-200/80 bg-white py-12 sm:py-16">
-        <div className="shell">
-          <div className="grid gap-8 sm:grid-cols-2">
+          {/* Matching Twin Outcome Cards */}
+          <div className="grid gap-6 md:grid-cols-2 items-stretch">
             {/* Deliverables */}
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-sm">
-              <div className="flex items-center gap-2 pb-4 border-b border-slate-100">
-                <FileCheck2 className="h-5 w-5 text-[#2F7CEF]" />
-                <h3 className="text-lg font-bold text-[#0E2539]">
-                  Deliverables &amp; Artifacts
+            <div className="rounded-2xl border border-slate-200/90 bg-white p-7 shadow-xs">
+              <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+                <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] shrink-0">
+                  <FileCheck2 className="h-4 w-4" />
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-[#0E2539]">
+                  What You Receive
                 </h3>
               </div>
               <ul className="mt-5 space-y-3">
                 {service.deliverables.map((del) => (
-                  <li key={del} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                  <li key={del} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span className="font-medium">{del}</span>
                   </li>
@@ -187,16 +194,18 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
 
             {/* Typical Defects Caught */}
-            <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-7 sm:p-8">
-              <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
-                <Bug className="h-5 w-5 text-rose-600" />
-                <h3 className="text-lg font-bold text-[#0E2539]">
-                  Sample Bugs Caught in this Discipline
+            <div className="rounded-2xl border border-slate-200/90 bg-white p-7 shadow-xs">
+              <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+                <div className="grid h-9 w-9 place-items-center rounded-xl bg-rose-50 text-rose-600 border border-rose-200/80 shrink-0">
+                  <Bug className="h-4 w-4" />
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-[#0E2539]">
+                  High-Risk Bugs We Catch Early
                 </h3>
               </div>
               <ul className="mt-5 space-y-3">
                 {service.typicalBugsCaught.map((bug) => (
-                  <li key={bug} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600">
+                  <li key={bug} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                     <span className="h-1.5 w-1.5 rounded-full bg-rose-500 mt-2 shrink-0" />
                     <span>{bug}</span>
                   </li>
@@ -207,8 +216,8 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 5. EXPLORE RELATED SERVICES */}
-      <section className="border-b border-slate-200/80 bg-slate-50/60 py-12 sm:py-14">
+      {/* 4. EXPLORE RELATED SERVICES */}
+      <section className="border-b border-slate-200/80 bg-white py-12 sm:py-14">
         <div className="shell">
           <div className="flex items-center justify-between pb-6 border-b border-slate-100 flex-wrap gap-4">
             <div>
