@@ -143,18 +143,13 @@ export default function CareersPage() {
         />
 
         <div className="shell relative z-10">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-5 border-b border-slate-200/70">
-            <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
-                OPEN ROLES • {totalOpenings} POSITIONS
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
-                Build your career in real-world QA.
-              </h2>
-            </div>
-            <span className="text-xs sm:text-sm font-medium text-slate-500">
-              Remote / Hybrid engineering team • Continuous hiring
+          <div className="mb-10 pb-5 border-b border-slate-200/70">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
+              OPEN ROLES • {totalOpenings} POSITIONS
             </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
+              Build your career in real-world QA.
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-7 items-stretch">
