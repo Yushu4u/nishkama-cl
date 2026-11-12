@@ -102,9 +102,7 @@ export default function CareersPage() {
       {/* 1. HERO SECTION (Minimalist, respectful, non-bloated) */}
       <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
         <div className="shell text-center max-w-3xl mx-auto">
-          <span className="badge-pill">CAREERS AT NISHKAMA CODELAB</span>
-
-          <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
             We don&apos;t hire test runners.
             <br />
             We hire <span className="text-[#2F7CEF]">Quality Advocates.</span>
