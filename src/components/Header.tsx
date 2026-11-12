@@ -62,11 +62,11 @@ export function Header() {
     <>
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md transition-smooth">
         <nav
-          className="shell flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] min-h-[88px] sm:min-h-[94px] lg:min-h-[98px] gap-4"
+          className="shell flex items-center justify-between min-h-[84px] sm:min-h-[90px] lg:min-h-[94px] gap-6"
           aria-label="Main Navigation"
         >
         {/* Brand Logo Lockup */}
-        <div className="justify-self-start">
+        <div className="shrink-0">
           <Link
             href="/"
             className="shrink-0 flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF] rounded-lg py-1"
@@ -78,33 +78,45 @@ export function Header() {
               width={310}
               height={98}
               priority
-              className="h-14 sm:h-[60px] md:h-[66px] lg:h-[72px] w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              className="h-14 sm:h-[60px] md:h-[66px] lg:h-[70px] w-auto object-contain transition-transform group-hover:scale-[1.02]"
             />
           </Link>
         </div>
 
-        {/* Center: Desktop Navigation Links (Floating Island Pill Container) */}
-        <div className="hidden lg:flex justify-self-center items-center gap-1 bg-slate-100/70 border border-slate-200/80 rounded-full p-1.5 backdrop-blur-sm shadow-xs">
+        {/* Center: Minimalist Desktop Navigation Links (Balanced between Logo & CTA) */}
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
           <Link
             href="/"
-            className={`whitespace-nowrap rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
+            className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm transition-colors ${
               pathname === "/"
-                ? "text-[#2F7CEF] bg-white shadow-xs"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
+                ? "font-bold text-[#2F7CEF]"
+                : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
             }`}
           >
             Home
+            {pathname === "/" && (
+              <span
+                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                aria-hidden="true"
+              />
+            )}
           </Link>
 
           <Link
             href="/about"
-            className={`whitespace-nowrap rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
+            className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm transition-colors ${
               pathname === "/about"
-                ? "text-[#2F7CEF] bg-white shadow-xs"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
+                ? "font-bold text-[#2F7CEF]"
+                : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
             }`}
           >
             About Us
+            {pathname === "/about" && (
+              <span
+                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                aria-hidden="true"
+              />
+            )}
           </Link>
 
           {/* Services with Hover/Click Dropdown */}
@@ -115,19 +127,25 @@ export function Header() {
           >
             <Link
               href="/services"
-              className={`whitespace-nowrap inline-flex items-center gap-1.5 rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
+              className={`relative whitespace-nowrap inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm transition-colors ${
                 pathname.startsWith("/services")
-                  ? "text-[#2F7CEF] bg-white shadow-xs"
-                  : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
+                  ? "font-bold text-[#2F7CEF]"
+                  : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
               }`}
             >
               <span>QA Services</span>
               <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${
                   servicesDropdownOpen ? "rotate-180 text-[#2F7CEF]" : "text-slate-400"
                 }`}
                 aria-hidden="true"
               />
+              {pathname.startsWith("/services") && (
+                <span
+                  className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                  aria-hidden="true"
+                />
+              )}
             </Link>
 
             {/* Dropdown Menu */}
@@ -175,32 +193,44 @@ export function Header() {
 
           <Link
             href="/quality-advocacy"
-            className={`whitespace-nowrap rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
+            className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm transition-colors ${
               pathname === "/quality-advocacy"
-                ? "text-[#2F7CEF] bg-white shadow-xs"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
+                ? "font-bold text-[#2F7CEF]"
+                : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
             }`}
           >
             Quality Advocacy
+            {pathname === "/quality-advocacy" && (
+              <span
+                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                aria-hidden="true"
+              />
+            )}
           </Link>
 
           <Link
             href="/careers"
-            className={`whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
+            className={`relative whitespace-nowrap inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm transition-colors ${
               pathname === "/careers"
-                ? "text-[#2F7CEF] bg-white shadow-xs"
-                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
+                ? "font-bold text-[#2F7CEF]"
+                : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
             }`}
           >
             <span>Careers</span>
             <span className="rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wider leading-none">
               Hiring
             </span>
+            {pathname === "/careers" && (
+              <span
+                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                aria-hidden="true"
+              />
+            )}
           </Link>
         </div>
 
         {/* Right Section: Primary CTA + Mobile Menu Button */}
-        <div className="justify-self-end flex items-center gap-3">
+        <div className="shrink-0 flex items-center gap-3">
           {/* Desktop Primary CTA: Contact Us */}
           <Link
             href="/contact"
