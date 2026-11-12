@@ -26,9 +26,6 @@ export default function QualityAdvocacyPage() {
                 to help teams see issues from outside their development bubble.
               </p>
               <div className="mt-6 flex flex-wrap gap-3.5">
-                <Button href="/contact?need=advocacy" variant="primary" size="lg" withArrow>
-                  Put Your Product Through a Quality Reality Check
-                </Button>
                 <Button href="#three-lenses" variant="outline" size="lg">
                   Explore the Three Lenses
                 </Button>
