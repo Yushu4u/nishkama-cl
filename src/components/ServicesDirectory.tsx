@@ -71,16 +71,8 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
                 </span>
               </div>
 
-              {/* Category Pill */}
-              <div className="mt-6">
-                <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-blue-200/80 bg-[#EFF6FF] px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF]" />
-                  <span>{service.categoryLabel}</span>
-                </span>
-              </div>
-
               {/* Enhanced Display Title */}
-              <h3 className="mt-3.5 text-xl sm:text-[1.4rem] sm:min-h-[3.6rem] font-extrabold tracking-tight text-[#0E2539] leading-snug transition-colors duration-200 group-hover:text-[#2F7CEF]">
+              <h3 className="mt-6 text-xl sm:text-[1.4rem] sm:min-h-[3.6rem] font-extrabold tracking-tight text-[#0E2539] leading-snug transition-colors duration-200 group-hover:text-[#2F7CEF]">
                 {service.title}
               </h3>
 
