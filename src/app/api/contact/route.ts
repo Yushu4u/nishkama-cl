@@ -23,14 +23,52 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-// Basic HTML sanitization helper to prevent script injection
-function sanitizeString(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#x27;");
+interface ContactWebhookPayload {
+  receiptId: string;
+  submittedAt: string;
+  firstName: string;
+  lastName: string;
+  workEmail: string;
+  company: string;
+  productWebsite: string;
+  needHelpWith: string;
+  currentQaSetup: string;
+  expectedTimeline: string;
+  details: string;
+  notifyEmail: string;
+}
+
+async function dispatchToGoogleWebhook(
+  webhookUrl: string,
+  webhookSecret: string | undefined,
+  payload: ContactWebhookPayload
+): Promise<void> {
+  const response = await fetch(webhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...payload,
+      secret: webhookSecret || "",
+      sendConfirmation: true,
+    }),
+    redirect: "follow",
+    signal: AbortSignal.timeout(10000),
+  });
+
+  const rawBody = await response.text();
+  let parsed: { ok?: boolean; error?: string } | null = null;
+  try {
+    parsed = JSON.parse(rawBody) as { ok?: boolean; error?: string };
+  } catch {
+    parsed = null;
+  }
+
+  if (!response.ok || !parsed?.ok) {
+    const reason = parsed?.error || `HTTP ${response.status}`;
+    throw new Error(`Google contact webhook failed: ${reason}`);
+  }
 }
 
 export async function POST(request: Request) {
@@ -60,8 +98,11 @@ export async function POST(request: Request) {
     }
 
     // 1. Spam Honeypot Check: If the invisible field contains any characters, it is a bot
-    if (body.website_hp && typeof body.website_hp === "string" && body.website_hp.trim().length > 0) {
-      // Return a simulated success to confuse automated spam bots without processing
+    if (
+      "website_hp" in body &&
+      typeof body.website_hp === "string" &&
+      body.website_hp.trim().length > 0
+    ) {
       return NextResponse.json({
         success: true,
         receiptId: `NCL-SPAM-${Date.now().toString(36).toUpperCase()}`,
@@ -92,50 +133,68 @@ export async function POST(request: Request) {
     }
 
     const validData = validationResult.data;
+    const receiptId = `NCL-${Date.now().toString(36).toUpperCase()}-${Math.random()
+      .toString(36)
+      .substring(2, 6)
+      .toUpperCase()}`;
 
-    // 3. Sanitization
-    const sanitizedData = {
-      firstName: sanitizeString(validData.firstName),
-      lastName: sanitizeString(validData.lastName),
-      workEmail: validData.workEmail.toLowerCase(),
-      company: sanitizeString(validData.company),
-      productWebsite: validData.productWebsite ? sanitizeString(validData.productWebsite) : "",
-      needHelpWith: sanitizeString(validData.needHelpWith),
-      currentQaSetup: validData.currentQaSetup ? sanitizeString(validData.currentQaSetup) : "",
-      expectedTimeline: validData.expectedTimeline ? sanitizeString(validData.expectedTimeline) : "",
-      details: validData.details ? sanitizeString(validData.details) : "",
+    const notifyEmail =
+      process.env.CONTACT_NOTIFICATION_EMAIL?.trim() || "hello@nishkamacodelab.com";
+
+    const payload: ContactWebhookPayload = {
+      receiptId,
       submittedAt: new Date().toISOString(),
+      firstName: validData.firstName,
+      lastName: validData.lastName,
+      workEmail: validData.workEmail.toLowerCase(),
+      company: validData.company,
+      productWebsite: validData.productWebsite || "",
+      needHelpWith: validData.needHelpWith,
+      currentQaSetup: validData.currentQaSetup || "",
+      expectedTimeline: validData.expectedTimeline || "",
+      details: validData.details || "",
+      notifyEmail,
     };
 
-    const receiptId = `NCL-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+    // 3. Google Workspace Webhook Delivery (Sheet Log + Notification Email + Auto-Confirmation)
+    const webhookUrl = process.env.GOOGLE_CONTACT_WEBHOOK_URL?.trim();
+    const webhookSecret = process.env.GOOGLE_CONTACT_WEBHOOK_SECRET?.trim();
 
-    // 4. Email Provider Integration Boundary
-    // In production, when RESEND_API_KEY or SMTP credentials are provided, dispatch notification.
-    const hasResend = Boolean(process.env.RESEND_API_KEY);
-    const hasSmtp = Boolean(process.env.SMTP_HOST && process.env.SMTP_USER);
-
-    if (hasResend || hasSmtp) {
-      // Production email dispatch logic here
-      console.log(`[Production Email Boundary] Dispatching email for receipt ${receiptId} via configured provider.`);
+    if (webhookUrl) {
+      await dispatchToGoogleWebhook(webhookUrl, webhookSecret, payload);
+    } else if (process.env.NODE_ENV === "production") {
+      console.error("[Contact API Error]: GOOGLE_CONTACT_WEBHOOK_URL is not configured.");
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Contact form delivery is being finalized. Please email us directly at hello@nishkamacodelab.com.",
+        },
+        { status: 503 }
+      );
     } else {
-      // Local development / unconfigured provider boundary: Log cleanly to server console
-      console.log(`[Contact Form Received] Receipt: ${receiptId}`);
-      console.log(`From: ${sanitizedData.firstName} ${sanitizedData.lastName} (${sanitizedData.workEmail}) at ${sanitizedData.company}`);
-      console.log(`Need: ${sanitizedData.needHelpWith} | Timeline: ${sanitizedData.expectedTimeline || "Not specified"}`);
+      console.log(`[Contact Form Local Dev Log] Receipt: ${receiptId}`);
+      console.log(
+        `From: ${payload.firstName} ${payload.lastName} (${payload.workEmail}) at ${payload.company}`
+      );
+      console.log(
+        `Need: ${payload.needHelpWith} | Timeline: ${payload.expectedTimeline || "Not specified"}`
+      );
     }
 
     return NextResponse.json({
       success: true,
       receiptId,
       message:
-        "Thank you for contacting Nishkama CodeLab. A QA specialist will review your details and respond within 1 business day.",
+        "Thank you for contacting Nishkama CodeLab. A confirmation email has been sent to your inbox, and a QA specialist will respond within 1 business day.",
     });
   } catch (error) {
     console.error("[Contact API Error]:", error);
     return NextResponse.json(
       {
         success: false,
-        error: "An unexpected server error occurred. Please try again or email us directly at hello@nishkamacodelab.com.",
+        error:
+          "Unable to send your inquiry right now. Please try again or email us directly at hello@nishkamacodelab.com.",
       },
       { status: 500 }
     );
