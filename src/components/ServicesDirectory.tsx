@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import {
+  ArrowRight,
   Glasses,
   CheckSquare,
   Compass,
@@ -37,9 +39,10 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
         const numberLabel = String(index + 1).padStart(2, "0");
 
         return (
-          <article
+          <Link
             key={service.id}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_8px_28px_-10px_rgba(14,37,57,0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2F7CEF]/45 hover:shadow-[0_22px_44px_-12px_rgba(47,124,239,0.16)]"
+            href={service.href}
+            className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_8px_28px_-10px_rgba(14,37,57,0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2F7CEF]/45 hover:shadow-[0_22px_44px_-12px_rgba(47,124,239,0.16)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
           >
             {/* Top glowing electric-blue accent edge */}
             <div
@@ -86,7 +89,12 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
                 {service.gist}
               </p>
             </div>
-          </article>
+
+            <div className="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#2F7CEF]">
+              <span>Explore Discipline</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </div>
+          </Link>
         );
       })}
     </div>
