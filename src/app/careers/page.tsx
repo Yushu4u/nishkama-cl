@@ -253,10 +253,7 @@ export default function CareersPage() {
       {/* 3. CALLOUT BAND */}
       <section className="bg-[#0E2539] text-white py-12 md:py-16">
         <div className="shell text-center max-w-2xl mx-auto">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
-            HOW TO APPLY
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
             Ready to advocate for product quality?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
