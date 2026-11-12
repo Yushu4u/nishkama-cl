@@ -17,7 +17,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { detailedServices } from "@/data/services";
-import { allServicesData } from "@/data/servicesData";
 import { siteConfig } from "@/data/siteConfig";
 import { Button } from "@/components/Button";
 
@@ -82,9 +81,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  const relatedServices = detailedServices
-    .filter((s) => s.slug !== service.slug)
-    .slice(0, 3);
+  const otherServices = detailedServices.filter((s) => s.slug !== service.slug);
 
   return (
     <div className="bg-white text-[#0E2539]">
@@ -183,77 +180,40 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 4. EXPLORE RELATED SERVICES */}
-      <section className="border-b border-slate-200/80 bg-white py-14 sm:py-16">
+      {/* 4. COMPACT SERVICE NAVIGATOR */}
+      <section className="border-b border-slate-200/80 bg-white py-8 sm:py-10">
         <div className="shell">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-5 border-b border-slate-200/70">
-            <div>
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
-                COMPLEMENTARY DISCIPLINES
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2539]">
-                Explore Other Software QA Services
-              </h2>
-              <p className="mt-1.5 text-sm text-slate-600">
-                Pair disciplines to match your release cadence, architecture, and risk profile.
-              </p>
-            </div>
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+              Explore Other Software QA Services
+            </h2>
             <Link
               href="/services"
-              className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold text-[#0E2539] hover:border-[#2F7CEF] hover:bg-[#EFF6FF] hover:text-[#2F7CEF] transition-all whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1 text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] transition-colors whitespace-nowrap"
             >
-              <span>View All 9 Services</span>
+              <span>View All 9</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3 items-stretch">
-            {relatedServices.map((rel) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+            {otherServices.map((rel) => {
               const Icon = serviceIconMap[rel.slug] || CheckSquare;
-              const catalogMeta = allServicesData.find((item) => item.slug === rel.slug);
               return (
                 <Link
                   key={rel.slug}
                   href={`/services/${rel.slug}`}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-[0_8px_28px_-10px_rgba(14,37,57,0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2F7CEF]/45 hover:shadow-[0_22px_44px_-12px_rgba(47,124,239,0.16)]"
+                  className="group flex items-center justify-between gap-2.5 rounded-xl border border-slate-200/80 bg-slate-50/50 px-3.5 py-2.5 transition-all hover:border-[#2F7CEF]/50 hover:bg-white hover:shadow-xs"
                 >
-                  {/* Top electric-blue accent rail */}
-                  <div
-                    className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#2F7CEF] via-[#60A5FA] to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-                    aria-hidden="true"
-                  />
-
-                  {/* Subtle top-right ambient glow */}
-                  <div
-                    className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#2F7CEF]/[0.05] blur-2xl transition-colors duration-300 group-hover:bg-[#2F7CEF]/[0.12]"
-                    aria-hidden="true"
-                  />
-
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-[#2F7CEF] to-[#1D4ED8] text-white shadow-md shadow-[#2F7CEF]/25 transition-transform duration-300 group-hover:scale-105">
-                        <Icon className="h-5 w-5" />
-                      </div>
-
-                      {catalogMeta?.categoryLabel && (
-                        <span className="inline-flex items-center rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-wider text-slate-600">
-                          {catalogMeta.categoryLabel}
-                        </span>
-                      )}
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#EFF6FF] text-[#2F7CEF] transition-colors group-hover:bg-[#2F7CEF] group-hover:text-white">
+                      <Icon className="h-3.5 w-3.5" />
                     </div>
-
-                    <h3 className="mt-5 text-lg font-extrabold tracking-tight text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
+                    <span className="truncate text-xs font-bold text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
                       {rel.title}
-                    </h3>
-                    <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
-                      {rel.shortDescription}
-                    </p>
+                    </span>
                   </div>
-
-                  <div className="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#2F7CEF]">
-                    <span>Explore Discipline</span>
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
+                  <ArrowRight className="h-3.5 w-3.5 shrink-0 text-slate-400 transition-all group-hover:translate-x-0.5 group-hover:text-[#2F7CEF]" />
                 </Link>
               );
             })}
