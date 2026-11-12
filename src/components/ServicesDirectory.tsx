@@ -77,7 +77,7 @@ export function ServicesDirectory({ services }: ServicesDirectoryProps) {
               </div>
 
               {/* Enhanced Display Title */}
-              <h3 className="mt-3.5 text-xl sm:text-[1.4rem] font-extrabold tracking-tight text-[#0E2539] leading-snug transition-colors duration-200 group-hover:text-[#2F7CEF]">
+              <h3 className="mt-3.5 text-xl sm:text-[1.4rem] sm:min-h-[3.6rem] font-extrabold tracking-tight text-[#0E2539] leading-snug transition-colors duration-200 group-hover:text-[#2F7CEF]">
                 {service.title}
               </h3>
 

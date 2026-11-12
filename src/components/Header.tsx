@@ -164,19 +164,34 @@ export function Header() {
 
                   {siteConfig.serviceSubPages.map((sub) => {
                     const slug = sub.href.replace("/services/", "");
+                    const isSubActive = pathname === sub.href;
                     return (
                       <Link
                         key={sub.href}
                         href={sub.href}
                         onClick={() => setServicesDropdownOpen(false)}
-                        className="group flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors"
+                        className={`group flex items-start gap-2.5 p-2 rounded-xl transition-colors ${
+                          isSubActive ? "bg-[#EFF6FF]/90" : "hover:bg-slate-50"
+                        }`}
                         role="menuitem"
                       >
-                        <div className="mt-0.5 shrink-0 p-1 rounded-lg bg-slate-50 group-hover:bg-[#EFF6FF] border border-slate-100 transition-colors">
+                        <div
+                          className={`mt-0.5 shrink-0 p-1 rounded-lg border transition-colors ${
+                            isSubActive
+                              ? "bg-[#EFF6FF] border-[#BFDBFE]"
+                              : "bg-slate-50 group-hover:bg-[#EFF6FF] border-slate-100"
+                          }`}
+                        >
                           {serviceIcons[slug] || <CheckSquare className="h-4 w-4 text-[#2F7CEF]" />}
                         </div>
                         <div>
-                          <span className="block text-xs font-bold text-slate-800 group-hover:text-[#2F7CEF] transition-colors">
+                          <span
+                            className={`block text-xs font-bold transition-colors ${
+                              isSubActive
+                                ? "text-[#2F7CEF]"
+                                : "text-slate-800 group-hover:text-[#2F7CEF]"
+                            }`}
+                          >
                             {sub.label}
                           </span>
                           <span className="block text-[11px] text-slate-500 leading-tight">

@@ -18,7 +18,7 @@ export function Footer() {
               className="inline-block group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF] rounded-xl"
               aria-label="Nishkama CodeLab Homepage"
             >
-              <div className="bg-white px-3 py-1.5 rounded-xl inline-flex items-center shadow-sm transition-transform group-hover:scale-105">
+              <div className="bg-white/95 px-3.5 py-2 rounded-xl inline-flex items-center ring-1 ring-white/25 shadow-md transition-transform group-hover:scale-105">
                 <Image
                   src={siteConfig.brand.assets.logoLockup}
                   alt="Nishkama CodeLab"

@@ -117,8 +117,12 @@ export default function CareersPage() {
   return (
     <div className="bg-white text-[#0E2539]">
       {/* 1. HERO SECTION */}
-      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
-        <div className="shell text-center max-w-3xl mx-auto">
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-white py-12 md:py-16">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(47,124,239,0.06),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10 text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#0E2539] leading-[1.08]">
             Join Nishkama as a{" "}
             <span className="text-[#2F7CEF] whitespace-nowrap">Quality Advocate.</span>
@@ -250,8 +254,12 @@ export default function CareersPage() {
       </section>
 
       {/* 3. CALLOUT BAND */}
-      <section className="bg-[#0E2539] text-white py-12 md:py-16">
-        <div className="shell text-center max-w-2xl mx-auto">
+      <section className="relative overflow-hidden bg-[#0E2539] text-white py-12 md:py-16 border-t border-[#2F7CEF]/20">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(47,124,239,0.14),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10 text-center max-w-2xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
             Ready to advocate for product quality?
           </h2>

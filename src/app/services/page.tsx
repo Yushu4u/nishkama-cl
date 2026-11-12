@@ -14,8 +14,12 @@ export default function ServicesPage() {
   return (
     <div className="bg-white text-[#0E2539]">
       {/* 1. HERO SECTION (Identical structure & padding to About page hero) */}
-      <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
-        <div className="shell">
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-white py-12 md:py-16">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_30%_0%,rgba(47,124,239,0.06),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10">
           <div className="max-w-3xl">
             <span className="badge-pill">QA SERVICES CATALOG</span>
             <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
@@ -62,12 +66,13 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. CALLOUT BAND (Identical to About page callout) */}
-      <section className="bg-[#0E2539] text-white py-12 md:py-16">
-        <div className="shell text-center max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
-            GET IN TOUCH
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+      <section className="relative overflow-hidden bg-[#0E2539] text-white py-12 md:py-16 border-t border-[#2F7CEF]/20">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(47,124,239,0.14),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10 text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
             Ready for an independent quality partner?
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">

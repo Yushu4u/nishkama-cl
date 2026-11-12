@@ -5,15 +5,13 @@ import { FeaturedCardsSection } from "@/components/FeaturedCardsSection";
 export default function HomePage() {
   return (
     <div className="bg-[#FAFBFD] text-slate-900 min-h-screen">
-      {/* Ambient background mesh */}
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[640px] -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(47,124,239,0.08),rgba(255,255,255,0))]"
-        aria-hidden="true"
-      />
-
       {/* 1. HERO SECTION */}
-      <section className="relative pt-14 pb-12 sm:pt-20 sm:pb-16 border-b border-slate-200/80 bg-white">
-        <div className="shell text-center">
+      <section className="relative overflow-hidden pt-14 pb-12 sm:pt-20 sm:pb-16 border-b border-slate-200/80 bg-white">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(47,124,239,0.07),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10 text-center">
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs shadow-xs mb-4 sm:mb-5 mx-auto">
             <span className="h-2 w-2 rounded-full bg-[#2F7CEF] animate-pulse" />
@@ -63,13 +61,13 @@ export default function HomePage() {
       <FeaturedCardsSection />
 
       {/* 3. CALLOUT BANNER (Pre-Footer Consultation) */}
-      <section className="bg-[#0E2539] text-white py-14 sm:py-16 border-t border-[#2F7CEF]/20">
-        <div className="shell text-center max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#2F7CEF]" />
-            PARTNER WITH QUALITY ADVOCATES
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
+      <section className="relative overflow-hidden bg-[#0E2539] text-white py-14 sm:py-16 border-t border-[#2F7CEF]/20">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(47,124,239,0.14),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10 text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
             Build release confidence before your next deployment.
           </h2>
           <p className="mt-3.5 text-base sm:text-lg text-slate-300 leading-relaxed">
