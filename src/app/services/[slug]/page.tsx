@@ -94,15 +94,6 @@ export default async function ServiceDetailPage({ params }: Props) {
         />
         <div className="shell relative z-10">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="badge-pill">
-                SERVICE {service.number}
-              </span>
-              <span className="text-xs font-semibold text-slate-500">
-                Independent Software QA
-              </span>
-            </div>
-
             <h1 className="text-3xl font-extrabold text-[#0E2539] tracking-tight sm:text-5xl sm:leading-[1.1]">
               {service.title}
             </h1>
@@ -244,10 +235,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 href={`/services/${rel.slug}`}
                 className="rounded-xl border border-slate-200/80 bg-white p-5 hover:border-[#BFDBFE] hover:shadow-md transition-all group"
               >
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                  SERVICE {rel.number}
-                </span>
-                <h4 className="mt-1 text-sm font-bold text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
+                <h4 className="text-sm font-bold text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
                   {rel.title}
                 </h4>
                 <p className="mt-1 text-xs text-slate-500 line-clamp-2">
