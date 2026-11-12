@@ -3,15 +3,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  CheckCircle2,
   ArrowRight,
   ChevronRight,
-  FileCheck2,
-  Bug,
+  Glasses,
+  CheckSquare,
+  Compass,
+  ShieldCheck,
+  Monitor,
+  UserCheck,
+  Workflow,
+  Rocket,
+  Search,
+  type LucideIcon,
 } from "lucide-react";
 import { detailedServices } from "@/data/services";
+import { allServicesData } from "@/data/servicesData";
 import { siteConfig } from "@/data/siteConfig";
 import { Button } from "@/components/Button";
+
+const serviceIconMap: Record<string, LucideIcon> = {
+  "xr-testing": Glasses,
+  "functional-testing": CheckSquare,
+  "exploratory-testing": Compass,
+  "regression-testing": ShieldCheck,
+  "compatibility-testing": Monitor,
+  "usability-testing": UserCheck,
+  "e2e-testing": Workflow,
+  "release-validation": Rocket,
+  "quality-audit": Search,
+};
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -131,14 +151,13 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 3. UNIFIED ENGAGEMENT OVERVIEW (Impact, Fit, Deliverables & Risks) */}
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-[#F8FAFC] py-12 sm:py-16">
+      {/* 3. IMPACT & FIT SUMMARY */}
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-[#F8FAFC] py-10 sm:py-12">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,rgba(47,124,239,0.05),rgba(248,250,252,0))]"
           aria-hidden="true"
         />
-        <div className="shell relative z-10 space-y-6">
-          {/* Unified Top Summary Card */}
+        <div className="shell relative z-10">
           <div className="grid lg:grid-cols-12 rounded-2xl border border-slate-200/90 bg-white shadow-xs overflow-hidden">
             <div className="lg:col-span-8 p-7 sm:p-8 flex flex-col justify-center">
               <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF]">
@@ -161,97 +180,88 @@ export default async function ServiceDetailPage({ params }: Props) {
               </p>
             </div>
           </div>
-
-          {/* Matching Twin Outcome Cards */}
-          <div className="grid gap-6 md:grid-cols-2 items-stretch">
-            {/* Deliverables */}
-            <div className="rounded-2xl border border-slate-200/90 bg-white p-7 shadow-xs">
-              <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-                <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#EFF6FF] text-[#2F7CEF] border border-[#BFDBFE] shrink-0">
-                  <FileCheck2 className="h-4 w-4" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#0E2539]">
-                  What You Receive
-                </h3>
-              </div>
-              <ul className="mt-5 space-y-3">
-                {service.deliverables.map((del) => (
-                  <li key={del} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span className="font-medium">{del}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Typical Defects Caught */}
-            <div className="rounded-2xl border border-slate-200/90 bg-white p-7 shadow-xs">
-              <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-                <div className="grid h-9 w-9 place-items-center rounded-xl bg-rose-50 text-rose-600 border border-rose-200/80 shrink-0">
-                  <Bug className="h-4 w-4" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#0E2539]">
-                  High-Risk Bugs We Catch Early
-                </h3>
-              </div>
-              <ul className="mt-5 space-y-3">
-                {service.typicalBugsCaught.map((bug) => (
-                  <li key={bug} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    <span className="h-1.5 w-1.5 rounded-full bg-rose-500 mt-2 shrink-0" />
-                    <span>{bug}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* 4. EXPLORE RELATED SERVICES */}
-      <section className="border-b border-slate-200/80 bg-white py-12 sm:py-14">
+      <section className="border-b border-slate-200/80 bg-white py-14 sm:py-16">
         <div className="shell">
-          <div className="flex items-center justify-between pb-6 border-b border-slate-100 flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-5 border-b border-slate-200/70">
             <div>
-              <h3 className="text-lg font-bold text-[#0E2539]">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
+                COMPLEMENTARY DISCIPLINES
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2539]">
                 Explore Other Software QA Services
-              </h3>
-              <p className="text-xs text-slate-500">
-                Discover complementary testing disciplines for comprehensive coverage.
+              </h2>
+              <p className="mt-1.5 text-sm text-slate-600">
+                Pair disciplines to match your release cadence, architecture, and risk profile.
               </p>
             </div>
             <Link
               href="/services"
-              className="text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] flex items-center gap-1"
+              className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold text-[#0E2539] hover:border-[#2F7CEF] hover:bg-[#EFF6FF] hover:text-[#2F7CEF] transition-all whitespace-nowrap shrink-0"
             >
               <span>View All 9 Services</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
 
-          <div className="mt-6 grid gap-6 sm:grid-cols-3">
-            {relatedServices.map((rel) => (
-              <Link
-                key={rel.slug}
-                href={`/services/${rel.slug}`}
-                className="rounded-xl border border-slate-200/80 bg-white p-5 hover:border-[#BFDBFE] hover:shadow-md transition-all group"
-              >
-                <h4 className="text-sm font-bold text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
-                  {rel.title}
-                </h4>
-                <p className="mt-1 text-xs text-slate-500 line-clamp-2">
-                  {rel.shortDescription}
-                </p>
-                <div className="mt-3 flex items-center gap-1 text-xs font-bold text-[#2F7CEF]">
-                  <span>Learn more</span>
-                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
+          <div className="grid gap-6 md:grid-cols-3 items-stretch">
+            {relatedServices.map((rel) => {
+              const Icon = serviceIconMap[rel.slug] || CheckSquare;
+              const catalogMeta = allServicesData.find((item) => item.slug === rel.slug);
+              return (
+                <Link
+                  key={rel.slug}
+                  href={`/services/${rel.slug}`}
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-[0_8px_28px_-10px_rgba(14,37,57,0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2F7CEF]/45 hover:shadow-[0_22px_44px_-12px_rgba(47,124,239,0.16)]"
+                >
+                  {/* Top electric-blue accent rail */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#2F7CEF] via-[#60A5FA] to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+
+                  {/* Subtle top-right ambient glow */}
+                  <div
+                    className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#2F7CEF]/[0.05] blur-2xl transition-colors duration-300 group-hover:bg-[#2F7CEF]/[0.12]"
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative z-10">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-[#2F7CEF] to-[#1D4ED8] text-white shadow-md shadow-[#2F7CEF]/25 transition-transform duration-300 group-hover:scale-105">
+                        <Icon className="h-5 w-5" />
+                      </div>
+
+                      {catalogMeta?.categoryLabel && (
+                        <span className="inline-flex items-center rounded-full border border-slate-200/80 bg-slate-50 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-wider text-slate-600">
+                          {catalogMeta.categoryLabel}
+                        </span>
+                      )}
+                    </div>
+
+                    <h3 className="mt-5 text-lg font-extrabold tracking-tight text-[#0E2539] group-hover:text-[#2F7CEF] transition-colors">
+                      {rel.title}
+                    </h3>
+                    <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
+                      {rel.shortDescription}
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#2F7CEF]">
+                    <span>Explore Discipline</span>
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 6. BOTTOM CALLOUT BANNER */}
+      {/* 5. BOTTOM CALLOUT BANNER */}
       <section className="relative overflow-hidden bg-[#0E2539] py-12 sm:py-16 text-white border-t border-[#2F7CEF]/20">
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(ellipse_60%_100%_at_50%_0%,rgba(47,124,239,0.14),transparent)]"
