@@ -134,15 +134,6 @@ export default async function ServiceDetailPage({ params }: Props) {
               >
                 Inquire About {service.title}
               </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                trackingLabel="Talk to a Specialist"
-                trackingLocation="Service Hero"
-              >
-                Talk to a Specialist
-              </Button>
             </div>
           </div>
         </div>
