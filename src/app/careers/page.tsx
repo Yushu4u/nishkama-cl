@@ -10,17 +10,16 @@ import {
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Careers — QA Engineers & Quality Advocates | Nishkama CodeLab",
+  title: "Careers — QA Engineers & Quality Advocates",
   description:
-    "Join Nishkama CodeLab's 18 open roles: QA Engineer (1–2 yrs), Senior QA Engineer (3–5 yrs), and Lead QA Engineer (9+ yrs) — all operating with a Quality Advocate mindset.",
+    "Explore open QA roles at Nishkama CodeLab: QA Engineer (1–2 yrs), Senior QA Engineer (3–5 yrs), and Lead QA Engineer (9+ yrs) — all operating with a Quality Advocate mindset.",
 };
 
 interface Role {
   id: string;
   title: string;
   advocateTrack: string;
-  openings: string;
-  openingsCount: number;
+  statusLabel: string;
   experience: string;
   meta: string;
   icon: typeof Terminal;
@@ -35,8 +34,7 @@ const openRoles: Role[] = [
     id: "qa-engineer",
     title: "QA Engineer",
     advocateTrack: "Quality Advocate Track",
-    openings: "15 Openings",
-    openingsCount: 15,
+    statusLabel: "Open Role",
     experience: "1–2 Years Exp.",
     meta: "Full-Time • Remote / Hybrid",
     icon: Terminal,
@@ -61,8 +59,7 @@ const openRoles: Role[] = [
     id: "senior-qa-engineer",
     title: "Senior QA Engineer",
     advocateTrack: "Senior Quality Advocate",
-    openings: "2 Openings",
-    openingsCount: 2,
+    statusLabel: "Open Role",
     experience: "3–5 Years Exp.",
     meta: "Full-Time • Remote / Hybrid",
     icon: ShieldCheck,
@@ -87,8 +84,7 @@ const openRoles: Role[] = [
     id: "lead-qa-engineer",
     title: "Lead QA Engineer",
     advocateTrack: "Principal Quality Advocate",
-    openings: "1 Opening",
-    openingsCount: 1,
+    statusLabel: "Open Role",
     experience: "9+ Years Exp.",
     meta: "Full-Time • Remote / Hybrid",
     icon: Compass,
@@ -112,8 +108,6 @@ const openRoles: Role[] = [
 ];
 
 export default function CareersPage() {
-  const totalOpenings = openRoles.reduce((sum, r) => sum + r.openingsCount, 0);
-
   return (
     <div className="bg-white text-[#0E2539]">
       {/* 1. HERO SECTION */}
@@ -131,7 +125,7 @@ export default function CareersPage() {
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl mx-auto">
             Standard engineering titles powered by a Quality Advocate mindset. Hiring{" "}
             <strong className="text-[#0E2539] font-bold">
-              {totalOpenings} QA Engineers
+              QA Engineers
             </strong>{" "}
             focused on real-world users, technical depth, and zero-fluff bug evidence.
           </p>
@@ -148,7 +142,7 @@ export default function CareersPage() {
         <div className="shell relative z-10">
           <div className="mb-10 pb-5 border-b border-slate-200/70">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
-              OPEN ROLES • {totalOpenings} POSITIONS
+              OPEN ROLES
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
               Build your career in real-world QA.
@@ -170,14 +164,14 @@ export default function CareersPage() {
                   />
 
                   <div>
-                    {/* Top Row: Icon + Vacancy Pill */}
+                    {/* Top Row: Icon + Status Pill */}
                     <div className="flex items-start justify-between gap-3">
                       <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[#2F7CEF] to-[#1D4ED8] text-white shadow-md shadow-[#2F7CEF]/25">
                         <Icon className="h-5 w-5" />
                       </div>
 
                       <span className="inline-flex items-center rounded-full border border-blue-200/80 bg-[#EFF6FF] px-3 py-1 text-[11px] font-mono font-bold text-[#2F7CEF] whitespace-nowrap">
-                        {role.openings}
+                        {role.statusLabel}
                       </span>
                     </div>
 
