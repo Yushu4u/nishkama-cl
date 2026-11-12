@@ -188,18 +188,9 @@ export function CareerApplicationForm({ initialRole }: CareerApplicationFormProp
           {submitSuccess.message}
         </p>
 
-        <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left text-xs text-slate-600 space-y-3 max-w-lg mx-auto">
-          <p className="font-bold text-slate-900 uppercase tracking-wider">
-            What Happens Next?
-          </p>
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center text-xs text-slate-600 max-w-md mx-auto">
           <p>
-            <strong>1. Engineering Review:</strong> A senior QA lead reviews your experience, skills, and bug reporting style.
-          </p>
-          <p>
-            <strong>2. Practical Bug Challenge:</strong> Candidates passing initial review receive a 45-minute exploratory bug-hunt exercise.
-          </p>
-          <p>
-            <strong>3. Final Conversation &amp; Offer:</strong> Discussion on team fit, methodology, and compensation.
+            Our team will review your application and follow up via email. All submissions are kept strictly confidential.
           </p>
         </div>
 
