@@ -9,6 +9,7 @@ export interface ServiceItem {
   title: string;
   category: "immersive" | "sprint" | "audit";
   categoryLabel: string;
+  gist: string;
   summary: string;
   capabilities: CapabilityColumn[];
   ctaText: string;
@@ -22,6 +23,7 @@ export const allServicesData: ServiceItem[] = [
     title: "XR & Spatial Computing QA",
     category: "immersive",
     categoryLabel: "XR & Immersive",
+    gist: "Real-device validation for AR, VR, and MR apps across VisionOS, Meta Quest, and WebXR.",
     summary:
       "Comprehensive testing for AR, VR, and MR headsets, spatial tracking systems, and 3D spatial applications across VisionOS, Meta Quest, and WebXR.",
     capabilities: [
@@ -63,6 +65,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Functional Testing",
     category: "sprint",
     categoryLabel: "Core Sprint QA",
+    gist: "Verification of core features, user workflows, and business logic against exact specifications.",
     summary:
       "Rigorous verification of core features, state transitions, user workflows, and complex business logic against exact functional specifications.",
     capabilities: [
@@ -104,6 +107,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Exploratory Testing",
     category: "sprint",
     categoryLabel: "Core Sprint QA",
+    gist: "Unscripted, real-world testing to catch unpredictable edge cases before users reach them.",
     summary:
       "Unscripted, intuitive bug hunting that simulates real, unpredictable human behavior to uncover critical corner cases before real users do.",
     capabilities: [
@@ -145,6 +149,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Regression Testing",
     category: "sprint",
     categoryLabel: "Core Sprint QA",
+    gist: "Safeguarding verified features so new commits, upgrades, and hotfixes never break existing flows.",
     summary:
       "Targeted and comprehensive test cycles ensuring new commits, dependency bumps, and hotfixes never break existing, verified functionality.",
     capabilities: [
@@ -186,6 +191,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Compatibility & Device Testing",
     category: "sprint",
     categoryLabel: "Core Sprint QA",
+    gist: "Physical device validation across iOS, Android, macOS, Windows, and modern browser engines.",
     summary:
       "Comprehensive testing across physical iOS, Android, macOS, and Windows devices and modern browser engines without relying solely on emulators.",
     capabilities: [
@@ -227,6 +233,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Usability & UX Testing",
     category: "audit",
     categoryLabel: "UX & Quality Audits",
+    gist: "Evaluating workflow friction, visual polish, and accessibility for an intuitive user experience.",
     summary:
       "Evaluating user flows, cognitive friction, visual polish, microcopy clarity, and WCAG accessibility standards to ensure an intuitive product experience.",
     capabilities: [
@@ -268,6 +275,7 @@ export const allServicesData: ServiceItem[] = [
     title: "End-to-End (E2E) Testing",
     category: "sprint",
     categoryLabel: "Core Sprint QA",
+    gist: "Full-lifecycle checks spanning user interfaces, APIs, databases, and connected third-party services.",
     summary:
       "Full lifecycle validation spanning frontend user interfaces, backend workers, distributed microservices, databases, and third-party APIs.",
     capabilities: [
@@ -309,6 +317,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Release Validation & Go/No-Go",
     category: "audit",
     categoryLabel: "UX & Quality Audits",
+    gist: "Pre-deployment release candidate audits delivering decisive go or no-go launch verdicts.",
     summary:
       "Pre-deployment staging audits, release candidate verification, and definitive go/no-go quality verdicts for engineering and product leadership.",
     capabilities: [
@@ -350,6 +359,7 @@ export const allServicesData: ServiceItem[] = [
     title: "Quality Audit & Diagnostic",
     category: "audit",
     categoryLabel: "UX & Quality Audits",
+    gist: "Focused 1–2 week diagnostic uncovering coverage gaps, fragile workflows, and release risk.",
     summary:
       "A comprehensive 1–2 week deep-dive diagnostic of test coverage gaps, fragile workflows, defect leakages, and team QA velocity.",
     capabilities: [

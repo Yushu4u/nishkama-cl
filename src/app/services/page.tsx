@@ -39,16 +39,21 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 2. ALL 9 SERVICES DIRECTORY (Tests Assured-style dropdowns, zero boxed content) */}
-      <section className="border-b border-slate-200/80 bg-slate-50/70 py-12 md:py-16">
-        <div className="shell">
-          <div className="max-w-3xl mb-8">
+      {/* 2. ALL 9 SERVICES SHOWCASE (3x3 Visual Offering Grid) */}
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-[#F8FAFC] py-14 md:py-20">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_60%,rgba(47,124,239,0.06),rgba(248,250,252,0))]"
+          aria-hidden="true"
+        />
+        <div className="shell relative z-10">
+          <div className="max-w-3xl mb-10 md:mb-12">
             <span className="badge-pill">OUR 9 DISCIPLINES</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0E2539] leading-[1.1]">
-              Every layer of product quality, covered.
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0E2539] leading-[1.1]">
+              Every layer of product quality,{" "}
+              <span className="text-[#2F7CEF]">covered.</span>
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Explore our complete QA disciplines below. Click any discipline to view testing capabilities, coverage scope, and verification methodologies.
+            <p className="mt-3.5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+              Nine focused QA offerings engineered around product risk, physical device reality, and release confidence.
             </p>
           </div>
 
