@@ -4,196 +4,249 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  Users,
-  Award,
+  Terminal,
+  Compass,
 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Careers — Join the Quality Advocates | Nishkama CodeLab",
+  title: "Careers — QA Engineers & Quality Advocates | Nishkama CodeLab",
   description:
-    "We don't hire test runners; we hire Quality Advocates. Explore our 19 active openings: Quality Advocate (1–2 yrs), Senior Quality Advocate (3–5 yrs), and Lead Quality Advocate (9+ yrs).",
+    "Join Nishkama CodeLab's 19 open roles: QA Engineer (1–2 yrs), Senior QA Engineer (3–5 yrs), and Lead QA Engineer (9+ yrs) — all operating with a Quality Advocate mindset.",
 };
 
 interface Role {
   id: string;
-  advocacyTitle: string;
+  title: string;
+  advocateTrack: string;
   openings: string;
   openingsCount: number;
   experience: string;
-  type: string;
-  location: string;
-  icon: typeof ShieldCheck;
-  highlight: string;
-  description: string;
-  advocacyFocus: string[];
+  meta: string;
+  icon: typeof Terminal;
+  summary: string;
+  skills: string[];
+  deliverables: string[];
   mailtoSubject: string;
 }
 
-const openAdvocacyRoles: Role[] = [
+const openRoles: Role[] = [
   {
-    id: "quality-advocate",
-    advocacyTitle: "Quality Advocate",
-    openings: "15 Vacancies",
+    id: "qa-engineer",
+    title: "QA Engineer",
+    advocateTrack: "Quality Advocate Track",
+    openings: "15 Openings",
     openingsCount: 15,
-    experience: "1–2 Years Experience",
-    type: "Full-Time",
-    location: "Remote",
-    icon: ShieldCheck,
-    highlight: "Core Real-World Verification",
-    description:
-      "Advocate for the end-user by conducting unscripted exploratory journeys, user flow stress-testing, and functional verification across physical iOS, Android, and web platforms. You will hunt the edge-case blind spots and confusing friction that automated scripts miss.",
-    advocacyFocus: [
-      "Rigorous functional & exploratory test execution across real devices and platforms",
-      "Crafting crystal-clear repro steps backed by logs, traces, and video proofs",
-      "Zero happy-path bias — relentlessly testing error states, network drops, and boundary inputs",
+    experience: "1–2 Years Exp.",
+    meta: "Full-Time • Remote",
+    icon: Terminal,
+    summary:
+      "Own functional, exploratory, and regression cycles across web, mobile, and REST APIs — catching edge failures before users do.",
+    skills: [
+      "Functional QA",
+      "Jira / Linear",
+      "Postman",
+      "DevTools",
+      "SQL",
+      "Git",
     ],
-    mailtoSubject: "Application for Quality Advocate (1-2 Years Experience)",
+    deliverables: [
+      "Test real-device flows beyond scripted happy paths",
+      "Validate REST APIs and backend data with SQL",
+      "File deterministic bug reports with video & HAR logs",
+    ],
+    mailtoSubject: "Application for QA Engineer (1-2 Years Experience)",
   },
   {
-    id: "senior-quality-advocate",
-    advocacyTitle: "Senior Quality Advocate",
-    openings: "3 Vacancies",
+    id: "senior-qa-engineer",
+    title: "Senior QA Engineer",
+    advocateTrack: "Senior Quality Advocate",
+    openings: "3 Openings",
     openingsCount: 3,
-    experience: "3–5 Years Experience",
-    type: "Full-Time",
-    location: "Remote",
-    icon: Award,
-    highlight: "Regression & Defect Investigation",
-    description:
-      "Own critical user-journey regression suites, API verification, and cross-platform compatibility matrices. Working alongside engineering sprint teams, you will isolate edge cases, trace failing requests, and safeguard product stability across release cycles.",
-    advocacyFocus: [
-      "Network request inspection (DevTools, Postman) and response validation",
-      "Designing robust regression test suites integrated into deployment pipelines",
-      "Multi-device sweeps across flagship smartphones, tablets, and mobile operating systems",
+    experience: "3–5 Years Exp.",
+    meta: "Full-Time • Remote",
+    icon: ShieldCheck,
+    summary:
+      "Build Playwright E2E and API automation suites integrated into CI/CD while isolating complex edge defects across sprints.",
+    skills: [
+      "Playwright",
+      "TypeScript / JS",
+      "API Automation",
+      "GitHub Actions",
+      "Cross-Device QA",
+      "SQL",
     ],
-    mailtoSubject: "Application for Senior Quality Advocate (3-5 Years Experience)",
+    deliverables: [
+      "Architect reliable UI & API test suites in Playwright",
+      "Wire automated regression gates into CI/CD pipelines",
+      "Debug race conditions, auth state, and network drops",
+    ],
+    mailtoSubject: "Application for Senior QA Engineer (3-5 Years Experience)",
   },
   {
-    id: "lead-quality-advocate",
-    advocacyTitle: "Lead Quality Advocate",
-    openings: "1 Vacancy",
+    id: "lead-qa-engineer",
+    title: "Lead QA Engineer",
+    advocateTrack: "Principal Quality Advocate",
+    openings: "1 Opening",
     openingsCount: 1,
-    experience: "9+ Years Experience",
-    type: "Full-Time",
-    location: "Remote / Hybrid",
-    icon: Users,
-    highlight: "Quality Strategy & Leadership",
-    description:
-      "Set the holistic quality standard across our client engagements, mentor our advocate community, and partner directly with engineering leaders and founders. You will define release readiness frameworks, conduct thorough quality audits, and guide objective launch decisions.",
-    advocacyFocus: [
-      "Architecting quality frameworks, diagnostic scorecards, and coverage roadmaps",
-      "Coaching and leveling up advocates in investigative testing and clear bug reporting",
-      "Objective release readiness evaluation and clear stakeholder communication",
+    experience: "9+ Years Exp.",
+    meta: "Full-Time • Remote / Hybrid",
+    icon: Compass,
+    summary:
+      "Define test architecture, mentor QA engineers, and deliver objective Go/No-Go release verdicts for product leadership.",
+    skills: [
+      "Test Architecture",
+      "Playwright",
+      "CI/CD & Docker",
+      "k6 / JMeter",
+      "Risk Audits",
+      "Mentorship",
     ],
-    mailtoSubject: "Application for Lead Quality Advocate (9+ Years Experience)",
+    deliverables: [
+      "Design QA roadmaps, risk matrices, and coverage KPIs",
+      "Mentor engineers on exploratory depth & reporting rigor",
+      "Own pre-launch audits and production RCA sign-offs",
+    ],
+    mailtoSubject: "Application for Lead QA Engineer (9+ Years Experience)",
   },
 ];
 
 export default function CareersPage() {
-  const totalOpenings = openAdvocacyRoles.reduce(
-    (sum, r) => sum + r.openingsCount,
-    0
-  );
+  const totalOpenings = openRoles.reduce((sum, r) => sum + r.openingsCount, 0);
 
   return (
     <div className="bg-white text-[#0E2539]">
-      {/* 1. HERO SECTION (Minimalist, respectful, non-bloated) */}
+      {/* 1. HERO SECTION */}
       <section className="border-b border-slate-200/80 bg-white py-12 md:py-16">
         <div className="shell text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0E2539] leading-[1.08]">
-            We don&apos;t hire test runners.
-            <br />
-            We hire <span className="text-[#2F7CEF]">Quality Advocates.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#0E2539] leading-[1.08]">
+            Join Nishkama as a{" "}
+            <span className="text-[#2F7CEF] whitespace-nowrap">Quality Advocate.</span>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
-            At Nishkama CodeLab, we believe QA exists to defend the customer experience.
-            We don&apos;t reduce our team to mechanical script operators — we empower you as
-            an independent quality advocate. We are currently welcoming{" "}
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl mx-auto">
+            Standard engineering titles powered by a Quality Advocate mindset. Hiring{" "}
             <strong className="text-[#0E2539] font-bold">
-              {totalOpenings} Quality Advocates
+              {totalOpenings} QA Engineers
             </strong>{" "}
-            across three experience tiers.
+            focused on real-world users, technical depth, and zero-fluff bug evidence.
           </p>
         </div>
       </section>
 
-      {/* 2. THE 3 OPEN ADVOCACY TIERS (Clean, unbloated, high-dignity presentation) */}
-      <section className="border-b border-slate-200/80 bg-slate-50/70 py-12 md:py-16">
-        <div className="shell max-w-4xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <span className="badge-pill">CURRENT OPENINGS</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#0E2539]">
-              Find Your Place on the Team
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Every opening carries the title and dignity of a Quality Advocate, aligned with your depth of craft.
-            </p>
+      {/* 2. OPEN ROLES (3-Column Compact Architecture) */}
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-[#F8FAFC] py-14 md:py-20">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(47,124,239,0.06),rgba(248,250,252,0))]"
+          aria-hidden="true"
+        />
+
+        <div className="shell relative z-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-5 border-b border-slate-200/70">
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block mb-1">
+                OPEN ROLES • {totalOpenings} POSITIONS
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#0E2539]">
+                Build your career in real-world QA.
+              </h2>
+            </div>
+            <span className="text-xs sm:text-sm font-medium text-slate-500">
+              Remote-first engineering team • Continuous hiring
+            </span>
           </div>
 
-          <div className="space-y-4">
-            {openAdvocacyRoles.map((role) => {
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-7 items-stretch">
+            {openRoles.map((role) => {
               const Icon = role.icon;
               return (
                 <article
                   key={role.id}
-                  className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs hover:border-[#BFDBFE] hover:shadow-sm transition-all"
+                  className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-[0_8px_28px_-10px_rgba(14,37,57,0.07)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2F7CEF]/45 hover:shadow-[0_22px_44px_-12px_rgba(47,124,239,0.16)]"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 pb-4 border-b border-slate-100">
-                    <div className="flex items-start gap-3.5">
-                      <div className="mt-0.5 shrink-0 grid h-11 w-11 place-items-center rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] text-[#2F7CEF]">
+                  {/* Top glowing electric-blue accent rail */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#2F7CEF] via-[#60A5FA] to-transparent opacity-65 transition-opacity duration-300 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+
+                  <div>
+                    {/* Top Row: Icon + Vacancy Pill */}
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[#2F7CEF] to-[#1D4ED8] text-white shadow-md shadow-[#2F7CEF]/25">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <div>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#0E2539]">
-                            {role.advocacyTitle}
-                          </h3>
-                          <span className="rounded-md bg-blue-50 border border-blue-200 px-2.5 py-0.5 text-xs font-bold text-[#2F7CEF]">
-                            {role.openings}
-                          </span>
-                        </div>
-                        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-slate-500">
-                          <span className="font-semibold text-slate-700">
-                            {role.experience}
-                          </span>
-                          <span>•</span>
-                          <span>{role.type}</span>
-                          <span>•</span>
-                          <span>{role.location}</span>
-                        </div>
+
+                      <span className="inline-flex items-center rounded-full border border-blue-200/80 bg-[#EFF6FF] px-3 py-1 text-[11px] font-mono font-bold text-[#2F7CEF] whitespace-nowrap">
+                        {role.openings}
+                      </span>
+                    </div>
+
+                    {/* Authentic Title + Advocate Identity Track */}
+                    <div className="mt-5">
+                      <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block">
+                        {role.advocateTrack}
+                      </span>
+                      <h3 className="mt-1 text-2xl font-extrabold tracking-tight text-[#0E2539]">
+                        {role.title}
+                      </h3>
+                      <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold text-slate-500">
+                        <span className="text-[#0E2539]">{role.experience}</span>
+                        <span>•</span>
+                        <span>{role.meta}</span>
                       </div>
                     </div>
 
+                    {/* Crisp 2-line Role Summary */}
+                    <p className="mt-4 text-sm leading-relaxed text-slate-600 lg:min-h-[68px]">
+                      {role.summary}
+                    </p>
+
+                    {/* Required Stack & Skills */}
+                    <div className="mt-5 pt-4 border-t border-slate-100">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+                        REQUIRED SKILLS &amp; STACK
+                      </span>
+                      <div className="flex flex-wrap content-start gap-1.5 lg:min-h-[68px]">
+                        {role.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="rounded-lg border border-slate-200/90 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-700"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 3 Concise Ownership Bullets */}
+                    <div className="mt-5 pt-4 border-t border-slate-100">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+                        WHAT YOU WILL OWN
+                      </span>
+                      <ul className="space-y-2 text-[13px] text-slate-600 leading-snug">
+                        {role.deliverables.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-[#2F7CEF] shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Direct Apply Button */}
+                  <div className="mt-6 pt-5 border-t border-slate-100">
                     <a
                       href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(
                         role.mailtoSubject
                       )}`}
-                      className="self-start shrink-0 inline-flex items-center gap-2 rounded-xl bg-[#2F7CEF] px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm hover:bg-[#1E66D8] transition-all"
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#0E2539] px-5 py-3 text-xs sm:text-sm font-bold text-white shadow-xs transition-all hover:bg-[#2F7CEF] hover:shadow-md hover:shadow-[#2F7CEF]/20"
                     >
-                      <span>Apply Now</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
+                      <span>Apply for {role.title}</span>
+                      <ArrowRight className="h-4 w-4" />
                     </a>
-                  </div>
-
-                  <p className="mt-3.5 text-sm sm:text-base leading-relaxed text-slate-600">
-                    {role.description}
-                  </p>
-
-                  <div className="mt-4 pt-3.5 border-t border-slate-100">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                      Core Advocacy Focus:
-                    </span>
-                    <ul className="space-y-1.5 text-xs sm:text-sm text-slate-600">
-                      {role.advocacyFocus.map((focus, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-[#2F7CEF] shrink-0 mt-0.5" />
-                          <span>{focus}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </article>
               );
@@ -202,7 +255,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 3. CALLOUT BAND (Matching About and Services) */}
+      {/* 3. CALLOUT BAND */}
       <section className="bg-[#0E2539] text-white py-12 md:py-16">
         <div className="shell text-center max-w-2xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/80 px-3.5 py-1 text-xs font-semibold text-slate-300">
@@ -212,15 +265,15 @@ export default function CareersPage() {
             Ready to advocate for product quality?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-            Send your resume and a short note detailing a critical bug or user friction you caught before production to{" "}
+            Send your resume and one memorable production bug or UX edge case you caught to{" "}
             <span className="text-white font-semibold underline underline-offset-4">
               {siteConfig.email}
             </span>
-            . We review applications continuously.
+            .
           </p>
           <div className="mt-6 flex justify-center">
             <Button
-              href={`mailto:${siteConfig.email}?subject=Quality Advocate General Application`}
+              href={`mailto:${siteConfig.email}?subject=QA Engineering Application`}
               variant="primary"
               size="lg"
               withArrow
