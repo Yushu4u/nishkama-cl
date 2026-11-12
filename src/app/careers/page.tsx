@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 interface Role {
   id: string;
   title: string;
-  advocateTrack: string;
   statusLabel: string;
   experience: string;
   meta: string;
@@ -33,7 +32,6 @@ const openRoles: Role[] = [
   {
     id: "qa-engineer",
     title: "QA Engineer",
-    advocateTrack: "Quality Advocate Track",
     statusLabel: "Open Role",
     experience: "1–2 Years Exp.",
     meta: "Full-Time • Remote / Hybrid",
@@ -58,7 +56,6 @@ const openRoles: Role[] = [
   {
     id: "senior-qa-engineer",
     title: "Senior QA Engineer",
-    advocateTrack: "Senior Quality Advocate",
     statusLabel: "Open Role",
     experience: "3–5 Years Exp.",
     meta: "Full-Time • Remote / Hybrid",
@@ -83,7 +80,6 @@ const openRoles: Role[] = [
   {
     id: "lead-qa-engineer",
     title: "Lead QA Engineer",
-    advocateTrack: "Principal Quality Advocate",
     statusLabel: "Open Role",
     experience: "9+ Years Exp.",
     meta: "Full-Time • Remote / Hybrid",
@@ -175,12 +171,9 @@ export default function CareersPage() {
                       </span>
                     </div>
 
-                    {/* Authentic Title + Advocate Identity Track */}
+                    {/* Role Title & Meta */}
                     <div className="mt-5">
-                      <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider text-[#2F7CEF] block">
-                        {role.advocateTrack}
-                      </span>
-                      <h3 className="mt-1 text-2xl font-extrabold tracking-tight text-[#0E2539]">
+                      <h3 className="text-2xl font-extrabold tracking-tight text-[#0E2539]">
                         {role.title}
                       </h3>
                       <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold text-slate-500">
