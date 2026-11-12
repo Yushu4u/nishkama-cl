@@ -15,13 +15,13 @@ export async function Footer() {
   return (
     <footer className="border-t border-slate-700/70 bg-[#0B1D2E] text-slate-300 transition-smooth">
       <div className="shell py-10 md:py-12">
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-[1fr_1.3fr] gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-12 lg:gap-8">
           {/* Software QA Services Column */}
-          <div className="col-span-2 lg:col-span-5">
+          <div className="col-span-2 lg:col-span-6">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
               Software QA Services
             </h3>
-            <ul className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2.5 text-xs">
+            <ul className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-2.5 text-xs">
               {siteConfig.footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -36,7 +36,7 @@ export async function Footer() {
           </div>
 
           {/* Company Column */}
-          <div className="col-span-1 lg:col-span-2">
+          <div className="col-span-1 lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
               Company
             </h3>
@@ -54,10 +54,10 @@ export async function Footer() {
             </ul>
           </div>
 
-          {/* Legal & Trust Column */}
-          <div className="col-span-1 lg:col-span-2">
+          {/* Legal & Contact Column */}
+          <div className="col-span-1 lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
-              Legal &amp; Trust
+              Legal &amp; Contact
             </h3>
             <ul className="space-y-2.5 text-xs">
               {siteConfig.footerLinks.legal.map((link) => (
@@ -70,25 +70,17 @@ export async function Footer() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-1">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  aria-label={`Email ${siteConfig.name}`}
+                  className="inline-flex items-center gap-1.5 sm:gap-2 sm:rounded-full sm:border sm:border-slate-700 sm:bg-slate-900/60 sm:px-3.5 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-slate-200 transition-colors hover:border-[#2F7CEF] hover:text-white whitespace-nowrap"
+                >
+                  <Mail className="h-3.5 w-3.5 text-[#2F7CEF] shrink-0" aria-hidden="true" />
+                  <span>{siteConfig.email}</span>
+                </a>
+              </li>
             </ul>
-          </div>
-
-          {/* Direct Contact Column */}
-          <div className="col-span-2 lg:col-span-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
-              Contact
-            </h3>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              aria-label={`Email ${siteConfig.name}`}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-4 py-2 text-xs font-semibold text-slate-200 transition-colors hover:border-[#2F7CEF] hover:text-white whitespace-nowrap"
-            >
-              <Mail className="h-3.5 w-3.5 text-[#2F7CEF] shrink-0" aria-hidden="true" />
-              <span>{siteConfig.email}</span>
-            </a>
-            <p className="mt-3 text-xs leading-relaxed text-slate-400">
-              All inquiries reviewed within 1 business day under strict confidentiality.
-            </p>
           </div>
         </div>
 
