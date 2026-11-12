@@ -26,9 +26,20 @@ function isRateLimited(ip: string): boolean {
 interface ApplicationWebhookPayload {
   receiptId: string;
   submittedAt: string;
-  submissionType: string;
+  submissionType: "job_application";
   firstName: string;
   lastName: string;
+  email: string;
+  phone: string;
+  role: string;
+  experienceYears: string;
+  resumeUrl: string;
+  linkedinUrl: string;
+  currentCompany: string;
+  noticePeriod: string;
+  coverNote: string;
+  notifyEmail: string;
+  // Backwards-compatible fields
   workEmail: string;
   company: string;
   productWebsite: string;
@@ -36,7 +47,6 @@ interface ApplicationWebhookPayload {
   currentQaSetup: string;
   expectedTimeline: string;
   details: string;
-  notifyEmail: string;
 }
 
 async function dispatchToGoogleWebhook(
@@ -153,6 +163,17 @@ export async function POST(req: Request) {
       submissionType: "job_application",
       firstName: validData.firstName,
       lastName: validData.lastName,
+      email: validData.email.toLowerCase(),
+      phone: validData.phone || "",
+      role: validData.role,
+      experienceYears: validData.experienceYears,
+      resumeUrl: validData.resumeUrl,
+      linkedinUrl: validData.linkedinUrl || "",
+      currentCompany: validData.currentCompany || "",
+      noticePeriod: validData.noticePeriod || "",
+      coverNote: validData.coverNote || "",
+      notifyEmail,
+      // Backwards-compatible fields for older script version
       workEmail: validData.email.toLowerCase(),
       company: validData.currentCompany || "Independent Candidate",
       productWebsite: validData.resumeUrl,
@@ -162,7 +183,6 @@ export async function POST(req: Request) {
       }`,
       expectedTimeline: validData.noticePeriod || "Not specified",
       details: detailsParts.join("\n"),
-      notifyEmail,
     };
 
     // 3. Google Workspace Webhook Delivery
