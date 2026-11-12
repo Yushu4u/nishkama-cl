@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -87,18 +86,9 @@ export async function Footer() {
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-slate-800/80 space-y-4 text-xs text-slate-500">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src={siteConfig.brand.assets.iconSquare}
-                alt="Nishkama CodeLab Mark"
-                width={22}
-                height={22}
-                className="h-5 w-5 rounded-md object-contain"
-              />
-              <p>
-                &copy; {currentYear} {siteConfig.name}. All rights reserved.
-              </p>
-            </div>
+            <p>
+              &copy; {currentYear} {siteConfig.name}. All rights reserved.
+            </p>
             <p className="text-slate-500 text-[11px]">
               Independent QA &bull; Product Experience &bull; Quality Advocacy
             </p>
