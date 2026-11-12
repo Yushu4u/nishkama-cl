@@ -13,15 +13,15 @@ export async function Footer() {
   const currentYear = await getCurrentYear();
 
   return (
-    <footer className="border-t border-slate-800 bg-[#0E2539] text-slate-300 transition-smooth">
+    <footer className="border-t border-slate-700/70 bg-[#0B1D2E] text-slate-300 transition-smooth">
       <div className="shell py-10 md:py-12">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-12 lg:gap-8">
           {/* Software QA Services Column */}
-          <div className="sm:col-span-2 lg:col-span-5">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          <div className="col-span-2 lg:col-span-5">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
               Software QA Services
             </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-xs">
+            <ul className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2.5 text-xs">
               {siteConfig.footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -36,8 +36,8 @@ export async function Footer() {
           </div>
 
           {/* Company Column */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          <div className="col-span-1 lg:col-span-2">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
               Company
             </h3>
             <ul className="space-y-2.5 text-xs">
@@ -55,8 +55,8 @@ export async function Footer() {
           </div>
 
           {/* Legal & Trust Column */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          <div className="col-span-1 lg:col-span-2">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
               Legal &amp; Trust
             </h3>
             <ul className="space-y-2.5 text-xs">
@@ -74,8 +74,8 @@ export async function Footer() {
           </div>
 
           {/* Direct Contact Column */}
-          <div className="sm:col-span-2 lg:col-span-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          <div className="col-span-2 lg:col-span-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3.5">
               Contact
             </h3>
             <a
