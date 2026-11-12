@@ -7,7 +7,6 @@ import {
   Terminal,
   Compass,
 } from "lucide-react";
-import { Button } from "@/components/Button";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
@@ -258,21 +257,14 @@ export default function CareersPage() {
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
             Send your resume and one memorable production bug or UX edge case you caught to{" "}
-            <span className="text-white font-semibold underline underline-offset-4">
+            <a
+              href={`mailto:${siteConfig.email}?subject=QA Engineering Application`}
+              className="text-white font-semibold underline underline-offset-4 hover:text-[#60A5FA] transition-colors"
+            >
               {siteConfig.email}
-            </span>
+            </a>
             .
           </p>
-          <div className="mt-6 flex justify-center">
-            <Button
-              href={`mailto:${siteConfig.email}?subject=QA Engineering Application`}
-              variant="primary"
-              size="lg"
-              withArrow
-            >
-              Email Your Resume
-            </Button>
-          </div>
         </div>
       </section>
     </div>
