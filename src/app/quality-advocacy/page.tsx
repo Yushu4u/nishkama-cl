@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 import { QualityLensesShowcase } from "@/components/QualityLensesShowcase";
 
 export const metadata: Metadata = {
-  title: "Quality Advocacy — Quality from the User's Perspective | Nishkama CodeLab",
+  title: "Quality Advocacy — Quality from the User's Perspective",
   description:
     "Discover Quality Advocacy: Nishkama CodeLab's differentiated approach uniting technical QA, real-world dogfooding, and customer feedback analysis into actionable product excellence.",
 };

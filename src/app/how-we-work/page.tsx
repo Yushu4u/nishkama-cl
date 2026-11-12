@@ -15,7 +15,7 @@ import { processStages, qaPrinciples } from "@/data/howWeWork";
 import { engagementModels } from "@/data/engagementModels";
 
 export const metadata: Metadata = {
-  title: "How We Work — Collaborative, Evidence-Driven QA | Nishkama CodeLab",
+  title: "How We Work — Collaborative, Evidence-Driven QA",
   description:
     "Learn about Nishkama CodeLab's 6-stage testing process: Discover, Plan, Test, Experience, Report, and Improve. Built around product risk, reproducible bug reports, and clear release evidence.",
 };

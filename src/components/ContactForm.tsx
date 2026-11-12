@@ -6,24 +6,27 @@ import { CheckCircle2, AlertCircle, Loader2, ArrowRight } from "lucide-react";
 import { contactFormSchema, needOptions, timelineOptions } from "@/lib/validation";
 import { trackEvent } from "@/lib/analytics";
 
+const needParamMap: Record<string, string> = {
+  assessment: "QA Assessment (1–2 weeks)",
+  project: "Project QA (Milestone/Release)",
+  partner: "Ongoing QA Partner (Embedded)",
+  advocacy: "Quality Advocacy (Comprehensive)",
+  audit: "Quality Audit",
+  "quality-audit": "Quality Audit",
+  "xr-testing": "XR & Spatial Software QA",
+  "functional-testing": "Functional Testing",
+  "exploratory-testing": "Exploratory Testing",
+  "regression-testing": "Regression Testing",
+  "compatibility-testing": "Compatibility Testing",
+  "usability-testing": "Usability & Product Experience",
+  "e2e-testing": "End-to-End Testing",
+  "release-validation": "Release Validation",
+};
+
 export function ContactForm() {
   const searchParams = useSearchParams();
-  const initialNeedParam = searchParams.get("need");
-
-  let defaultNeed = "";
-  if (initialNeedParam === "assessment") {
-    defaultNeed = "QA Assessment (1–2 weeks)";
-  } else if (initialNeedParam === "project") {
-    defaultNeed = "Project QA (Milestone/Release)";
-  } else if (initialNeedParam === "partner") {
-    defaultNeed = "Ongoing QA Partner (Embedded)";
-  } else if (initialNeedParam === "advocacy") {
-    defaultNeed = "Quality Advocacy (Comprehensive)";
-  } else if (initialNeedParam === "audit" || initialNeedParam === "quality-audit") {
-    defaultNeed = "Quality Audit";
-  } else if (initialNeedParam === "functional-testing") {
-    defaultNeed = "QA Assessment (1–2 weeks)";
-  }
+  const initialNeedParam = searchParams.get("need") ?? "";
+  const defaultNeed = needParamMap[initialNeedParam] ?? "";
 
   const [formData, setFormData] = useState({
     firstName: "",

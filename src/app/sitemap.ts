@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/careers`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -57,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic Sub-Pages for all 8 QA Testing disciplines
+  // Dynamic Sub-Pages for all 9 Software QA disciplines
   const serviceSubPages: MetadataRoute.Sitemap = detailedServices.map((svc) => ({
     url: `${baseUrl}/services/${svc.slug}`,
     lastModified: now,
