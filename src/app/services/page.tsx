@@ -7,7 +7,7 @@ import { allServicesData } from "@/data/servicesData";
 export const metadata: Metadata = {
   title: "Software QA Services — 9 Testing Disciplines",
   description:
-    "Explore Nishkama CodeLab's 9 independent software QA disciplines: XR & Spatial QA, Functional Testing, Exploratory Testing, Regression Testing, Compatibility, Usability, E2E, Release Validation, and Quality Audits.",
+    "Explore Nishkama CodeLab's 9 independent software QA disciplines: XR & Spatial Software QA, Functional Testing, Exploratory Testing, Regression Testing, Compatibility, Usability, E2E, Release Validation, and Quality Audits.",
 };
 
 export default function ServicesPage() {
@@ -57,7 +57,7 @@ export default function ServicesPage() {
               <span className="text-[#2F7CEF]">covered.</span>
             </h2>
             <p className="mt-3.5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Nine focused QA offerings engineered around product risk, physical device reality, and release confidence.
+              Nine focused software QA offerings engineered around product risk, multi-platform reality, and release confidence.
             </p>
           </div>
 

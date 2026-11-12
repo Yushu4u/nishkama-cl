@@ -20,43 +20,43 @@ export const allServicesData: ServiceItem[] = [
   {
     id: "xr-testing",
     slug: "xr-testing",
-    title: "XR & Spatial Computing QA",
+    title: "XR & Spatial Software QA",
     category: "immersive",
-    categoryLabel: "XR & Immersive",
-    gist: "Real-device validation for AR, VR, and MR apps across VisionOS, Meta Quest, and WebXR.",
+    categoryLabel: "XR & Quest Software",
+    gist: "Software assurance for Meta Quest (HorizonOS), Unity spatial builds, and WebXR applications.",
     summary:
-      "Comprehensive testing for AR, VR, and MR headsets, spatial tracking systems, and 3D spatial applications across VisionOS, Meta Quest, and WebXR.",
+      "Comprehensive software quality assurance for Meta Quest applications, HorizonOS experiences, Unity 3D builds, and WebXR spatial software.",
     capabilities: [
       {
-        heading: "Supported Devices & Tracking",
+        heading: "Spatial Interaction & Tracking",
         items: [
-          "VR/AR headsets, displays, and optical viewports",
-          "Hand, eye, head, and spatial tracking accuracy",
-          "Pass-through latency and real-world camera calibration",
-          "Battery usage and performance stability under continuous load",
+          "Hand, head, and controller tracking responsiveness and gesture debounce",
+          "Spatial UI comfort zones, boundary handling, and anchor persistence",
+          "Pass-through UI alignment and gaze/pinch interaction states",
+          "Companion mobile app data sync and session continuity",
         ],
       },
       {
-        heading: "Spatial Software",
+        heading: "Quest Software & Runtimes",
         items: [
-          "VisionOS, HorizonOS, and WebXR browser runtimes",
-          "Spatial audio positioning and 3D physics fidelity",
-          "Boundary calibration and multi-modal interaction",
-          "Multi-user avatar synchronization & networking",
+          "Meta Quest (HorizonOS) and WebXR browser runtime verification",
+          "Spatial audio positioning, UI depth, and 3D scene stability",
+          "Multi-user spatial room synchronization and network recovery",
+          "Quest Store submission compliance and release readiness checks",
         ],
       },
       {
         heading: "How We Test",
         items: [
-          "Native Unity & Unreal Engine test validation",
-          "Physical lab testing across realistic lighting environments",
-          "Automated performance profiling and frame-rate analysis",
-          "Testing across real headsets and devices",
+          "Unity Test Framework & automated spatial smoke checks",
+          "ADB, logcat diagnostics, and crash/memory leak isolation",
+          "OVR Metrics frame-rate stability and stutter profiling",
+          "Structured repro evidence with telemetry and video traces",
         ],
       },
     ],
     ctaText:
-      "Need deep XR validation? Explore our dedicated spatial testing methodology or get in touch for custom lab setup.",
+      "Need confident Meta Quest or WebXR software assurance? Explore our XR QA approach or reach out to discuss your build.",
     href: "/services/xr-testing",
   },
   {
@@ -188,43 +188,43 @@ export const allServicesData: ServiceItem[] = [
   {
     id: "compatibility-testing",
     slug: "compatibility-testing",
-    title: "Compatibility & Device Testing",
+    title: "Compatibility Testing",
     category: "sprint",
     categoryLabel: "Core Sprint QA",
-    gist: "Physical device validation across iOS, Android, macOS, Windows, and modern browser engines.",
+    gist: "Cross-browser and OS validation across iOS, Android, macOS, Windows, and modern browser engines.",
     summary:
-      "Comprehensive testing across physical iOS, Android, macOS, and Windows devices and modern browser engines without relying solely on emulators.",
+      "Thorough software compatibility testing across major desktop and mobile operating systems, modern browser engines, and responsive viewports.",
     capabilities: [
       {
-        heading: "Supported Platforms & Devices",
+        heading: "Operating Systems & Viewports",
         items: [
-          "Modern flagship and mid-tier iPhones and Androids",
-          "Foldable devices, iPads, and Android tablets",
+          "iOS and Android mobile & tablet viewports",
           "macOS and Windows desktop environments",
-          "Linux distributions and enterprise browser runtimes",
+          "Linux and enterprise browser configurations",
+          "Responsive breakpoints from mobile to wide desktop",
         ],
       },
       {
-        heading: "Browsers & Viewports",
+        heading: "Browsers & Rendering",
         items: [
-          "Chromium engines (Chrome, Edge, Brave, Opera)",
+          "Chromium engines (Chrome, Edge, Brave)",
           "WebKit (Mobile Safari & Desktop Safari)",
           "Gecko engine (Firefox Mobile & Desktop)",
-          "Dynamic viewport breakpoints, orientations, and scaling",
+          "Dynamic viewport orientations, zoom, and high-DPI scaling",
         ],
       },
       {
         heading: "How We Test",
         items: [
-          "Tested on real physical devices, never emulators alone",
-          "Screen resolution, aspect ratio, and notch adaptations",
-          "Touch gestures vs. mouse hover state interactions",
-          "Battery drain, memory consumption, and thermal checks",
+          "Cross-browser and cross-OS matrix execution",
+          "Layout clipping, aspect ratio, and safe-area checks",
+          "Touch gestures vs. mouse and keyboard interaction parity",
+          "Throttled network behavior and client memory checks",
         ],
       },
     ],
     ctaText:
-      "Validate user experiences across hundreds of real-world device-browser combinations.",
+      "Deliver consistent software experiences across browsers, operating systems, and screen sizes.",
     href: "/services/compatibility-testing",
   },
   {

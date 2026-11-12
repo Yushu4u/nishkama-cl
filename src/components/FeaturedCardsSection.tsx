@@ -25,11 +25,11 @@ const cards: ShowcaseCard[] = [
   },
   {
     title: "Multi-Platform & Spatial QA",
-    desc: "Real physical device testing across iOS, Android, web, and spatial headsets (Apple Vision Pro, Meta Quest) under real-world conditions.",
+    desc: "Cross-platform software validation across web browsers, desktop and mobile OS environments, WebXR, and Meta Quest applications.",
     image: "/images/spatial-hardware-testing.jpg",
-    alt: "Multi-platform device testing across mobile, tablet, and spatial headsets",
+    alt: "Multi-platform software and Quest spatial QA validation interface",
     href: "/services/xr-testing",
-    tag: "DEVICE COVERAGE",
+    tag: "PLATFORM COVERAGE",
     dotColor: "bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]",
   },
   {

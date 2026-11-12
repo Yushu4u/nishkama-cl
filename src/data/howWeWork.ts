@@ -58,7 +58,7 @@ export const processStages: ProcessStage[] = [
     activities: [
       "Execute structured test cases for core business workflows and data inputs",
       "Conduct time-boxed exploratory bug hunting targeting edge cases and interruptions",
-      "Verify cross-platform compatibility across browsers and physical devices",
+      "Verify cross-platform compatibility across browsers, OS environments, and mobile viewports",
       "Inspect network payload failures, timeout states, and boundary conditions",
     ],
     outputs: [
