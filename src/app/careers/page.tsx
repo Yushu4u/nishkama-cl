@@ -13,7 +13,7 @@ import { siteConfig } from "@/data/siteConfig";
 export const metadata: Metadata = {
   title: "Careers — QA Engineers & Quality Advocates | Nishkama CodeLab",
   description:
-    "Join Nishkama CodeLab's 19 open roles: QA Engineer (1–2 yrs), Senior QA Engineer (3–5 yrs), and Lead QA Engineer (9+ yrs) — all operating with a Quality Advocate mindset.",
+    "Join Nishkama CodeLab's 18 open roles: QA Engineer (1–2 yrs), Senior QA Engineer (3–5 yrs), and Lead QA Engineer (9+ yrs) — all operating with a Quality Advocate mindset.",
 };
 
 interface Role {
@@ -39,7 +39,7 @@ const openRoles: Role[] = [
     openings: "15 Openings",
     openingsCount: 15,
     experience: "1–2 Years Exp.",
-    meta: "Full-Time • Remote",
+    meta: "Full-Time • Remote / Hybrid",
     icon: Terminal,
     summary:
       "Own functional, exploratory, and regression cycles across web, mobile, and REST APIs — catching edge failures before users do.",
@@ -62,10 +62,10 @@ const openRoles: Role[] = [
     id: "senior-qa-engineer",
     title: "Senior QA Engineer",
     advocateTrack: "Senior Quality Advocate",
-    openings: "3 Openings",
-    openingsCount: 3,
+    openings: "2 Openings",
+    openingsCount: 2,
     experience: "3–5 Years Exp.",
-    meta: "Full-Time • Remote",
+    meta: "Full-Time • Remote / Hybrid",
     icon: ShieldCheck,
     summary:
       "Build Playwright E2E and API automation suites integrated into CI/CD while isolating complex edge defects across sprints.",
@@ -153,7 +153,7 @@ export default function CareersPage() {
               </h2>
             </div>
             <span className="text-xs sm:text-sm font-medium text-slate-500">
-              Remote-first engineering team • Continuous hiring
+              Remote / Hybrid engineering team • Continuous hiring
             </span>
           </div>
 
@@ -244,7 +244,7 @@ export default function CareersPage() {
                       )}`}
                       className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#0E2539] px-5 py-3 text-xs sm:text-sm font-bold text-white shadow-xs transition-all hover:bg-[#2F7CEF] hover:shadow-md hover:shadow-[#2F7CEF]/20"
                     >
-                      <span>Apply for {role.title}</span>
+                      <span>Apply Now</span>
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
