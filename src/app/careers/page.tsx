@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   ShieldCheck,
   CheckCircle2,
@@ -223,15 +224,13 @@ export default function CareersPage() {
 
                   {/* Direct Apply Button */}
                   <div className="mt-6 pt-5 border-t border-slate-100">
-                    <a
-                      href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(
-                        role.mailtoSubject
-                      )}`}
+                    <Link
+                      href={`/careers/apply?role=${role.id}`}
                       className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#0E2539] px-5 py-3 text-xs sm:text-sm font-bold text-white shadow-xs transition-all hover:bg-[#2F7CEF] hover:shadow-md hover:shadow-[#2F7CEF]/20"
                     >
                       <span>Apply Now</span>
                       <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </Link>
                   </div>
                 </article>
               );
@@ -251,7 +250,7 @@ export default function CareersPage() {
             Ready to advocate for product quality?
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-            Send your resume and one memorable production bug or UX edge case you caught to{" "}
+            Apply online in 2 minutes or email your resume directly to{" "}
             <a
               href={`mailto:${siteConfig.email}?subject=QA Engineering Application`}
               className="text-white font-semibold underline underline-offset-4 hover:text-[#60A5FA] transition-colors"
@@ -260,6 +259,15 @@ export default function CareersPage() {
             </a>
             .
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/careers/apply"
+              className="inline-flex items-center gap-2 rounded-full bg-[#2F7CEF] px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] transition-all"
+            >
+              <span>Submit General Application</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

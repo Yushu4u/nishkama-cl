@@ -15,7 +15,11 @@ export type AnalyticsEvent =
   | { name: "contact_form_attempt"; properties: { selectedNeed?: string } }
   | { name: "contact_form_validation_failed"; properties: { errorCount: number; fields: string[] } }
   | { name: "contact_form_success"; properties: { responseTimeMs: number; selectedNeed: string } }
-  | { name: "contact_form_error"; properties: { statusCode: number; errorMessage: string } };
+  | { name: "contact_form_error"; properties: { statusCode: number; errorMessage: string } }
+  | { name: "career_application_attempt"; properties: { selectedRole?: string } }
+  | { name: "career_application_validation_failed"; properties: { errorCount: number; fields: string[] } }
+  | { name: "career_application_success"; properties: { role: string } }
+  | { name: "career_application_error"; properties: { errorMessage: string } };
 
 declare global {
   interface Window {
