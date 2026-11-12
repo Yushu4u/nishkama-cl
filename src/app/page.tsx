@@ -23,7 +23,7 @@ export default function HomePage() {
           {/* Headline (Crisp, High-Impact Typography) */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.35rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.08] max-w-5xl mx-auto">
             Quality Advocates for{" "}
-            <span className="text-[#2F7CEF] whitespace-nowrap">Your Software.</span>
+            <span className="text-[#2F7CEF] whitespace-nowrap">Your Product.</span>
           </h1>
 
           {/* Subhead */}
