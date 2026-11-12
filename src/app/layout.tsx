@@ -21,11 +21,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.canonicalUrl),
   title: {
-    default: "Nishkama CodeLab | Quality Advocates for Your Product",
+    default: "Nishkama CodeLab | Independent Software QA & Quality Advocacy",
     template: "%s | Nishkama CodeLab",
   },
   description: siteConfig.description,
   keywords: [
+    "software QA services",
     "QA services",
     "software testing services",
     "QA testing company",
@@ -57,20 +58,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.canonicalUrl,
     siteName: siteConfig.name,
-    title: "Nishkama CodeLab | Quality Advocates for Your Product",
+    title: "Nishkama CodeLab | Independent Software QA & Quality Advocacy",
     description: siteConfig.description,
     images: [
       {
         url: siteConfig.brand.assets.logoBanner,
         width: 1024,
         height: 320,
-        alt: "Nishkama CodeLab — Quality Advocates for Your Product",
+        alt: "Nishkama CodeLab — Independent Software QA & Quality Advocacy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nishkama CodeLab | Quality Advocates for Your Product",
+    title: "Nishkama CodeLab | Independent Software QA & Quality Advocacy",
     description: siteConfig.description,
     images: [siteConfig.brand.assets.logoBanner],
   },

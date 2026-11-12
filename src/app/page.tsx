@@ -23,12 +23,12 @@ export default function HomePage() {
           {/* Headline (Crisp, High-Impact Typography) */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.35rem] font-extrabold tracking-tight text-[#0E2539] leading-[1.08] max-w-5xl mx-auto">
             Quality Advocates for{" "}
-            <span className="text-[#2F7CEF] whitespace-nowrap">Your Product.</span>
+            <span className="text-[#2F7CEF] whitespace-nowrap">Your Software.</span>
           </h1>
 
           {/* Subhead */}
           <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-3xl mx-auto font-normal">
-            We help product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
+            We help software and product teams find what breaks, experience what users experience, and uncover quality risks before they become customer problems.
           </p>
 
           {/* Centered Primary Action Button */}
@@ -37,7 +37,7 @@ export default function HomePage() {
               href="/services"
               className="rounded-2xl bg-[#2F7CEF] px-8 sm:px-10 py-3.5 sm:py-4 text-base sm:text-lg font-bold text-white shadow-md shadow-[#2F7CEF]/25 hover:bg-[#1E66D8] hover:shadow-lg hover:shadow-[#2F7CEF]/35 transition-all hover:-translate-y-0.5 active:scale-98"
             >
-              Explore Our Services
+              Explore Software QA Services
             </Link>
           </div>
 

@@ -9,7 +9,7 @@ export const siteConfig = {
   shortName: "NCL",
   tagline: "Quality Advocates for Your Product",
   description:
-    "Nishkama CodeLab provides independent QA testing, product quality audits, exploratory testing, regression testing, usability validation, and Quality Advocacy for technology teams.",
+    "Nishkama CodeLab provides independent software QA testing, product quality audits, exploratory testing, regression testing, usability validation, and Quality Advocacy for technology teams.",
   email: "hello@nishkamacodelab.com",
   canonicalUrl: "https://www.nishkamacodelab.com",
   brand: {
@@ -30,7 +30,7 @@ export const siteConfig = {
   navItems: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "QA Services", href: "/services" },
+    { label: "Software QA Services", href: "/services" },
     { label: "Quality Advocacy", href: "/quality-advocacy" },
     { label: "Careers", href: "/careers" },
   ] as NavItem[],

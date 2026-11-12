@@ -58,7 +58,7 @@ export async function Footer() {
           {/* Testing Services Column */}
           <div className="lg:col-span-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Testing Disciplines
+              Software QA Services
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
               {siteConfig.footerLinks.services.map((link) => (

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.title} — QA Services | Nishkama CodeLab`,
+    title: `${service.title} — Software QA Services`,
     description: service.shortDescription,
     keywords: [
       service.title,
@@ -332,7 +332,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="flex items-center justify-between pb-6 border-b border-slate-100 flex-wrap gap-4">
             <div>
               <h3 className="text-lg font-bold text-[#0E2539]">
-                Explore Other QA Services
+                Explore Other Software QA Services
               </h3>
               <p className="text-xs text-slate-500">
                 Discover complementary testing disciplines for comprehensive coverage.
@@ -342,7 +342,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               href="/services"
               className="text-xs font-bold text-[#2F7CEF] hover:text-[#1E66D8] flex items-center gap-1"
             >
-              <span>View All 8 Services</span>
+              <span>View All 9 Services</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>

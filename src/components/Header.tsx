@@ -84,10 +84,10 @@ export function Header() {
         </div>
 
         {/* Center: Minimalist Desktop Navigation Links (Balanced between Logo & CTA) */}
-        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
           <Link
             href="/"
-            className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm transition-colors ${
+            className={`relative whitespace-nowrap rounded-lg px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
               pathname === "/"
                 ? "font-bold text-[#2F7CEF]"
                 : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
@@ -96,7 +96,7 @@ export function Header() {
             Home
             {pathname === "/" && (
               <span
-                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                className="absolute inset-x-2.5 xl:inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
                 aria-hidden="true"
               />
             )}
@@ -104,7 +104,7 @@ export function Header() {
 
           <Link
             href="/about"
-            className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm transition-colors ${
+            className={`relative whitespace-nowrap rounded-lg px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
               pathname === "/about"
                 ? "font-bold text-[#2F7CEF]"
                 : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
@@ -113,7 +113,7 @@ export function Header() {
             About Us
             {pathname === "/about" && (
               <span
-                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                className="absolute inset-x-2.5 xl:inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
                 aria-hidden="true"
               />
             )}
@@ -127,13 +127,13 @@ export function Header() {
           >
             <Link
               href="/services"
-              className={`relative whitespace-nowrap inline-flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm transition-colors ${
+              className={`relative whitespace-nowrap inline-flex items-center gap-1 rounded-lg px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
                 pathname.startsWith("/services")
                   ? "font-bold text-[#2F7CEF]"
                   : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
               }`}
             >
-              <span>QA Services</span>
+              <span>Software QA Services</span>
               <ChevronDown
                 className={`h-3.5 w-3.5 transition-transform duration-200 ${
                   servicesDropdownOpen ? "rotate-180 text-[#2F7CEF]" : "text-slate-400"
@@ -142,7 +142,7 @@ export function Header() {
               />
               {pathname.startsWith("/services") && (
                 <span
-                  className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                  className="absolute inset-x-2.5 xl:inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
                   aria-hidden="true"
                 />
               )}
@@ -158,7 +158,7 @@ export function Header() {
                 <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xl grid grid-cols-2 gap-2">
                   <div className="col-span-2 pb-2 mb-1 border-b border-slate-100">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                      Specialized QA Disciplines
+                      Software QA Disciplines
                     </span>
                   </div>
 
@@ -208,7 +208,7 @@ export function Header() {
 
           <Link
             href="/quality-advocacy"
-            className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm transition-colors ${
+            className={`relative whitespace-nowrap rounded-lg px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
               pathname === "/quality-advocacy"
                 ? "font-bold text-[#2F7CEF]"
                 : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
@@ -217,7 +217,7 @@ export function Header() {
             Quality Advocacy
             {pathname === "/quality-advocacy" && (
               <span
-                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                className="absolute inset-x-2.5 xl:inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
                 aria-hidden="true"
               />
             )}
@@ -225,7 +225,7 @@ export function Header() {
 
           <Link
             href="/careers"
-            className={`relative whitespace-nowrap inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm transition-colors ${
+            className={`relative whitespace-nowrap inline-flex items-center gap-2 rounded-lg px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
               pathname === "/careers"
                 ? "font-bold text-[#2F7CEF]"
                 : "font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0E2539]"
@@ -237,7 +237,7 @@ export function Header() {
             </span>
             {pathname === "/careers" && (
               <span
-                className="absolute inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
+                className="absolute inset-x-2.5 xl:inset-x-3.5 -bottom-0.5 h-[2px] rounded-full bg-[#2F7CEF]"
                 aria-hidden="true"
               />
             )}
@@ -249,7 +249,7 @@ export function Header() {
           {/* Desktop Primary CTA: Contact Us */}
           <Link
             href="/contact"
-            className="hidden lg:inline-flex rounded-full bg-[#2F7CEF] px-5 sm:px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
+            className="hidden lg:inline-flex whitespace-nowrap rounded-full bg-[#2F7CEF] px-5 xl:px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#1E66D8] hover:shadow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2F7CEF]"
             onClick={() => {
               trackEvent({
                 name: "cta_click",
@@ -327,13 +327,17 @@ export function Header() {
                     pathname.startsWith("/services") ? "text-[#2F7CEF]" : "text-slate-800"
                   }`}
                 >
-                  QA Services
+                  Software QA Services
                 </Link>
                 <button
                   type="button"
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   className="p-1 -mr-1 text-slate-400 hover:text-[#2F7CEF] transition-colors focus:outline-none"
-                  aria-label={mobileServicesOpen ? "Collapse QA Services submenu" : "Expand QA Services submenu"}
+                  aria-label={
+                    mobileServicesOpen
+                      ? "Collapse Software QA Services submenu"
+                      : "Expand Software QA Services submenu"
+                  }
                   aria-expanded={mobileServicesOpen}
                 >
                   <ChevronDown
