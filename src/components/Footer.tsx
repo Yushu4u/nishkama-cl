@@ -4,8 +4,13 @@ import Image from "next/image";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
-export function Footer() {
-  const currentYear = 2026;
+async function getCurrentYear(): Promise<number> {
+  "use cache";
+  return new Date().getFullYear();
+}
+
+export async function Footer() {
+  const currentYear = await getCurrentYear();
 
   return (
     <footer className="border-t border-slate-800 bg-[#0E2539] text-slate-300 transition-smooth">
@@ -109,21 +114,26 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-3">
-            <Image
-              src={siteConfig.brand.assets.iconSquare}
-              alt="Nishkama CodeLab Mark"
-              width={22}
-              height={22}
-              className="h-5 w-5 rounded-md object-contain"
-            />
-            <p>
-              &copy; {currentYear} {siteConfig.name}. All rights reserved.
+        <div className="mt-14 pt-8 border-t border-slate-800/80 space-y-4 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src={siteConfig.brand.assets.iconSquare}
+                alt="Nishkama CodeLab Mark"
+                width={22}
+                height={22}
+                className="h-5 w-5 rounded-md object-contain"
+              />
+              <p>
+                &copy; {currentYear} {siteConfig.name}. All rights reserved.
+              </p>
+            </div>
+            <p className="text-slate-500 text-[11px]">
+              Independent QA &bull; Product Experience &bull; Quality Advocacy
             </p>
           </div>
-          <p className="text-slate-500 text-[11px]">
-            Independent QA &bull; Product Experience &bull; Quality Advocacy
+          <p className="border-t border-slate-800/50 pt-4 text-[11px] text-slate-500/90 leading-relaxed text-center sm:text-left">
+            All third-party product names, logos, and trademarks mentioned on this website are the property of their respective owners and are used solely to identify supported platforms and engineering integrations.
           </p>
         </div>
       </div>

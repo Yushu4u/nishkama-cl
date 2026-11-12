@@ -11,7 +11,7 @@ export const siteConfig = {
   description:
     "Nishkama CodeLab provides independent QA testing, product quality audits, exploratory testing, regression testing, usability validation, and Quality Advocacy for technology teams.",
   email: "hello@nishkamacodelab.com",
-  canonicalUrl: "https://nishkamacodelab.com",
+  canonicalUrl: "https://www.nishkamacodelab.com",
   brand: {
     colors: {
       navy: "#0E2539",
@@ -58,7 +58,7 @@ export const siteConfig = {
       { label: "Quality Audit", href: "/services/quality-audit" },
     ],
     company: [
-      { label: "About NCL", href: "/about" },
+      { label: "About Us", href: "/about" },
       { label: "Quality Advocacy", href: "/quality-advocacy" },
       { label: "Careers", href: "/careers" },
       { label: "How We Work", href: "/how-we-work" },

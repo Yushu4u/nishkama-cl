@@ -12,6 +12,7 @@ import {
   Layers,
 } from "lucide-react";
 import { detailedServices } from "@/data/services";
+import { siteConfig } from "@/data/siteConfig";
 import { Button } from "@/components/Button";
 
 interface Props {
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${service.title} | Nishkama CodeLab`,
       description: service.shortDescription,
-      url: `https://nishkamacodelab.com/services/${service.slug}`,
+      url: `${siteConfig.canonicalUrl}/services/${service.slug}`,
       type: "website",
     },
   };
