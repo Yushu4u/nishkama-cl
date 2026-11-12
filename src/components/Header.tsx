@@ -86,14 +86,25 @@ export function Header() {
         {/* Center: Desktop Navigation Links (Floating Island Pill Container) */}
         <div className="hidden lg:flex justify-self-center items-center gap-1 bg-slate-100/70 border border-slate-200/80 rounded-full p-1.5 backdrop-blur-sm shadow-xs">
           <Link
+            href="/"
+            className={`whitespace-nowrap rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
+              pathname === "/"
+                ? "text-[#2F7CEF] bg-white shadow-xs"
+                : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
+            }`}
+          >
+            Home
+          </Link>
+
+          <Link
             href="/about"
-            className={`rounded-full px-4 py-2 text-sm font-bold transition-all ${
+            className={`whitespace-nowrap rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
               pathname === "/about"
                 ? "text-[#2F7CEF] bg-white shadow-xs"
                 : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
             }`}
           >
-            About
+            About Us
           </Link>
 
           {/* Services with Hover/Click Dropdown */}
@@ -104,7 +115,7 @@ export function Header() {
           >
             <Link
               href="/services"
-              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold transition-all ${
+              className={`whitespace-nowrap inline-flex items-center gap-1.5 rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
                 pathname.startsWith("/services")
                   ? "text-[#2F7CEF] bg-white shadow-xs"
                   : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
@@ -164,7 +175,7 @@ export function Header() {
 
           <Link
             href="/quality-advocacy"
-            className={`rounded-full px-4 py-2 text-sm font-bold transition-all ${
+            className={`whitespace-nowrap rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
               pathname === "/quality-advocacy"
                 ? "text-[#2F7CEF] bg-white shadow-xs"
                 : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
@@ -175,7 +186,7 @@ export function Header() {
 
           <Link
             href="/careers"
-            className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition-all ${
+            className={`whitespace-nowrap inline-flex items-center gap-2 rounded-full px-3.5 xl:px-4 py-2 text-sm font-bold transition-all ${
               pathname === "/careers"
                 ? "text-[#2F7CEF] bg-white shadow-xs"
                 : "text-slate-700 hover:text-[#2F7CEF] hover:bg-white/60"
@@ -239,13 +250,23 @@ export function Header() {
         <div className="space-y-4">
           <div className="space-y-1">
             <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                pathname === "/" ? "bg-[#EFF6FF] text-[#2F7CEF]" : "text-slate-800 hover:bg-slate-50"
+              }`}
+            >
+              Home
+            </Link>
+
+            <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
               className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
                 pathname === "/about" ? "bg-[#EFF6FF] text-[#2F7CEF]" : "text-slate-800 hover:bg-slate-50"
               }`}
             >
-              About
+              About Us
             </Link>
 
             <div>

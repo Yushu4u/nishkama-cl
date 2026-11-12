@@ -28,7 +28,8 @@ export const siteConfig = {
     },
   },
   navItems: [
-    { label: "About", href: "/about" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
     { label: "QA Services", href: "/services" },
     { label: "Quality Advocacy", href: "/quality-advocacy" },
     { label: "Careers", href: "/careers" },
