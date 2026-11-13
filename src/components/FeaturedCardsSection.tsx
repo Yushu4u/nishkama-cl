@@ -25,9 +25,9 @@ const cards: ShowcaseCard[] = [
   },
   {
     title: "Multi-Platform & Spatial QA",
-    desc: "Cross-platform software validation across web browsers, desktop and mobile OS environments, WebXR, and Meta Quest applications.",
+    desc: "Cross-platform software validation across web browsers, desktop and mobile OS environments, WebXR, and AR, VR & MR devices.",
     image: "/images/spatial-hardware-testing.jpg",
-    alt: "Multi-platform software and Quest spatial QA validation interface",
+    alt: "Multi-platform software and spatial XR/MR QA validation interface",
     href: "/services/xr-testing",
     tag: "PLATFORM COVERAGE",
     dotColor: "bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]",

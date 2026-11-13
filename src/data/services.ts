@@ -37,12 +37,12 @@ export const detailedServices: DetailedService[] = [
     slug: "xr-testing",
     number: "01",
     title: "XR & Spatial Software QA",
-    tagline: "Manual and automated software assurance for Meta Quest (HorizonOS), Unity builds, and WebXR spatial applications.",
-    shortDescription: "End-to-end spatial software QA across Meta Quest, HorizonOS, and WebXR—validating spatial UI interaction, frame stability, Unity builds, and Quest Store readiness.",
+    tagline: "Manual and automated software assurance for AR, VR, and MR devices, Unity builds, and WebXR spatial applications.",
+    shortDescription: "End-to-end spatial software QA across AR, VR, and MR devices—validating spatial UI interaction, frame stability, Unity builds, and store readiness.",
     longDescription:
-      "Nishkama CodeLab delivers focused manual and automated software quality assurance for Meta Quest and spatial computing applications. From hand-tracking gesture debounce and frame-time stability on HorizonOS to companion-app data sync, Unity scene regression, and Quest Store compliance, our QA engineers ensure comfortable, stutter-free user experiences.",
+      "Nishkama CodeLab delivers focused manual and automated software quality assurance for spatial computing applications. Our team includes QA specialists with hands-on experience working across modern AR, VR, and MR devices. From hand-tracking gesture debounce and frame-time stability to companion-app data sync, Unity scene regression, and platform store compliance, our QA engineers ensure comfortable, stutter-free user experiences.",
     whyItMatters:
-      "Unlike traditional 2D screens, software defects in XR cause immediate user discomfort—stutter, eye strain, and disorienting UI drift. Precision spatial software QA is vital to shipping Quest and WebXR products that users trust.",
+      "Unlike traditional 2D screens, software defects in XR cause immediate user discomfort—stutter, eye strain, and disorienting UI drift. Precision spatial software QA is vital to shipping AR, VR, and MR products that users trust.",
     iconKey: "glasses",
     capabilitiesGrouped: [
       {
@@ -55,21 +55,21 @@ export const detailedServices: DetailedService[] = [
         ],
       },
       {
-        heading: "Quest Software & Frame Stability",
+        heading: "Device Performance & Frame Stability",
         items: [
-          "Stable target frame rates (72Hz / 90Hz) and shader-compile stutter checks",
+          "Stable target frame rates (72Hz / 90Hz / 120Hz) and shader-compile stutter checks",
           "Unity spatial build verification and scene-transition regression",
           "Depth clipping, UI layer legibility, and FOV edge artifacts",
           "Spatial audio positioning, occlusion, and haptic feedback checks",
         ],
       },
       {
-        heading: "Quest QA Automation & Store Readiness",
+        heading: "Spatial QA Automation & Release Readiness",
         items: [
           "Automated smoke checks within Unity Test Framework",
-          "ADB, logcat traces, and Python scripts for repeatable regression",
+          "Device debug bridges, runtime logs, and automation scripts for repeatable regression",
           "Multi-user spatial room synchronization and network-drop recovery",
-          "Meta Quest Store (Horizon Store) technical compliance & release checks",
+          "Platform store technical compliance, guideline conformance & release checks",
         ],
       },
     ],
@@ -77,13 +77,13 @@ export const detailedServices: DetailedService[] = [
       "Frame drops, shader stutters, and reprojection artifacts",
       "Hand tracking pinch precision, occlusion handling, and gesture debounce",
       "Spatial UI layer depth, text readability, and user comfort zones",
-      "Network synchronization across multi-user Quest and WebXR sessions",
+      "Network synchronization across multi-user AR, VR, and WebXR sessions",
     ],
     deliverables: [
-      "Frame-rate and memory telemetry benchmarks (OVR Metrics / logcat)",
-      "Clear video bug recordings with ADB logcat traces and repro steps",
+      "Frame-rate and memory telemetry benchmarks (real-time device profiling & runtime logs)",
+      "Clear video bug recordings with system runtime traces and repro steps",
       "Spatial comfort and interaction UX audit scorecards",
-      "Automated Unity / ADB spatial smoke test scripts",
+      "Automated spatial smoke test scripts",
     ],
     typicalBugsCaught: [
       "Sudden frame drops triggering reprojection shudder when complex scenes load",
@@ -92,12 +92,12 @@ export const detailedServices: DetailedService[] = [
       "Hand tracking losing pinch state when hands cross or drop near resting position",
     ],
     recommendedFor:
-      "Meta Quest app teams, XR studios, Unity spatial developers, enterprise 3D training platforms, and WebXR creators.",
+      "Spatial app teams, XR/MR studios, Unity developers, enterprise 3D training platforms, and WebXR creators.",
     executionSteps: [
-      { step: "01", title: "Runtime & SDK Mapping", desc: "Align on target HorizonOS / WebXR runtimes, Unity versions, and comfort criteria." },
+      { step: "01", title: "Runtime & Device Mapping", desc: "Align on target AR, VR & MR devices, spatial runtime environments, Unity versions, and comfort criteria." },
       { step: "02", title: "Telemetry Profiling", desc: "Capture baseline frame times, memory growth, and scene-load metrics." },
       { step: "03", title: "Spatial Stress & Exploratory QA", desc: "Execute rapid gesture sequences, boundary transitions, network drops, and extended sessions." },
-      { step: "04", title: "Regression & Store Checks", desc: "Verify core spatial flows, companion sync, and Quest Store readiness." },
+      { step: "04", title: "Regression & Store Checks", desc: "Verify core spatial flows, companion sync, and platform store readiness." },
     ],
   },
   {

@@ -35,7 +35,7 @@ export const siteConfig = {
     { label: "Careers", href: "/careers" },
   ] as NavItem[],
   serviceSubPages: [
-    { label: "XR & Spatial QA", href: "/services/xr-testing", desc: "Meta Quest, HorizonOS, WebXR & Unity QA" },
+    { label: "XR & Spatial QA", href: "/services/xr-testing", desc: "AR, VR & MR devices, WebXR & Unity QA" },
     { label: "Functional Testing", href: "/services/functional-testing", desc: "Core feature verification & business rules" },
     { label: "Exploratory Testing", href: "/services/exploratory-testing", desc: "Unscripted edge-case discovery & bug hunting" },
     { label: "Regression Testing", href: "/services/regression-testing", desc: "Protecting critical paths and release safety" },

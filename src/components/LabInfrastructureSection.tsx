@@ -235,7 +235,7 @@ export function LabInfrastructureSection() {
                 </div>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Dedicated testing rigs for Apple Vision Pro and Meta Quest. We evaluate 6DoF hand-tracking latency, field-of-view comfort, spatial audio sync, and frame-rate stability over long sessions.
+                Hands-on testing across modern AR, VR, and MR devices. Our QA specialists evaluate 6DoF hand-tracking latency, field-of-view comfort, spatial audio sync, and frame-rate stability over extended sessions.
               </p>
             </div>
 

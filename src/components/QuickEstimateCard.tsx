@@ -45,7 +45,7 @@ const platforms: PlatformScope[] = [
     id: "spatial-xr",
     label: "Spatial & XR",
     icon: Glasses,
-    badges: ["6DoF Gesture Debounce", "Frame Stability / FPS", "VisionOS & Quest Apps"],
+    badges: ["6DoF Gesture Debounce", "Frame Stability / FPS", "AR, VR & MR Devices"],
   },
 ];
 

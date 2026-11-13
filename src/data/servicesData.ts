@@ -22,10 +22,10 @@ export const allServicesData: ServiceItem[] = [
     slug: "xr-testing",
     title: "XR & Spatial Software QA",
     category: "immersive",
-    categoryLabel: "XR & Quest Software",
-    gist: "Software assurance for Meta Quest (HorizonOS), Unity spatial builds, and WebXR applications.",
+    categoryLabel: "XR & MR Software",
+    gist: "Software assurance for AR, VR, and MR devices, Unity spatial builds, and WebXR applications.",
     summary:
-      "Comprehensive software quality assurance for Meta Quest applications, HorizonOS experiences, Unity 3D builds, and WebXR spatial software.",
+      "Comprehensive software quality assurance led by specialists with hands-on experience across AR, VR, and MR devices, spatial runtime environments, and Unity 3D builds.",
     capabilities: [
       {
         heading: "Spatial Interaction & Tracking",
@@ -37,26 +37,26 @@ export const allServicesData: ServiceItem[] = [
         ],
       },
       {
-        heading: "Quest Software & Runtimes",
+        heading: "XR & MR Runtimes",
         items: [
-          "Meta Quest (HorizonOS) and WebXR browser runtime verification",
+          "AR, VR & MR headsets, spatial runtime environments, and WebXR browser verification",
           "Spatial audio positioning, UI depth, and 3D scene stability",
           "Multi-user spatial room synchronization and network recovery",
-          "Quest Store submission compliance and release readiness checks",
+          "Platform store technical compliance and spatial release readiness checks",
         ],
       },
       {
         heading: "How We Test",
         items: [
           "Unity Test Framework & automated spatial smoke checks",
-          "ADB, logcat diagnostics, and crash/memory leak isolation",
-          "OVR Metrics frame-rate stability and stutter profiling",
+          "Device debug bridges, runtime diagnostics, and crash/memory leak isolation",
+          "Real-time frame-rate stability, thermal profiling, and stutter analysis",
           "Structured repro evidence with telemetry and video traces",
         ],
       },
     ],
     ctaText:
-      "Need confident Meta Quest or WebXR software assurance? Explore our XR QA approach or reach out to discuss your build.",
+      "Need confident software assurance across AR, VR, or MR devices? Explore our XR QA approach or reach out to discuss your build.",
     href: "/services/xr-testing",
   },
   {
